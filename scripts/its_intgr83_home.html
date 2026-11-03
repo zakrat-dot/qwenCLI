@@ -1,0 +1,830 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar_level0 no-touchscreen js-disabled">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+		<title id="w_title" class="w">Технологии интеграции &quot;1С:Предприятия 8.3&quot;</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="theme-color" content="#ffdf16">
+		<link rel="preconnect" href="https://mc.yandex.ru">
+		<link rel="preconnect" href="https://counter.yadro.ru">
+		<base id="w_base" class="l" data-nonce="1789134211" href="/db/content/intgr83/src/book.html" target="w_metadata_doc_frame">		
+		<link id="w_canonical" rel="canonical" class="l" href="https://its.1c.ru/db/intgr83">		<script type="text/javascript">
+			(function(){
+				var n = navigator, d = document, de = d.documentElement, dc = de.className.replace(/(^|\s+)js-disabled(\s+|$)/, ' '), rxos = /(^|\s+)(android|ios)(\s+|$)/;
+				if(window.TouchEvent && 'standalone' in n || window.matchMedia && matchMedia('(any-pointer: coarse)').matches){
+					dc = dc.replace(/(^|\s+)no-touchscreen(\s+|$)/, ' touchscreen ');
+					if(window.TouchEvent && 'standalone' in n){
+						dc = dc.replace(rxos, ' ios ');
+						d.addEventListener('touchstart', (function(){return function(){}})());
+					}
+					else if(n.userAgentData && n.userAgentData.platform === 'Android'
+					|| (!n.userAgentData || !n.userAgentData.platform && n.vendor === 'Google Inc.') && n.userAgent.match(/\bAndroid\b/))
+						dc = dc.replace(rxos, ' android ');
+					else
+						dc = dc.replace(rxos, ' ');
+				}else
+					dc = dc.replace(rxos, ' ').replace(/(^|\s+)touchscreen(\s+|$)/, ' no-touchscreen ');
+				de.className = dc;
+			})();
+		</script>
+		<script type="text/javascript">
+window.deferred=[];window.errors=[];;
+(function(){var attrs=decodeURIComponent(location.hash.replace('#', '').replace(/:/g, '/')).replace(/%$/, '%25');if(!attrs.match(/^(?:content|bookmark)\//))return;else if(window.TouchEvent && 'standalone' in navigator || document.documentElement.className.match(/\bandroid\b/)){document.write('<style>body,html::before,html::after{display:none!important}</style>');var load = function(){location.replace(location.pathname+'/'+attrs.replace(/^content\/(-?\d+)\/1\b/, 'content/$1/hdoc'));};if(window.TouchEvent && 'standalone' in navigator || !window.requestAnimationFrame || document.visibilityState === 'hidden'){load();}else{requestAnimationFrame(load);}return;}if(attrs.match(/^content\/[^\/]+\/[^\/]+\/[^\/]+/))return;var url=location.protocol+'//'+location.hostname+location.pathname+'/'+attrs;url+=(attrs.indexOf('?')!==-1?'&':'?')+'bus&1789134211=&event[name]=mode';if(!window.preloadedXHR)window.preloadedXHR={};var request=new XMLHttpRequest;request.open('GET', url, true);if(document.referrer)request.setRequestHeader('X-Referer', document.referrer);if(navigator.userAgent.match(/Chrome\b/))request.setRequestHeader('X-Attachment-Accept', 1);request.send();preloadedXHR[url]=request;})();
+deferred.push(function(){App.User.init(false, 'BITRIX_SM_LOGIN', 'SUBSCRIBE_PERIOD', 'PARTWEB_LOGIN', 'FRESH_LOGIN', 'BITRIX_SM_UIDH', '/user/auth/ping.json', 1380);});
+</script>		<script type="text/javascript">
+			window.TEMPLATE_NEW = true;
+			window.MOBILE_ENABLED = true;
+		</script>
+		<style>
+		@font-face {
+			font-family: 'Roboto';
+			src: url('/font/roboto/Roboto-Regular.woff2') format('woff2'),
+				 url('/font/roboto/Roboto-Regular.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'Roboto';
+			src: url('/font/roboto/Roboto-Bold.woff2') format('woff2'),
+				 url('/font/roboto/Roboto-Bold.woff') format('woff');
+			font-weight: bold;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaMediumC';
+			src: url('/font/futura/FuturaMediumC.woff2') format('woff2'),
+				 url('/font/futura/FuturaMediumC.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaDemiC';
+			src: url('/font/futura/FuturaDemiC.woff2') format('woff2'),
+				 url('/font/futura/FuturaDemiC.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaBookC';
+			src: url('/font/futura/FuturaBookC.woff2') format('woff2'),
+				 url('/font/futura/FuturaBookC.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaLightC';
+			src: url('/font/futura/FuturaLightC.woff2') format('woff2'),
+				 url('/font/futura/FuturaLightC.woff') format('woff');
+			font-weight: 300;
+			font-style: normal;
+			font-display: block;
+		}
+		</style>
+												<link rel="stylesheet" type="text/css" href="/common/page/css/1789134243/core__new.css_?_=1789134243"><link rel="stylesheet" type="text/css" href="/common/page/css/1789134243/its__new.css_?_=1789134243"><link rel="stylesheet" type="text/css" href="/css/mobile.css?_=1758294439">							<script type="text/javascript" onload="this.loaded=true" defer src="/common/page/js/1789134243/core__new.js_?_=1789134243"></script><script type="text/javascript" onload="this.loaded=true" defer src="/common/page/js/1789134243/its__new.js_?_=1789134243"></script>						<style>
+				html
+		{contain:strict}
+		html::-webkit-scrollbar,
+		body::-webkit-scrollbar
+		{display:none}
+				</style>
+		<link id="favicon_static" type="image/x-icon" rel="icon" href="/favicon.ico">
+				<link rel="apple-touch-icon" sizes="120x120" href="/img_new/logo_its_apple_touch_120.png?_=1621642314">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img_new/logo_its_apple_touch_152.png?_=1621642321">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img_new/logo_its_apple_touch_180.png?_=1621642327">
+		<meta name="vk:image" content="https://its.1c.ru/img_new/logo_its_resize_on_white.gif">
+		<meta name="og:image" content="https://its.1c.ru/db/content/intgr83/_metaimage/999999/hdoc/696x394.png?_=00000030389258BF-v2">
+		<meta name="og:image" content="https://its.1c.ru/db/content/intgr83/_metaimage/999999/hdoc/770x342.png?_=00000030389258BF-v2">
+		<meta name="og:image" content="https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598">
+		<meta name="robots" content="noarchive">
+		<link rel="search" type="application/opensearchdescription+xml" title="1С:ИТС" href="/search/opensearch.xml">
+	</head>
+	<body class="ru lang_ru its main main_main tabbed unauthorized" data-app="its" data-module="main" data-action="main">
+		<div id="main_container" class="sidebar-fixed " data-viewport-shift-media-max-width-portrait="478px" data-viewport-shift-media-max-width-landscape="991px" data-viewport-shift-snap-padding="5px" data-viewport-shift-scrollbar-width="10px" data-viewport-shift-scrollbar-border-width="3px" data-viewport-shift-translate-x="0px" data-viewport-shift-absolute-max-shift="265">
+<!-- noindex -->
+		<div id="header">
+			<div id="w_siteselect" class="w" style="display:none"></div>			<div class="top-personal">
+				<div id="w_user_login" class="w unauthorized null nofreezelayout"><iframe id="auth_check" name="auth_check" style="display:none" src="https://login.1c.ru/login?service=https%3A%2F%2Fits.1c.ru%2Flogin%2F%3Faction%3Daftercheck%26provider%3Dlogin&amp;gateway=true" class="nojs"></iframe>
+<div id="personal_info">
+	<a id="login" class="nojs" href="/user/auth?backurl=%2Fdb%2Fintgr83" target="_top" rel="nofollow" onclick="this.href=this.href.replace(/\?backurl=.*$/,'?backurl='+encodeURIComponent(location.href.replace(/^https?:\/\/[^\/]+/, '')))">Вход</a>
+</div>
+<div class="avatar">
+	<a class="nojs" href="/user/auth?backurl=%2Fdb%2Fintgr83" target="_top" rel="nofollow" onclick="this.href=this.href.replace(/\?backurl=.*$/,'?backurl='+encodeURIComponent(location.href.replace(/^https?:\/\/[^\/]+/, '')))" aria-label="Вход">&nbsp;</a>
+</div>
+</div>			</div>
+			<div id="top_menu">
+				<div id="top_menu_burger_space">
+					<div id="top_menu_burger" onClick="setTimeout(function(){var d=document,de=d.documentElement,db=d.body,mc=d.getElementById('main_container'),rx=/\bshow-menu\b/,hc=db.className.match(rx);if(!d.getElementById('w_sidebar_menu')||window.styleDeferred&&styleDeferred.usingShell&&!styleDeferred.inactive){alert(window.styleDeferred.error?'Произошла ошибка. Пожалуйста, перезагрузите страницу.':'Пожалуйста, подождите...');return}if(hc){de.className=de.className.replace(rx, '');db.className=db.className.replace(rx, '')}else{de.className+=' show-menu';db.className+=' show-menu'}if(window.SSP&&window.App){!hc&&App.Sidebar.load(false,false,function(){});!hc&&App.Viewport.hasShift()&&db.addEventListener('transitionend',App.Viewport.resetShift,false);if(App.sidebarCarousel.getPosition()){App.sidebarCarousel.adjust();!hc&&App.sidebarCarousel.moveTo(0);}}}, 0)"></div>
+				</div>
+				<div class="top_menu1">
+					<div class="top_menu_item"><a target="_top" href="/db/aboutitsnew">Об 1С:ИТС</a></div>
+										<div class="top_menu_item"><a target="_top" href="/test-drive">Тест-драйв</a></div>
+					<div class="top_menu_item"><a target="_top" href="/zakaz?order[comment]=Заявка на заключение договора ИТС">Заказать ИТС</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/question/">Задать вопрос</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/update1c/">Обновить ПО</a></div>
+															<div class="top_menu_item"><a target="_top" href="/personal/qos">Оценить 1С</a></div>
+															<div class="top_menu_item"><a target="_blank" rel="noopener" href="https://torg.1c.ru/equipment/onlayn-kassy/?utm_source=its&utm_medium=tmenu">Купить кассу</a></div>
+									</div>
+				<div class="top_menu2">
+										<div class="top_menu_item"><a target="_top" href="/db/itsrev">Тематические подборки</a></div>
+															<div class="top_menu_item"><a target="_top" href="/calendar">Календарь бухгалтера</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/calc_help/">Калькуляторы</a></div>
+					<div class="top_menu_item"><a target="_top" href="/kbk">Подбор КБК</a></div>
+															<div class="top_menu_item last_search_link"><a target="_top" href="/db/morphmerged/search">Последние результаты поиска</a></div>
+																				<div class="top_menu_item"><a target="_top" href="/news/subscription">Подписаться на рассылку</a></div>
+																								</div>
+			</div>
+			<script type="text/javascript">
+				document.getElementById('top_menu').style.setProperty('--menu-item-count', document.getElementsByClassName('top_menu_item').length);
+			</script>
+		</div>
+		<!-- /noindex -->			<script type="text/javascript">
+				if(window.performance
+				&& (performance.getEntriesByName || performance.getEntriesByType)
+				&& window.PerformancePaintTiming
+				&& window.requestAnimationFrame)
+					(function(){
+						var disableFaultyPaintReporting = function(){
+							if(performance.faultyPaintReportingDisabled)
+								return;
+							else if(document.visibilityState === 'hidden' && !performance.getEntriesByType('paint').length)
+								performance.faultyPaintReportingDisabled = document.prerendering ? 'prerender' : 'hidden';
+							else if(!('standalone' in navigator) && (!window.styleDeferred || !styleDeferred.waitingPaint))
+								requestAnimationFrame(function(){
+									requestAnimationFrame(function(){
+										setTimeout(function(){
+											if(performance.faultyPaintReportingDisabled || performance.getEntriesByType('paint').length)
+												return;
+											performance.faultyPaintReportingDisabled = 'timeout';
+										}, 500);
+									});
+								});
+						};
+						if(window.styleDeferred && !styleDeferred.inactive && !styleDeferred.usingShell){
+							styleDeferred.push(disableFaultyPaintReporting);
+							var splashPreload = document.getElementById('css_shell_splash_preload');
+							if(splashPreload)
+								splashPreload.onload = disableFaultyPaintReporting;
+						}
+						else
+							disableFaultyPaintReporting();
+					})();
+			</script>
+<script type="text/javascript">
+			deferred.push(function(){
+				App.navChainCarousel = new App.Carousel('navchain_inner', 'w_navchain', 'navchain_left', 'navchain_right', null, {
+					bypixel:false,
+					absolute:true,
+					step:1,
+					wrap:false
+				});
+				var navChain = SSP.DOM.byId('w_navchain');
+				SSP.DOM.listen(navChain, 'click', App.Handler.navChainClick);
+				if(SSP.Browser.hasTouchScreen)
+					SSP.DOM.listen(navChain, 'touchstart', App.Handler.navChainTouchStart);
+							});
+		</script><div id="navchain"><div class="navchain_carousel__navigation left disabled" id="navchain_left"></div><div id="navchain_inner">
+		<ol id="w_navchain" class="blank w" itemtype="http://schema.org/BreadcrumbList" itemscope><!--noindex-->
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/" id="navchain_level_1" target="_top" itemprop="item">Главная</a>
+<meta itemprop="name" content="Главная" />
+<meta itemprop="position" content="1" />
+</li>
+<!--/noindex-->
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/section/books" id="navchain_level_2" target="_top" itemprop="item">Книги и периодика</a>
+<meta itemprop="name" content="Книги и периодика" />
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/section/books/books_dev" id="navchain_level_3" target="_top" title="Книги для разработчиков и администраторов 1С" itemprop="item">Книги для разработчиков и администраторов 1С</a>
+<meta itemprop="name" content="Книги для разработчиков и администраторов 1С" />
+<meta itemprop="position" content="3" />
+</li>
+<li class="inline-block">
+<h1 class="inline-block" id="navchain_level_4" title="Технологии интеграции &quot;1С:Предприятия 8.3&quot;"><noscript id="navchain_autofocus_noscript"><input class="autofocus_noscript" type="text" tabindex="-1" autofocus></noscript>Технологии интеграции &quot;1С:Предприятия 8.3&quot;</h1>
+</li>
+<script type="text/javascript">
+	deferred.push(function(){
+		if(App.navChainCarousel)
+		{
+			App.navChainCarousel.adjust();
+						App.navChainCarousel.moveTo(3, App.Carousel.MOVETO_ALIGN_LEFT, true);
+		}
+	});
+	(function(){
+		var nans = document.getElementById('navchain_autofocus_noscript');
+		if(nans)
+			nans.parentNode.removeChild(nans);
+		var ribbon = document.getElementById('w_navchain');
+		ribbon.style.visibility = 'hidden';
+		var enableButton = function(id){
+			var button = document.getElementById(id);
+			if(button){
+				button.className = button.className.replace(/\bdisabled\b/g, ' ');
+				return true;
+			}
+		};
+		var removePseudo = function(){
+			document.documentElement.className = document.documentElement.className.replace(/(^|\s+)pseudo-navchain-chevron-(left|right)\b[^\s]*/g, ' ');
+			if(window.styleDeferred && !styleDeferred.inactive && styleDeferred.appendShell)
+				styleDeferred.appendShell('body::before{display:none}');
+		};
+		var adjustCarousel = function(isEager){
+			var style = ribbon.style;
+			if(style.display !== 'block')
+				style.display = 'block'
+			try{
+				var aperture = document.getElementById('navchain_inner');
+				var apertureRect = aperture.getBoundingClientRect();
+				var apertureSize = Math.round(apertureRect.right) - Math.round(apertureRect.left);
+				var ribbonSize = ribbon.scrollWidth;
+				if(ribbonSize > apertureSize){
+					var moveTo = ribbon.children[3];
+					var moveToRect = moveTo.getBoundingClientRect();
+					var ribbonPosition = Math.round(apertureRect.left) - Math.round(moveToRect.left);
+					var supportsTransform = window.CSS && CSS.supports && CSS.supports('transform: translate(0px, 0px)');
+					var existingMatch = supportsTransform ? style.transform.match(/^translate\((-?\d+[\.\d]*)px\b/) : style.left.match(/^(-?\d+[\.\d]*)px$/);
+					var existingPosition = existingMatch ? parseInt(existingMatch[1], 10) : 0;
+					if(existingPosition)
+						ribbonPosition += existingPosition;
+					if(ribbonPosition > 0)
+						ribbonPosition = 0;
+					else{
+						if(isEager && !document.getElementById('navchain_left'))
+							setTimeout(function(){
+								enableButton('navchain_left') || setTimeout(function(){enableButton('navchain_left')}, 0);
+							}, 0);
+						else
+							enableButton('navchain_left');
+					}
+					if(ribbonPosition < apertureSize - ribbonSize)
+						ribbonPosition = apertureSize - ribbonSize;
+					else{
+						if(isEager && !document.getElementById('navchain_right'))
+							setTimeout(function(){
+								enableButton('navchain_right') || setTimeout(function(){enableButton('navchain_right')}, 0);
+							}, 0);
+						else
+							enableButton('navchain_right');
+					}
+					if(window.requestAnimationFrame)
+						requestAnimationFrame(function(){
+							requestAnimationFrame(function(){
+								requestAnimationFrame(removePseudo);
+							});
+						});
+					else
+						setTimeout(removePseudo, 0);
+					if(ribbonPosition){
+						if(supportsTransform)
+							style.transform = 'translate(' + ribbonPosition + 'px, 0px)';
+						else
+							style.left = ribbonPosition + 'px';
+						if(window.App&&App.navChainCarousel)
+							App.navChainCarousel.syncPosition(ribbonPosition);
+					}
+				}
+			}catch(e){
+				console.log(e);
+			}
+			style.visibility = 'visible';
+			if(isEager && window.styleDeferred && !styleDeferred.inactive && styleDeferred.appendShell)
+				styleDeferred.appendShell('html::before{display:none}');
+		};
+		if(window.styleDeferred){
+			if(styleDeferred.waitingPaint)
+				;
+			else if(styleDeferred.inactive
+			|| styleDeferred.usingShell && ('standalone' in navigator || !document.documentElement.className.match(/(^|\s+)pseudo-navchain-chevron-right(\s+|$)/)))
+				adjustCarousel(true);
+			else
+				styleDeferred.push(adjustCarousel);
+			if(styleDeferred.waitingPaint || window.TouchEvent && 'standalone' in navigator){
+				var fonts = document.fonts;
+				if(fonts && (!fonts.check || !fonts.ready))
+					fonts = void 0;
+				var bodyFont = 'normal 400 1px Roboto';
+				var adjustCarouselWithFonts = function(){
+					if(fonts && 'standalone' in navigator){
+						if(fonts.check(bodyFont))
+							adjustCarousel();
+						else
+							fonts.ready.then(function(){
+								adjustCarousel();
+							});
+					}else
+						setTimeout(adjustCarousel, 0);
+				};
+				if(styleDeferred.waitingPaint)
+					var waitingPaintInterval = setInterval(function(){
+						if(styleDeferred.inactive
+						|| !styleDeferred.waitingPaint
+						|| window.PerformancePaintTiming && performance.getEntriesByType('paint').length && (!('standalone' in navigator) || fonts && fonts.check(bodyFont))){
+							clearInterval(waitingPaintInterval);
+							if(window.requestAnimationFrame)
+								requestAnimationFrame(function(){
+									requestAnimationFrame(adjustCarouselWithFonts);
+								});
+							else
+								setTimeout(adjustCarouselWithFonts, 0);
+							ribbon.className += ' not-waiting-paint';
+						}
+					}, 16);
+				else
+					setTimeout(adjustCarouselWithFonts, 0);
+			}
+		}
+		else
+			adjustCarousel(true);
+	})();
+</script>
+</ol>		</div><div class="navchain_carousel__navigation right disabled" id="navchain_right"></div></div>						<script type="text/javascript">
+				deferred.push(function(){try{SSP.Scroll.mimicByClass('mimic_scroll');}catch(e){}});
+							deferred.push(function(){if(!SSP.Browser.Android && !SSP.Browser.IOS && document.activeElement == document.body || document.activeElement == document.documentElement)SSP.DOM.requestAnimationFrame(function(){SSP.DOM.focus(SSP.DOM.byId('w_content'));});});
+						</script>
+<div id="w_content" class="l"><div id="l_classifier" class="l" style="display:none"></div><div id="l_content" class="l with-toc null" style="display:none"><div id="l_doc" class="l" style="display:"><div id="l_doc_frame" class="l" data-db="intgr83" data-doc="999999" data-tab="hdoc" style="display:"><div id="l_doc_frame_inner" class="l loading null" data-header-font="" data-header-tag="" data-header-pseudo="" data-wait-fonts="" data-wait-images="" style="display:"><script type="text/javascript">
+	if(!location.hash || location.hash === '#')
+		document.write("<iframe id=\"w_metadata_doc_frame\" class=\"l mimic_scroll\" name=\"w_metadata_doc_frame\" frameborder=\"0\" scrolling=\"auto\" title=\"Документ\" src=\"\/db\/content\/intgr83\/src\/book.html\" srcdoc=\"&lt;!DOCTYPE html PUBLIC &quot;-\/\/W3C\/\/DTD HTML 4.0 Transitional\/\/EN&quot;&gt;&lt;html class=&quot;js-disabled&quot;&gt;&lt;head&gt;&lt;title&gt;&amp;#1058;&amp;#1077;&amp;#1093;&amp;#1085;&amp;#1086;&amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1080; &amp;#1080;&amp;#1085;&amp;#1090;&amp;#1077;&amp;#1075;&amp;#1088;&amp;#1072;&amp;#1094;&amp;#1080;&amp;#1080; &quot;1&amp;#1057;:&amp;#1055;&amp;#1088;&amp;#1077;&amp;#1076;&amp;#1087;&amp;#1088;&amp;#1080;&amp;#1103;&amp;#1090;&amp;#1080;&amp;#1103; 8.3&quot; :: &amp;#1058;&amp;#1077;&amp;#1093;&amp;#1085;&amp;#1086;&amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1080; &amp;#1080;&amp;#1085;&amp;#1090;&amp;#1077;&amp;#1075;&amp;#1088;&amp;#1072;&amp;#1094;&amp;#1080;&amp;#1080; &quot;1&amp;#1057;:&amp;#1055;&amp;#1088;&amp;#1077;&amp;#1076;&amp;#1087;&amp;#1088;&amp;#1080;&amp;#1103;&amp;#1090;&amp;#1080;&amp;#1103; 8.3&quot;&lt;\/title&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text\/html; charset=windows-1251&quot;&gt;&lt;\/meta&gt;&lt;style&gt;p, .MsoNormal {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 1.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.listcont, .ListCont {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0); \r\n\tfont-style: normal; \r\n\tmargin-left: 2.8em;\r\n\tmargin-bottom: 1.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.listcont2, .ListCont2 {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0); \r\n\tfont-style: normal; \r\n\tmargin-left: 5.6em;\r\n\tmargin-bottom: 1.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.listcont3, .ListCont3 {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0); \r\n\tfont-style: normal; \r\n\tmargin-left: 8.4em;\r\n\tmargin-bottom: 1.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\nli {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.listingnazv {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\tfont-size: 0.83em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.tablnazv {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\tfont-size: 0.83em;\r\n\ttext-align: center;\r\n\tfont-weight : normal;\r\n}\r\n.picnazv, .MsoCaption, .picturepodp {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 1.20em;\r\n\tfont-size: 0.83em;\r\n\ttext-align: center;\r\n\tfont-weight : normal;\r\n}\r\n.picyakor {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\ttext-align: center;\r\n\tfont-weight : normal;\r\n}\r\n.picture, .Picture {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\ttext-align: center;\r\n\tfont-weight : normal;\r\n}\r\n.bold {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tfont-size: 0.92em;\r\n\tfont-weight : bold;\r\n}\r\n.vrezkanazv, .Warningword {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tmargin-bottom: 0.20em;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : bold;\r\n}\r\n.vrezkabody, .Notes, .sovet {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #666666;\r\n\tfont-style: italic;\r\n\tmargin-left: 26px;\r\n\tmargin-bottom: 20px;\r\n\tfont-size: 0.92em;\r\n\ttext-align: left;\r\n\tfont-weight : normal;\r\n}\r\n.interface, .Interface, .kursiv, .command {\r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tline-height: 1.20em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-indent: 0.00em;\r\n\tcolor: rgb(0,0,0);\r\n\tfont-style: normal;\r\n\tmargin-left: 0.00em;\r\n\tfont-style: italic;\r\n\tfont-size: 0.92em;\r\n\tfont-weight : normal;\r\n}\r\nh1 {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal; \r\n\tfont-weight: bold; \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px;\r\n\tfont-size: 1.49em; \r\n\tmargin: 32px 0px 20px 0px;\r\n}\r\nh2 {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal; \r\n\tfont-weight: bold; \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px;\r\n\tfont-size: 1.27em; \r\n\tmargin: 24px 0px 10px 0px;\r\n}\r\nh3 {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal; \r\n\tfont-weight: bold; \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px;\r\n\tfont-size: 1.08em; \r\n\tmargin: 18px 0px  5px 0px;\r\n}\r\nh4, h5, h6, h7, h8, h9 {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal; \r\n\tfont-weight: bold; \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px;\r\n\tfont-size: 0.92em; \r\n\tmargin: 13px 0px 0px 0px;\r\n}\r\n.title {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal;  \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px; \r\n\tfont-weight: bold;\r\n\tmargin-left: 32px; \r\n\tmargin-bottom: 60px;\r\n\tfont-size: 1.49em;\r\n}\r\n.titlecopy {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal;  \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px; \r\n\tfont-weight: bold;\r\n\tmargin-left: 0px; \r\n\tmargin-bottom: 30px;\r\n\tfont-size: 1.49em;\r\n}\r\n.author {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal;  \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px; \r\n\tfont-weight: normal;\r\n \tmargin: 32px 0px 60px 0px;\r\n\tfont-size: 1.27em;\r\n}\r\n.authorcopy {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal;  \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px; \r\n\tfont-weight: normal;\r\n \tmargin: 32px 0px 30px 0px;\r\n\tfont-size: 1.27em;\r\n}\r\n.ancopy {\r\n\tfont-style: italic;\r\n}\r\n.firmacopy {\r\n\tfont-weight: bold;\r\n}\r\n.version {\r\n\tcolor: #000000; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-style: normal; \r\n\tfont-variant: normal;  \r\n\tline-height: 1.2; \r\n\ttext-align: left; \r\n\ttext-decoration: none; \r\n\ttext-indent: 0px; \r\n\tfont-weight: normal;\r\n\tmargin-left: 32px;\r\n\tfont-size: 1.27em;\r\n}\r\nimg {\r\n\tborder-width : 0;\r\n\tmax-width : 100%;\r\n\tmax-height: 100%;\r\n}\r\ntable {\r\n\tborder-collapse: collapse;\r\n\tborder-color : #999;\r\n\tborder-width: 1px; \r\n\tcolor: #333333; \r\n\tfont-family: Arial, Helvetica, sans-serif; \r\n\tfont-size: 0.90em; \r\n\tfont-weight: normal; \r\n\tline-height: 1.1; \r\n\twidth: 100%; \r\n\tmargin-bottom: 1.20em;\r\n}\r\nthead {\r\n\tborder: inherit;\r\n}\r\nthead th{\r\n\tbackground-color: #A6A6A6; \r\n\tcolor: #FFF; \r\n}\r\ntbody, tfoot, tr {\r\n\tborder:inherit;\r\n}\r\nth {\r\n\tborder-color : #666;    \r\n\tborder-style : solid;   \r\n\tborder-width : 1px; \r\n\tpadding : 5px; \r\n\tpadding-top: 7px;\r\n}\r\ntd {\r\n\tborder-color : #666;    \r\n\tborder-style : solid;   \r\n\tborder-width : 1px; \r\n\tpadding : 5px; \r\n\tpadding-top: 7px;\r\n\tbackground-color: #FFFFFF; \r\n\tcolor : #4D4D4D;\r\n}\r\ndiv.codebox {\r\n\tbackground-color: #FEFFCC;\r\n\tborder: thin solid; \r\n\tmargin-bottom: 1.2em; \r\n\tpadding: 0.5em; \r\n\tborder-color: #0000ff;\r\n}\r\n.k {\r\n\tcolor: #FF0000;\r\n}\r\n.c {\r\n\tcolor: #008000;\r\n}\r\n.s {\r\n\tcolor: #000000;\r\n}\r\n.n {\r\n\tcolor: #000000;\r\n}\r\n.p {\r\n\tcolor: #993300;\r\n}\r\np.codeline {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 0.00em;\r\n}\r\np.codeline1indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 1.20em;\r\n}\r\np.codeline2indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 2.40em;\r\n}\r\np.codeline3indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 3.60em;\r\n}\r\np.codeline4indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 4.80em;\r\n}\r\np.codeline5indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 6.00em;\r\n}\r\np.codeline6indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 7.20em;\r\n}\r\np.codeline7indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 8.40em;\r\n}\r\np.codeline8indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 9.60em;\r\n}\r\np.codeline9indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 10.80em;\r\n}\r\np.codeline10indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #0000ff;\r\n\tmargin-left: 12.00em;\r\n}\r\np.textline {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 0.00em;\r\n}\r\np.textline1indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 1.20em;\r\n}\r\np.textline2indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 2.40em;\r\n}\r\np.textline3indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 3.60em;\r\n}\r\np.textline4indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 4.80em;\r\n}\r\np.textline5indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 6.00em;\r\n}\r\np.textline6indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 7.20em;\r\n}\r\np.textline7indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 8.40em;\r\n}\r\np.textline8indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 9.60em;\r\n}\r\np.textline9indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 10.80em;\r\n}\r\np.textline10indent {\r\n\tfont-family: &quot;Courier&quot;; \r\n\tfont-size: 0.83em;  \r\n\tfont-style: normal; \r\n\tfont-weight: normal; \r\n\tline-height: 1.20em; \r\n\tmargin-bottom: 0.00em; \r\n\tmargin-right: 0.00em; \r\n\tmargin-top: 0.00em; \r\n\ttext-align: left; \r\n\ttext-indent: 0.00em;\r\n\tcolor: #000000;\r\n\tmargin-left: 12.00em;\r\n}&lt;\/style&gt;&lt;\/link&gt;&lt;meta name=&quot;robots&quot; content=&quot;noarchive&quot;&gt;\r\n&lt;link href=&quot;https:\/\/its.1c.ru\/db\/content\/intgr83\/src\/book.html&quot; rel=&quot;canonical&quot;&gt;\r\n&lt;style&gt;a\r\n{text-decoration-skip-ink:none}\r\n\r\n.msocomtxt,\r\n.iss_disk_only\r\n{display:none}\r\n\r\n@media not all and (any-pointer: coarse) {\r\n  * a:not([href]),\r\n  * a:not([href]):hover\r\n  {color:inherit;text-decoration:inherit}\r\n  \r\n  * a:not([href]):focus,\r\n  a.bookmark:focus\r\n  {outline:0}\r\n}\r\n\r\n@media (-ms-high-contrast: none), (-ms-high-contrast: active) {\r\n  * a:not([href]),\r\n  * a:not([href]):hover\r\n  {color:inherit;text-decoration:inherit}\r\n  \r\n  * a:not([href]):focus,\r\n  a.bookmark:focus\r\n  {outline:0}\r\n}\r\n\r\npre\r\n{font-family:Courier New, Courier, monospace}\r\n\r\n.iss_sch_hl,\r\nmark\r\n{background-color:#fff3a9;color:inherit}\r\n\r\n.iss_sch_hl.active,\r\nmark.active\r\n{background-color:#ffdf16!important}\r\n\r\n#w_share,\r\n#w_webpush\r\n{margin:12px 0!important;padding:12px 20px!important;border-top:2pt #d7d7d7 solid;border-bottom:2pt #d7d7d7 solid}\r\n\r\n#w_share\r\n{margin:20px}\r\n\r\n#w_content #w_share\r\n{margin-left:0}\r\n\r\n#w_share a.share\r\n{text-decoration:none;width:40px;height:40px;margin:0 5px 0 0;background-image:url('\/img\/share.gif?v2');background-repeat:no-repeat;display:inline-block}\r\n\r\n#w_share a#share_vk\r\n{background-position:0 0}\r\n\r\n#w_share a#share_fb\r\n{background-position:-45px 0}\r\n\r\n#w_share a#share_ok\r\n{background-position:-90px 0}\r\n\r\n#w_share a#share_tw\r\n{background-position:-135px 0}\r\n\r\n#w_share a#share_gp\r\n{background-position:-180px 0}\r\n\r\n#w_share a#share_lj\r\n{background-position:-225px 0}\r\n\r\n#w_webpush\r\n{display:none!important}\r\n\r\n#w_webpush #webpush_button\r\n{background-image:url('\/img\/template\/button-bcg-grey.gif');background-position:bottom;background-repeat:repeat-x;height:20px;border:1px solid #a0a0a0;color:#404040;font-family:Verdana,Tahoma,sans-serif;font-size:12px;width:auto!important}\r\n\r\n@media print { #w_share, #w_webpush, #w_news_footer {display:none!important} }\r\n\r\nimg.enlargeable\r\n{\r\n\tmax-width: 100%;\r\n\theight: auto;\r\n\tcursor: pointer;\r\n\tcursor: zoom-in;\r\n\ttransition: max-width 600ms ease;\r\n}\r\n\r\nimg.enlargeable.enlarged\r\n{\r\n\tmax-width: none;\r\n\tcursor: pointer;\r\n\tcursor: zoom-out;\r\n}\r\n\r\nimg.enlargeable.incomplete\r\n{\r\n\tbackground-image: url('\/img_new\/spinner-tpt-small.svg');\r\n\tbackground-position: center center;\r\n\tbackground-repeat: no-repeat;\r\n}\r\n\r\n@media (-ms-high-contrast: none), (-ms-high-contrast: active)\r\n{\r\n\timg.enlargeable.incomplete\r\n\t{\r\n\t\tbackground-image: none;\r\n\t}\r\n}\r\n\r\n.aspect-ratio-keeper {\r\n  position: relative;\r\n  max-height: var(--max-height);\r\n}\r\n\r\n.aspect-ratio-keeper::before {\r\n  content: &quot;&quot;;\r\n  display: block;\r\n  padding-bottom: calc(100% \/ (var(--aspect-ratio)) + var(--height-compensation));\r\n}\r\n\r\n.aspect-ratio-keeper &gt; img.enlargeable,\r\n.aspect-ratio-keeper &gt; a,\r\n.aspect-ratio-keeper &gt; span {\r\n  position: absolute;\r\n  top: 0;\r\n  max-height: 100%;\r\n}\r\n\r\n.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; img.enlargeable,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; a,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; span {\r\n  left: 0;\r\n}\r\n\r\n.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; img.enlargeable,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; a,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; span {\r\n  right: 0;\r\n}\r\n\r\n.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; img.enlargeable,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; a,\r\n.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; span {\r\n  left: 50%;\r\n  transform: translate(-50%);\r\n}\r\n\r\np:has(img) {\r\n\tcontain: none;\r\n}\r\n\r\nhtml {\r\n\t-webkit-tap-highlight-color: rgba(0, 0, 0, 0);\r\n}\r\n\r\n@media (any-pointer: coarse) {\r\n\thtml,\r\n\tbody {\r\n\t\tscrollbar-gutter: stable;\r\n\t}\r\n\thtml::-webkit-scrollbar,\r\n\tbody::-webkit-scrollbar {\r\n\t\tbackground-color: transparent;\r\n\t\t--scrollbar-corner: absent;\r\n\t}\r\n\thtml::-webkit-scrollbar:corner-present,\r\n\tbody::-webkit-scrollbar:corner-present {\r\n\t\t--scrollbar-corner: present;\r\n\t}\r\n\thtml::-webkit-scrollbar-track,\r\n\tbody::-webkit-scrollbar-track,\r\n\thtml::-webkit-scrollbar-button,\r\n\tbody::-webkit-scrollbar-button {\r\n\t\tbackground-color: #e7e7e7;\r\n\t}\r\n\thtml::-webkit-scrollbar-thumb,\r\n\tbody::-webkit-scrollbar-thumb {\r\n\t\tbackground-color: #bbbbbb;\r\n\t}\r\n\thtml::-webkit-scrollbar:vertical,\r\n\tbody::-webkit-scrollbar:vertical,\r\n\thtml::-webkit-scrollbar-track:vertical,\r\n\tbody::-webkit-scrollbar-track:vertical,\r\n\thtml::-webkit-scrollbar-thumb:vertical,\r\n\tbody::-webkit-scrollbar-thumb:vertical,\r\n\thtml::-webkit-scrollbar-button:vertical,\r\n\tbody::-webkit-scrollbar-button:vertical {\r\n\t\twidth: 10px;\r\n\t\tborder-top: 0;\r\n\t\tborder-bottom: 0;\r\n\t}\r\n\thtml::-webkit-scrollbar:horizontal,\r\n\tbody::-webkit-scrollbar:horizontal,\r\n\thtml::-webkit-scrollbar-track:horizontal,\r\n\tbody::-webkit-scrollbar-track:horizontal,\r\n\thtml::-webkit-scrollbar-thumb:horizontal,\r\n\tbody::-webkit-scrollbar-thumb:horizontal,\r\n\thtml::-webkit-scrollbar-button:horizontal,\r\n\tbody::-webkit-scrollbar-button:horizontal {\r\n\t\theight: 10px;\r\n\t\tborder-left: 0;\r\n\t\tborder-right: 0;\r\n\t}\r\n\thtml::-webkit-scrollbar,\r\n\tbody::-webkit-scrollbar,\r\n\thtml::-webkit-scrollbar-track,\r\n\tbody::-webkit-scrollbar-track,\r\n\thtml::-webkit-scrollbar-thumb,\r\n\tbody::-webkit-scrollbar-thumb,\r\n\thtml::-webkit-scrollbar-button,\r\n\tbody::-webkit-scrollbar-button {\r\n\t\tborder-width: 3px;\r\n\t\tborder-style: solid;\r\n\t\tborder-color: transparent;\r\n\t\t-webkit-background-clip: content-box;\r\n\t\tbackground-clip: content-box;\r\n\t}\r\n\thtml::-webkit-scrollbar-thumb:vertical,\r\n\tbody::-webkit-scrollbar-thumb:vertical {\r\n\t\tmin-height: 66px;\r\n\t}\r\n\thtml::-webkit-scrollbar-thumb:horizontal,\r\n\tbody::-webkit-scrollbar-thumb:horizontal {\r\n\t\tmin-width: 66px;\r\n\t}\r\n\thtml::-webkit-scrollbar-corner,\r\n\tbody::-webkit-scrollbar-corner,\r\n\thtml::-webkit-resizer,\r\n\tbody::-webkit-resizer,\r\n\thtml::-webkit-scrollbar-button,\r\n\tbody::-webkit-scrollbar-button,\r\n\thtml.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end:corner-present,\r\n\tbody.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end:corner-present,\r\n\thtml.attached_to_viewport &gt; body::-webkit-scrollbar-button:vertical:increment:end:corner-present {\r\n\t\tdisplay: none;\r\n\t}\r\n\thtml.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end,\r\n\tbody.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end,\r\n\thtml.attached_to_viewport &gt; body::-webkit-scrollbar-button:vertical:increment:end {\r\n\t\tdisplay: block;\r\n\t\theight: 0;\r\n\t}\r\n}\r\n&lt;\/style&gt;\r\n&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;\r\n&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;\r\n&lt;style id=&quot;doc_style&quot;&gt;.iss_sch_hl,mark,.iss_sch_hl.active,mark.active{background-color:transparent!important;padding:0}&lt;\/style&gt;\r\n&lt;script type=&quot;text\/javascript&quot;&gt;(function(window, undefined)\r\n{\r\n\t&quot;use strict&quot;;\r\n\t\r\n\tif(window.frameElement)\r\n\t{\r\n\t\tvar parent = window.frameElement.ownerDocument.defaultView || window.frameElement.ownerDocument.parentWindow;\r\n\t\tvar styleDeferred = parent.styleDeferred;\r\n\t\tvar iframeParent = window.frameElement.parentNode;\r\n\t\tvar waitFonts = iframeParent.getAttribute('data-wait-fonts');\r\n\t\tvar headerFont = iframeParent.getAttribute('data-header-font');\r\n\t\tvar headerTag = iframeParent.getAttribute('data-header-tag');\r\n\t\tvar headerPseudo = iframeParent.getAttribute('data-header-pseudo');\r\n\t\t\r\n\t\tif(waitFonts)\r\n\t\t{\r\n\t\t\twaitFonts = waitFonts.split(',');\r\n\t\t\tvar fontTriggerCss = [];\r\n\t\t\tvar fontTriggerRules = 'content:&quot;.&quot;;position:absolute;visibility:hidden';\r\n\t\t\t\r\n\t\t\tif(waitFonts[0])\r\n\t\t\t\tfontTriggerCss.push('html::before{' + fontTriggerRules + ';font:' + waitFonts[0] + '}');\r\n\t\t\t\r\n\t\t\tif(waitFonts[1])\r\n\t\t\t\tfontTriggerCss.push('html::after{' + fontTriggerRules + ';font:' + waitFonts[1] + '}');\r\n\t\t\t\r\n\t\t\tif(fontTriggerCss.length)\r\n\t\t\t{\r\n\t\t\t\tvar fontTriggerStyle = document.createElement('STYLE');\r\n\t\t\t\tfontTriggerStyle.type = 'text\/css';\r\n\t\t\t\tfontTriggerStyle.appendChild(document.createTextNode(fontTriggerCss.join(&quot;\\r\\n&quot;)));\r\n\t\t\t\tdocument.head.appendChild(fontTriggerStyle);\r\n\t\t\t\tvar forceLayout = document.documentElement.offsetHeight;\r\n\t\t\t\tdocument.head.removeChild(fontTriggerStyle);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\telse\r\n\t{\r\n\t\tvar parent = window;\r\n\t\tvar styleDeferred = void 0;\r\n\t\tvar iframeParent = void 0;\r\n\t}\r\n\t\r\n\tvar iOS = window.TouchEvent &amp;&amp; 'standalone' in navigator;\r\n\tvar Android = navigator.userAgentData &amp;&amp; navigator.userAgentData.platform === 'Android'\r\n\t\t\t   || (!navigator.userAgentData || !navigator.userAgentData.platform &amp;&amp; navigator.vendor === 'Google Inc.') &amp;&amp; navigator.userAgent.match(\/\\bAndroid\\b\/);\r\n\tvar supportsScrollbarStyle = window.CSS &amp;&amp; CSS.supports &amp;&amp; CSS.supports('selector(::-webkit-scrollbar)');\r\n\tvar raf = window.requestAnimationFrame || function(cb){setTimeout(cb, 0);};\r\n\t\r\n\tif(iOS)\r\n\t\tdocument.addEventListener('touchstart', (function(){return function(){}})());\r\n\t\r\n\tvar hasTouchScreen = iOS || window.matchMedia &amp;&amp; matchMedia('(any-pointer: coarse)').matches;\r\n\tvar dc = document.documentElement.className.replace(\/(^|\\s+)js-disabled(\\s+|$)\/, ' ');\r\n\tdc += ' ' + (hasTouchScreen ? 'touchscreen' : 'no-touchscreen');\r\n\t\r\n\tif(iOS)\r\n\t\tdc += ' ios';\r\n\telse if(Android)\r\n\t\tdc += ' android';\r\n\t\r\n\tdocument.documentElement.className = dc;\r\n\t\r\n\tif(window.frameElement &amp;&amp; (Android || parent.LIGHTHOUSE))\r\n\t\tvar triggerLCP = parent.DEV\r\n\t\t\t\t\t  || parent.LIGHTHOUSE\r\n\t\t\t\t\t  || navigator.userAgent.match(\/\\b(Chrome-Lighthouse|PTST)\\b\/);\r\n\telse\r\n\t\tvar triggerLCP = false;\r\n\t\r\n\tvar waitingImages = window.frameElement ? !!iframeParent.getAttribute('data-wait-images') : false;\r\n\tvar waitingFonts = false;\r\n\tvar fontWaitDeadline = 1500;\r\n\tvar LCPtriggered = false;\r\n\t\r\n\tvar showDocument = function(noTriggerLCP)\r\n\t{\r\n\t\twaitingFonts = false;\r\n\t\tvar rx = \/(^|\\s)loading(\\s|$)\/;\r\n\t\t\r\n\t\tif(iframeParent.className.match(rx))\r\n\t\t{\r\n\t\t\tif(headerTag &amp;&amp; headerPseudo &amp;&amp; styleDeferred &amp;&amp; styleDeferred.appendShell &amp;&amp; !styleDeferred.inactive)\r\n\t\t\t{\r\n\t\t\t\tvar removeFakeHeader = function()\r\n\t\t\t\t{\r\n\t\t\t\t\tif(styleDeferred.inactive\r\n\t\t\t\t\t|| document.readyState === 'complete'\r\n\t\t\t\t\t|| document.getElementsByTagName(headerTag)[0] &amp;&amp; (!headerFont || checkFonts([headerFont])))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tif(!styleDeferred.inactive)\r\n\t\t\t\t\t\t\tstyleDeferred.appendShell(headerPseudo + '{display:none}');\r\n\t\t\t\t\t}\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\traf(removeFakeHeader);\r\n\t\t\t\t};\r\n\t\t\t\t\r\n\t\t\t\traf(removeFakeHeader);\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tiframeParent.className = iframeParent.className.replace(rx, ' ');\r\n\t\t\t\r\n\t\t\tif((!styleDeferred || styleDeferred.usingShell || styleDeferred.inactive)\r\n\t\t\t&amp;&amp; (!styleDeferred || styleDeferred.activateInterval || styleDeferred.finalizeInterval || parent.SSP &amp;&amp; parent.App))\r\n\t\t\t{\r\n\t\t\t\tiframeParent.style.width = iframeParent.offsetWidth + 'px';\r\n\t\t\t\tvar forceLayout = iframeParent.offsetWidth;\r\n\t\t\t\tiframeParent.style.removeProperty('width');\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif(triggerLCP\r\n\t\t\t&amp;&amp; !noTriggerLCP)\r\n\t\t\t{\r\n\t\t\t\tif(styleDeferred &amp;&amp; !styleDeferred.usingShell &amp;&amp; !styleDeferred.inactive)\r\n\t\t\t\t\tstyleDeferred.push(function(){\r\n\t\t\t\t\t\ttriggerLCPforLighthouse(true);\r\n\t\t\t\t\t});\r\n\t\t\t\telse if(window.location.toString() === 'about:srcdoc')\r\n\t\t\t\t\ttriggerLCPforLighthouse();\r\n\t\t\t\telse\r\n\t\t\t\t\traf(function(){\r\n\t\t\t\t\t\traf(triggerLCPforLighthouse);\r\n\t\t\t\t\t});\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n\t\r\n\tvar readyToShowDocument = function()\r\n\t{\r\n\t\tif(!parent.App\r\n\t\t|| !parent.App.Its\r\n\t\t|| !parent.App.Its.Handler\r\n\t\t|| !parent.App.Its.Handler.loadedInitialDocument)\r\n\t\t\tif(!hasDocumentScrollIntent())\r\n\t\t\t\tif(styleDeferred\r\n\t\t\t\t|| !Android &amp;&amp; !iOS)\r\n\t\t\t\t{\r\n\t\t\t\t\tif(!Android &amp;&amp; !iOS &amp;&amp; !hasTouchScreen)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar syncedCustomScrollbars = syncCustomScrollbars();\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tif(!syncedCustomScrollbars\r\n\t\t\t\t\t\t&amp;&amp; !supportsScrollbarStyle)\r\n\t\t\t\t\t\t\treturn false;\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\treturn true;\r\n\t\t\t\t}\r\n\t\t\r\n\t\treturn false;\r\n\t};\r\n\t\r\n\tvar syncCustomScrollbars = function()\r\n\t{\r\n\t\tvar frameParent = frameElement.parentNode;\r\n\t\t\r\n\t\tif(frameParent\r\n\t\t&amp;&amp; frameParent.querySelector)\r\n\t\t{\r\n\t\t\tvar bar_v = frameParent.querySelector('div.thin_scroll_bar_v');\r\n\t\t\tvar thumb_v = frameParent.querySelector('div.thin_scroll_thumb_v');\r\n\t\t\tvar bar_h = frameParent.querySelector('div.thin_scroll_bar_h');\r\n\t\t\tvar thumb_h = frameParent.querySelector('div.thin_scroll_thumb_h');\r\n\t\t\tvar corner = frameParent.querySelector('div.thin_scroll_corner');\r\n\t\t\t\r\n\t\t\tif(!bar_v || !thumb_v || !bar_h || !thumb_h || !corner)\r\n\t\t\t{\r\n\t\t\t\tif(supportsScrollbarStyle)\r\n\t\t\t\t\treturn;\r\n\t\t\t\telse if(navigator.userAgent.match(\/Edge\\\/([\\d]{1,3})\/))\r\n\t\t\t\t\treturn true;\r\n\t\t\t\t\r\n\t\t\t\tvar parentDocument = parent.document;\r\n\t\t\t\t\r\n\t\t\t\tbar_v = parentDocument.createElement('div');\r\n\t\t\t\tbar_v.className = 'thin_scroll_bar_v';\r\n\t\t\t\t\r\n\t\t\t\tthumb_v = parentDocument.createElement('div');\r\n\t\t\t\tthumb_v.className = 'thin_scroll_thumb_v';\r\n\t\t\t\t\r\n\t\t\t\tbar_v.appendChild(thumb_v);\r\n\t\t\t\t\r\n\t\t\t\tbar_h = parentDocument.createElement('div');\r\n\t\t\t\tbar_h.className = 'thin_scroll_bar_h';\r\n\t\t\t\t\r\n\t\t\t\tthumb_h = parentDocument.createElement('div');\r\n\t\t\t\tthumb_h.className = 'thin_scroll_thumb_h';\r\n\t\t\t\t\r\n\t\t\t\tbar_h.appendChild(thumb_h);\r\n\t\t\t\t\r\n\t\t\t\tcorner = parentDocument.createElement('div');\r\n\t\t\t\tcorner.className = 'thin_scroll_corner';\r\n\t\t\t\t\r\n\t\t\t\tframeParent.appendChild(corner);\r\n\t\t\t\tframeParent.appendChild(bar_v);\r\n\t\t\t\tframeParent.appendChild(bar_h);\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif(supportsScrollbarStyle)\r\n\t\t\t{\r\n\t\t\t\tbar_v.style.display = 'none';\r\n\t\t\t\tthumb_v.style.display = 'none';\r\n\t\t\t\tbar_h.style.display = 'none';\r\n\t\t\t\tthumb_h.style.display = 'none';\r\n\t\t\t\tcorner.style.display = 'none';\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tif(document.scrollingElement)\r\n\t\t\t\t\tvar scrolling = document.scrollingElement;\r\n\t\t\t\telse\r\n\t\t\t\t\tvar scrolling = document.compatMode === 'BackCompat' ? document.body : document.documentElement;\r\n\t\t\t\t\r\n\t\t\t\tvar has_scroll_v = scrolling.scrollHeight &gt; scrolling.clientHeight;\r\n\t\t\t\tvar has_scroll_h = scrolling.scrollWidth &gt; scrolling.clientWidth;\r\n\t\t\t\t\r\n\t\t\t\tbar_v.style.display = 'block';\r\n\t\t\t\tbar_v.style.removeProperty('bottom');\r\n\t\t\t\tthumb_v.style.display = has_scroll_v ? 'block' : 'none';\r\n\t\t\t\tbar_h.style.display = 'block';\r\n\t\t\t\tbar_h.style.removeProperty('right');\r\n\t\t\t\tthumb_h.style.display = has_scroll_h ? 'block' : 'none';\r\n\t\t\t\tcorner.style.display = 'block';\r\n\t\t\t\t\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t\treturn false;\r\n\t};\r\n\t\r\n\tvar checkFonts = function(fonts)\r\n\t{\r\n\t\tif(document.fonts &amp;&amp; document.fonts.size &amp;&amp; document.fonts.check)\r\n\t\t\tfor(var i = 0; i &lt; fonts.length; i++)\r\n\t\t\t\ttry\r\n\t\t\t\t{\r\n\t\t\t\t\tif(!document.fonts.check(fonts[i]))\r\n\t\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\tcatch(e){}\r\n\t\t\r\n\t\treturn true;\r\n\t};\r\n\t\r\n\tvar fontWaitDeadlineMissed = function()\r\n\t{\r\n\t\tvar performance = window.frameElement ? parent.performance : window.performance;\r\n\t\t\r\n\t\tif(performance)\r\n\t\t{\r\n\t\t\tif(performance.now)\r\n\t\t\t\treturn performance.now() &gt;= fontWaitDeadline;\r\n\t\t\telse if(performance.timing\r\n\t\t\t&amp;&amp; performance.timing.navigationStart)\r\n\t\t\t\treturn Date.now() - performance.timing.navigationStart &gt;= fontWaitDeadline;\r\n\t\t}\r\n\t};\r\n\t\r\n\tvar hasDocumentScrollIntent = function()\r\n\t{\r\n\t\tif(!window.frameElement)\r\n\t\t\treturn false;\r\n\t\t\r\n\t\treturn parent.location.hash !== ''\r\n\t\t\t|| parent.location.pathname.match(\/@[0-9a-f]+[:\\\/]*$\/)\r\n\t\t\t|| window.location.hash !== ''\r\n\t\t\t|| window.location.search.match(\/[\\?&amp;]search=\/);\r\n\t};\r\n\t\r\n\twindow.alertDiskOnly = parent.alertDiskOnly = function()\r\n\t{\r\n\t\talert('Данная возможность доступна в дисковой версии');\r\n\t};\r\n\t\r\n\twindow.alertBrokenLink = parent.alertBrokenLink = function()\r\n\t{\r\n\t\talert('Ошибка! Неизвестная ссылка');\r\n\t};\r\n\t\r\n\twindow.onBodyAvailable = function()\r\n\t{\r\n\t\tif(!window.frameElement\r\n\t\t|| !parent.TEMPLATE_NEW)\r\n\t\t\treturn;\r\n\t\t\r\n\t\tvar imgRules = '{max-width:100%;height:auto;background:center no-repeat url(\\'\/img_new\/spinner-tpt-small.svg\\')}';\r\n\t\tvar css = 'p.pic_image&gt;img,'\r\n\t\t\t\t+ 'div.pic_image&gt;img,'\r\n\t\t\t\t+ 'p.Picture&gt;img,'\r\n\t\t\t\t+ 'div.Picture&gt;img,'\r\n\t\t\t\t+ 'p img:only-child,'\r\n\t\t\t\t+ 'div img:only-child'\r\n\t\t\t\t+ imgRules\r\n\t\t\t\t+ 'p:has(img~script) img,'\r\n\t\t\t\t+ 'div:has(img~script) img'\r\n\t\t\t\t+ imgRules;\r\n\t\t\r\n\t\tvar style = document.createElement('STYLE');\r\n\t\tstyle.id = 'img_enlargeable_style_initial';\r\n\t\tstyle.type = 'text\/css';\r\n\t\tstyle.appendChild(document.createTextNode(css));\r\n\t\tdocument.head.appendChild(style);\r\n\t\t\r\n\t\tif(iOS\r\n\t\t&amp;&amp; (!window.CSS || !CSS.supports || !CSS.supports('touch-action: pan-y')))\r\n\t\t{\r\n\t\t\tvar parentWidth = window.frameElement.parentNode.offsetWidth;\r\n\t\t\t\r\n\t\t\tif(!parentWidth)\r\n\t\t\t\treturn;\r\n\t\t\t\r\n\t\t\tvar body = document.body;\r\n\t\t\tvar documentElementStyle = window.getComputedStyle(documentElement);\r\n\t\t\tvar bodyStyle = window.getComputedStyle(body);\r\n\t\t\tvar documentElementPadding = parseInt(documentElementStyle.paddingLeft) + parseInt(documentElementStyle.paddingRight);\r\n\t\t\tvar bodyMargin = parseInt(bodyStyle.marginLeft) + parseInt(bodyStyle.marginRight);\r\n\t\t\tvar bodyPadding = parseInt(bodyStyle.paddingLeft) + parseInt(bodyStyle.paddingRight);\r\n\t\t\tdocumentElement.style.setProperty('margin-left', '0px', 'important');\r\n\t\t\tdocumentElement.style.setProperty('margin-right', '0px', 'important');\r\n\t\t\tdocumentElement.style.setProperty('min-width', 'auto', 'important');\r\n\t\t\tdocumentElement.style.setProperty('max-width', 'none', 'important');\r\n\t\t\tdocumentElement.style.setProperty('width', (parentWidth - documentElementPadding) + 'px', 'important');\r\n\t\t\tbody.style.setProperty('min-width', 'auto', 'important');\r\n\t\t\tbody.style.setProperty('max-width', 'none', 'important');\r\n\t\t\tbody.style.setProperty('width', (parentWidth - documentElementPadding - bodyMargin - bodyPadding) + 'px', 'important');\r\n\t\t}\r\n\t\t\r\n\t\tdocument.contentAdjustedForWebkitOverflowScrolling = true;\r\n\t\t\r\n\t\tif(!Android &amp;&amp; !iOS &amp;&amp; supportsScrollbarStyle)\r\n\t\t{\r\n\t\t\tvar css = 'html::-webkit-scrollbar,body::-webkit-scrollbar'\r\n\t\t\t\t\t+ '{width:17px;height:17px}'\r\n\t\t\t\t\t+ 'html::-webkit-scrollbar,body::-webkit-scrollbar,'\r\n\t\t\t\t\t+ 'html::-webkit-scrollbar-track,body::-webkit-scrollbar-track,'\r\n\t\t\t\t\t+ 'html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb'\r\n\t\t\t\t\t+ '{background-color:transparent}';\r\n\t\t\t\r\n\t\t\tvar style = document.createElement('STYLE');\r\n\t\t\tstyle.id = 'scrollbar_style_initial';\r\n\t\t\tstyle.type = 'text\/css';\r\n\t\t\tstyle.appendChild(document.createTextNode(css));\r\n\t\t\tdocument.head.appendChild(style);\r\n\t\t}\r\n\t\t\r\n\t\tif((Android || !iOS &amp;&amp; supportsScrollbarStyle)\r\n\t\t&amp;&amp; !document.body.className.match(\/(?:^|\\s)iframe\\s+error(?:\\s|$)\/))\r\n\t\t{\r\n\t\t\tvar scrollerStyleSheetId = 'scroller_stylesheet_w_metadata_doc_frame';\r\n\t\t\t\r\n\t\t\tif((!Android &amp;&amp; !iOS &amp;&amp; supportsScrollbarStyle || parent.document.getElementById(scrollerStyleSheetId))\r\n\t\t\t&amp;&amp; !document.getElementById(scrollerStyleSheetId))\r\n\t\t\t{\r\n\t\t\t\tif(document.scrollingElement)\r\n\t\t\t\t\tvar scrollerTagName = document.scrollingElement.tagName.toLowerCase();\r\n\t\t\t\telse\r\n\t\t\t\t\tvar scrollerTagName = document.compatMode === 'BackCompat' ? 'body' : 'html';\r\n\t\t\t\t\r\n\t\t\t\tvar css = scrollerTagName\r\n\t\t\t\t\t\t+ '{overflow-y:scroll}';\r\n\t\t\t\t\r\n\t\t\t\tvar style = document.createElement('STYLE');\r\n\t\t\t\tstyle.id = scrollerStyleSheetId;\r\n\t\t\t\tstyle.type = 'text\/css';\r\n\t\t\t\tstyle.appendChild(document.createTextNode(css));\r\n\t\t\t\tstyle.setAttribute('data-preserve-style', css);\r\n\t\t\t\tdocument.head.appendChild(style);\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t\tif(readyToShowDocument()\r\n\t\t&amp;&amp; !waitingImages)\r\n\t\t{\r\n\t\t\tvar doWaitFonts = !!waitFonts;\r\n\t\t\t\r\n\t\t\tif(doWaitFonts)\r\n\t\t\t{\r\n\t\t\t\tvar connection = navigator.connection;\r\n\t\t\t\t\r\n\t\t\t\tif(fontWaitDeadlineMissed())\r\n\t\t\t\t\tdoWaitFonts = false;\r\n\t\t\t\telse if((Android || iOS)\r\n\t\t\t\t&amp;&amp; (navigator.hardwareConcurrency &amp;&amp; navigator.hardwareConcurrency &lt;= 4 || navigator.deviceMemory &amp;&amp; navigator.deviceMemory &lt;= 2 || navigator.maxTouchPoints &amp;&amp; navigator.maxTouchPoints &lt;= 2))\r\n\t\t\t\t\tdoWaitFonts = false;\r\n\t\t\t\telse if(connection\r\n\t\t\t\t&amp;&amp; (connection.type === 'cellular' || connection.type === 'unknown' || connection.effectiveType &amp;&amp; connection.effectiveType !== '4g'))\r\n\t\t\t\t\tdoWaitFonts = false;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif(!doWaitFonts || !document.fonts || !document.fonts.size || !document.fonts.ready)\r\n\t\t\t\tshowDocument();\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\twaitingFonts = true;\r\n\t\t\t\tvar fontWaiterInterval;\r\n\t\t\t\t\r\n\t\t\t\tvar fontWaiter = function()\r\n\t\t\t\t{\r\n\t\t\t\t\tvar fontsLoaded = true;\r\n\t\t\t\t\t\r\n\t\t\t\t\tif(waitingFonts\r\n\t\t\t\t\t&amp;&amp; !fontWaitDeadlineMissed()\r\n\t\t\t\t\t&amp;&amp; !checkFonts(waitFonts))\r\n\t\t\t\t\t\tfontsLoaded = false;\r\n\t\t\t\t\t\r\n\t\t\t\t\tif(fontsLoaded)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tif(fontWaiterInterval)\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tclearInterval(fontWaiterInterval);\r\n\t\t\t\t\t\t\tfontWaiterInterval = void 0;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tshowDocument();\r\n\t\t\t\t\t}\r\n\t\t\t\t};\r\n\t\t\t\t\r\n\t\t\t\tfontWaiter();\r\n\t\t\t\t\r\n\t\t\t\tif(waitingFonts)\r\n\t\t\t\t{\r\n\t\t\t\t\traf(fontWaiter);\r\n\t\t\t\t\tsetTimeout(fontWaiter, 0);\r\n\t\t\t\t\tfontWaiterInterval = setInterval(fontWaiter, 8);\r\n\t\t\t\t\tdocument.fonts.ready.then(showDocument);\r\n\t\t\t\t\tdocument.fonts.onloadingerror = showDocument;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n\t\r\n\twindow.forceDocumentLayout = function(ignoreWaitingResources)\r\n\t{\r\n\t\tvar currentScript = document.currentScript;\r\n\t\t\r\n\t\tif(currentScript\r\n\t\t&amp;&amp; !currentScript.src\r\n\t\t&amp;&amp; currentScript.parentNode\r\n\t\t&amp;&amp; currentScript.parentNode.tagName !== 'HEAD')\r\n\t\t{\r\n\t\t\tvar previousSibling = currentScript.previousSibling;\r\n\t\t\tvar unsizedImg = previousSibling\r\n\t\t\t\t\t\t  &amp;&amp; previousSibling.tagName === 'IMG'\r\n\t\t\t\t\t\t  &amp;&amp; (!previousSibling.getAttribute('width') &amp;&amp; !previousSibling.style.width || !previousSibling.getAttribute('height') &amp;&amp; !previousSibling.style.height);\r\n\t\t\t\r\n\t\t\tif(!unsizedImg &amp;&amp; window.CSS &amp;&amp; CSS.supports &amp;&amp; CSS.supports('selector(:has(*))'))\r\n\t\t\t\tsetTimeout(function(){\r\n\t\t\t\t\traf(function(){\r\n\t\t\t\t\t\traf(function(){\r\n\t\t\t\t\t\t\tcurrentScript.parentNode.removeChild(currentScript);\r\n\t\t\t\t\t\t});\r\n\t\t\t\t\t});\r\n\t\t\t\t}, 0);\r\n\t\t\telse\r\n\t\t\t\tcurrentScript.parentNode.removeChild(currentScript);\r\n\t\t\t\r\n\t\t\tif(unsizedImg)\r\n\t\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tif(!window.frameElement\r\n\t\t|| !parent.TEMPLATE_NEW)\r\n\t\t\treturn;\r\n\t\t\r\n\t\tif((ignoreWaitingResources || !waitingImages &amp;&amp; (!waitingFonts || fontWaitDeadlineMissed()))\r\n\t\t&amp;&amp; readyToShowDocument())\r\n\t\t{\r\n\t\t\tvar forceLayout = document.documentElement.offsetHeight;\r\n\t\t\tshowDocument(true);\r\n\t\t\ttriggerLCPforLighthouse();\r\n\t\t}\r\n\t};\r\n\t\r\n\twindow.adjustContentLegacy = function()\r\n\t{\r\n\t\tvar css = 'pre, code, kbd, p.Programtext'\r\n\t\t\t\t+ '{white-space:pre-wrap;word-wrap:break-word}'\r\n\t\t\t\t+ 'h1, h2, h3, h4, h5, h6, p, li, table,'\r\n\t\t\t\t+ 'p span, p font, p b, p strong, p i, p em,'\r\n\t\t\t\t+ 'li span, li font, li b, li strong, li i, li em,'\r\n\t\t\t\t+ 'table span, table font, table b, table strong, table i, table em,'\r\n\t\t\t\t+ 'span.apiname'\r\n\t\t\t\t+ '{white-space:normal;word-wrap:break-word}'\r\n\t\t\t\t+ 'body&gt;div.index&gt;a, body&gt;div&gt;div.index&gt;a, ul.toc a,'\r\n\t\t\t\t+ 'body&gt;ul:not([class]) a:only-of-type[target=&quot;_top&quot;],'\r\n\t\t\t\t+ 'body&gt;ul:not([class]) a:only-of-type[href^=&quot;\/&quot;],'\r\n\t\t\t\t+ 'body&gt;ul:not([class]) a:only-of-type[href^=&quot;#&quot;]'\r\n\t\t\t\t+ '{display:inline-block;margin-top:10px;word-wrap:normal}';\r\n\t\t\r\n\t\tif(!window.frameElement)\r\n\t\t{\r\n\t\t\tif(location.hash !== '_print'\r\n\t\t\t&amp;&amp; location.hash !== '#_print')\r\n\t\t\t{\r\n\t\t\t\tcss += 'p a, li a, table a'\r\n\t\t\t\t\t + '{white-space:normal;word-wrap:break-word}';\r\n\t\t\t}\r\n\t\t}\r\n\t\telse if(!parent.MOBILE_ENABLED)\r\n\t\t\tcss += 'html {text-size-adjust:200%!important;-webkit-text-size-adjust:200%!important}';\r\n\t\t\r\n\t\tvar style = document.createElement('STYLE');\r\n\t\tstyle.type = 'text\/css';\r\n\t\tstyle.appendChild(document.createTextNode('@media (any-pointer: coarse),(pointer: none){' + css + '}'));\r\n\t\tdocument.head.appendChild(style);\r\n\t};\r\n\t\r\n\twindow.triggerLCPforLighthouse = function(ignoreTriggered)\r\n\t{\r\n\t\tif(!window.frameElement\r\n\t\t|| !triggerLCP\r\n\t\t|| !ignoreTriggered &amp;&amp; LCPtriggered)\r\n\t\t\treturn;\r\n\t\t\r\n\t\tvar overlay = parent.document.createElement('DIV');\r\n\t\toverlay.className = 'lighthouse_forced_lcp_from_iframe';\r\n\t\toverlay.style.backgroundColor = '#fff';\r\n\t\toverlay.style.position = 'absolute';\r\n\t\toverlay.style.display = 'block';\r\n\t\toverlay.style.overflow = 'hidden';\r\n\t\toverlay.style.top = 0;\r\n\t\toverlay.style.bottom = 0;\r\n\t\toverlay.style.left = 0;\r\n\t\toverlay.style.right = 0;\r\n\t\toverlay.style.opacity = '0.5';\r\n\t\toverlay.innerHTML = '. '.repeat(5000);\r\n\t\tparent.document.body.appendChild(overlay);\r\n\t\tLCPtriggered = true;\r\n\t\traf(function(){\r\n\t\t\tsetTimeout(function(){\r\n\t\t\t\toverlay.style.opacity = 0;\r\n\t\t\t\tsetTimeout(function(){\r\n\t\t\t\t\traf(function(){\r\n\t\t\t\t\t\toverlay.style.top = '-100vh';\r\n\t\t\t\t\t\toverlay.style.bottom = '100vh';\r\n\t\t\t\t\t});\r\n\t\t\t\t}, 0);\r\n\t\t\t}, 0);\r\n\t\t});\r\n\t};\r\n\t\r\n\tif(!window.frameElement)\r\n\t{\r\n\t\tvar autoImgWidth = true;\r\n\t\tvar hash = window.location.hash;\r\n\t\t\r\n\t\tif(hash !== '_print' &amp;&amp; hash !== '#_print')\r\n\t\t{\r\n\t\t\tvar thisLoc = window.location.pathname.split('\/');\r\n\t\t\tif(thisLoc[0] === '')\r\n\t\t\t\tthisLoc.shift();\r\n\t\t\tvar appPath = thisLoc.shift();\r\n\t\t\tvar mode = thisLoc.shift();\r\n\t\t\tvar dbNick = thisLoc.shift();\r\n\t\t\tvar docPath = thisLoc.join('\/').replace(\/\\?[0-9]{10}=?\/, '').replace(\/_+$\/, '');\r\n\t\t\t\r\n\t\t\tif(hash &amp;&amp; hash.charAt(0) === '#')\r\n\t\t\t\thash = hash.substr(1);\r\n\t\t\t\r\n\t\t\tvar matchReferrer = new RegExp('^https?:\/\/' + location.host.replace(\/\\.\/g, '\\\\.') + '\/' + appPath + '\/' + dbNick + '(?:\/|$)', 'i');\r\n\t\t\t\r\n\t\t\tvar colon = encodeURIComponent(':');\r\n\t\t\tvar matchUser = new RegExp('\\\\bUSER_TYPE=[' + colon + '\\\\d]*' + colon + '1' + colon);\r\n\t\t\t\r\n\t\t\tif(mode !== 'files'\r\n\t\t\t&amp;&amp; (document.referrer &amp;&amp; !document.referrer.match(matchReferrer) || !document.referrer &amp;&amp; document.cookie.match(matchUser)))\r\n\t\t\t{\r\n\t\t\t\tautoImgWidth = false;\r\n\t\t\t\t\r\n\t\t\t\ttry\r\n\t\t\t\t{\r\n\t\t\t\t\tif(!document.body &amp;&amp; location.hostname.match(\/(?:\\.(ru|local)|^127\\.0\\.0\\.1)$\/))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tdocument.write('&lt;style&gt;html{width:100%;height:100%;background:#fff url(\\'\/img_new\/logo_its_resize_on_white.gif\\') center center no-repeat}body{display:none!important}&lt;\/style&gt;&lt;\/head&gt;&lt;body&gt;&lt;\/body&gt;&lt;\/html&gt;');\r\n\t\t\t\t\t\tdocument.close();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tcatch(e){}\r\n\t\t\t\t\r\n\t\t\t\tsetTimeout(function(){\r\n\t\t\t\t\twindow.location.replace('\/' + appPath + '\/' + dbNick + '\/' + mode + '\/' + docPath + '_' + (hash ? '?anchor=' + hash : ''));\r\n\t\t\t\t}, 0);\r\n\t\t\t}\r\n\t\t\telse if(hasTouchScreen)\r\n\t\t\t\tdocument.write('&lt;style&gt;table{display:block;width:auto!important;overflow-x:auto;clear:both}&lt;\/style&gt;');\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\t\/*@cc_on\r\n\t\t\tif(true)\r\n\t\t\t{\r\n\t\t\t\twindow.print();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t@*\/\r\n\t\t\t\twindow.onload = function()\r\n\t\t\t\t{\r\n\t\t\t\t\tvar imgs = document.getElementsByTagName('IMG');\r\n\t\t\t\t\tvar incomplete = 0;\r\n\t\t\t\t\t\r\n\t\t\t\t\tvar imgOnLoad = function()\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tincomplete--;\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tif(incomplete === 0)\r\n\t\t\t\t\t\t\twindow.print();\r\n\t\t\t\t\t};\r\n\t\t\t\t\t\r\n\t\t\t\t\tfor(var i = 0; i &lt; imgs.length; i++)\r\n\t\t\t\t\t\tif(imgs[i].complete === false)\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\timgs[i].onload = imgOnLoad;\r\n\t\t\t\t\t\t\timgs[i].setAttribute('loading', 'eager');\r\n\t\t\t\t\t\t\tincomplete++;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\tif(!incomplete)\r\n\t\t\t\t\t\twindow.print();\r\n\t\t\t\t};\r\n\t\t\t\/*@cc_on\r\n\t\t\t}\r\n\t\t\t@*\/\r\n\t\t}\r\n\t\t\r\n\t\tif(autoImgWidth)\r\n\t\t\tdocument.write('&lt;style&gt;.pic_image img, .Picture img {max-width:100%;height:auto} @media (any-pointer: coarse),(pointer: none){ img {max-width:100%;height:auto} }&lt;\/style&gt;');\r\n\t}\r\n\telse\r\n\t{\r\n\t\tif(parent.document.title === 'Document Moved')\r\n\t\t\tparent.location.reload(true);\r\n\t\telse\r\n\t\t{\r\n\t\t\tif(parent.MOBILE_ENABLED)\r\n\t\t\t{\r\n\t\t\t\tvar documentElement = document.documentElement;\r\n\t\t\t\tdocumentElement.style.setProperty('text-size-adjust', '100%', 'important');\r\n\t\t\t\tdocumentElement.style.setProperty('-webkit-text-size-adjust', '100%', 'important');\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif(parent.deferred\r\n\t\t\t&amp;&amp; location.hostname.match(\/\\.eu$\/))\r\n\t\t\t\tparent.deferred.push(function()\r\n\t\t\t\t{\r\n\t\t\t\t\tvar loginLink = document.getElementById('login_link_iframe');\r\n\t\t\t\t\t\r\n\t\t\t\t\tif(loginLink)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar parentLoc = parent.location.pathname.split('\/');\r\n\t\t\t\t\t\tif(parentLoc[0] === '')\r\n\t\t\t\t\t\t\tparentLoc.shift();\r\n\t\t\t\t\t\tvar appPath = '\/' + parentLoc.shift() + '\/';\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tif(appPath !== '\/db\/')\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tappPath += parentLoc.shift() + '\/';\r\n\t\t\t\t\t\t\tvar pathEncoded = appPath.replace(\/\\\/\/g, '%2F');\r\n\t\t\t\t\t\t\tvar rx = new RegExp('\\\\?backurl=' + pathEncoded);\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif(!loginLink.href.match(rx))\r\n\t\t\t\t\t\t\t\tloginLink.href = loginLink.href.replace(\/\\?backurl=%2Fdb%2F\/, '?backurl=' + pathEncoded);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t});\r\n\t\t\t\r\n\t\t\tif(parent.SSP &amp;&amp; parent.App)\r\n\t\t\t\tsetTimeout(parent.SSP.Bus.runDeferred, 0);\r\n\t\t\t\r\n\t\t\tvar checker = (function()\r\n\t\t\t{\r\n\t\t\t\tif((document.readyState === 'loaded' || document.readyState === 'complete')\r\n\t\t\t\t&amp;&amp; parent.SSP\r\n\t\t\t\t&amp;&amp; parent.App)\r\n\t\t\t\t{\r\n\t\t\t\t\tclearInterval(interval);\r\n\t\t\t\t\tparent.SSP.Bus.runDeferred();\r\n\t\t\t\t}\r\n\t\t\t\telse if(parent.document.documentElement.className.match(\/(^|\\s)css-failed(\\s|$)\/))\r\n\t\t\t\t\tclearInterval(interval);\r\n\t\t\t});\r\n\t\t\tvar interval = setInterval(checker, 50);\r\n\t\t\t\r\n\t\t\tif(parent.App\r\n\t\t\t&amp;&amp; parent.App.Viewport)\r\n\t\t\t\tparent.App.Viewport.resetShift(true);\r\n\t\t\t\r\n\t\t\tif(!hasTouchScreen)\r\n\t\t\t\ttry\r\n\t\t\t\t{\r\n\t\t\t\t\twindow.frameElement.focus();\r\n\t\t\t\t}\r\n\t\t\t\tcatch(e)\r\n\t\t\t\t{\r\n\t\t\t\t\tconsole.log(e);\r\n\t\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n)(window);&lt;\/script&gt;&lt;\/script&gt;\r\n&lt;script type=&quot;text\/javascript&quot;&gt;adjustContentLegacy()&lt;\/script&gt;\r\n&lt;\/head&gt;&lt;body&gt;\r\n&lt;script type=&quot;text\/javascript&quot;&gt;onBodyAvailable()&lt;\/script&gt;&lt;p class=&quot;author&quot;&gt;Е. Ю. Хрусталёва&lt;\/p&gt;&lt;p class=&quot;title&quot;&gt;Технологии интеграции &quot;1С:Предприятия 8.3&quot;&lt;\/p&gt;&lt;\/body&gt;&lt;\/html&gt;\"><\/iframe>");
+	else
+	{
+		if(!navigator.userAgentData && navigator.userAgent && navigator.userAgent.match(/\bTrident\/\d+(\.\d+)*\s*;/))
+			var iframeSrc = 'about:blank';
+		else if(/*@cc_on false && @*/ (!('standalone' in navigator) || window.CSS && CSS.supports && !CSS.supports('touch-action: pan-y')))
+			var iframeSrc = 'javascript:';
+		else
+			var iframeSrc = '/blank.htm';
+		
+		document.write('<iframe src="' + iframeSrc + '" id="w_metadata_doc_frame" name="w_metadata_doc_frame" class="mimic_scroll l" frameborder="0" scrolling="auto"></iframe>');
+	}
+	if(location.hash.match(/^#?(?:(?:content|bookmark):.+)?$/))
+		document.getElementById('l_content').style.display = '';
+</script>
+<noscript><iframe id="w_metadata_doc_frame" class="l mimic_scroll" name="w_metadata_doc_frame" frameborder="0" scrolling="auto" title="Документ" src="/db/content/intgr83/src/book.html"></iframe></noscript>
+</div><div id="w_metadata_doc_tabs" class="w null" style="display:none"></div><div id="w_metadata_doc_title" class="w" style="display:"><div id="doc_title" title="Технологии интеграции &quot;1С:Предприятия 8.3&quot;"><!--noindex-->Технологии интеграции &quot;1С:Предприятия 8.3&quot;<!--/noindex--></div><div id="l_doc_controls" class="l null"><div id="w_back_link" class="l"><a id="w_back_href" class="inline-block nojs l" href="javascript:history.back()" rel="nofollow" onClick="return window.App ? App.Its.Handler.backLinkClick.call(this, event) : true"><!--noindex-->Назад<!--/noindex--></a></div><div id="w_review_link" class="w" title="Оставить отзыв" style="display:none"><a href="/db/review/edit/intgr83/999999/1" class="popup" target="_top" rel="nofollow">&nbsp;</a></div><div id="w_review_likelink" class="w" title="Мне нравится" onClick="return App.Its.Handler.likeClick.call(this, event)" style="display:none"></div><div id="w_extended_search_button_doc" class="l" style="display:none"><a id="w_extended_search_href_doc" title="Расширенный поиск" class="inline-block l" target="_top" href="javascript:">&nbsp;</a></div><div id="w_metadata_findintoc" class="l" style="display:"><a id="w_metadata_findintoc_href" title="Оглавление" class="inline-block l" target="_top" href="/db/intgr83" onclick="if(window.styleDeferred&amp;&amp;styleDeferred.usingShell&amp;&amp;!styleDeferred.inactive)return true;var lc=document.getElementById('l_content');lc.className=lc.className.replace(/\bhide-toc\b/,'');if(lc.className.match(/\bshow-toc\b/)){lc.className=lc.className.replace(/\bshow-toc\b/,'')}else{lc.className+=' show-toc'}return false" onmousedown="window.SSP&amp;&amp;window.App&amp;&amp;App.Its.Handler.findInTocMouseDown()">&nbsp;</a></div><div id="w_metadata_findinclassifier" class="l" style="display:none"><a id="w_metadata_findinclassifier_href" title="Найти в содержании" class="inline-block l" target="_top" href="javascript:">&nbsp;</a></div><div id="w_metadata_archive_button" class="l" style="display:"><a id="w_metadata_archive_href" target="archive" class="inline-block nojs l" title="Актуальность" rel="nofollow" href="javascript:" onClick="return App.Its.Handler.archiveButtonClick.call(this, event)" data-title="Документ был опубликован более 1 года назад и мог утратить актуальность.">&nbsp;</a></div><div id="w_metadata_print_button" class="l"><a id="w_metadata_print_href" target="print" class="inline-block nojs l" title="Версия для печати" rel="nofollow" onClick="return App.Its.Handler.printButtonClick.call(this, event)" href="/db/content/intgr83/src/book.html#_print">&nbsp;</a></div><div id="w_favorite_link" class="w" title="Избранное" onClick="return App.Its.Handler.favoriteClick.call(this, event)" style="display:none"></div><select id="w_metadata_versionselect" class="w" onChange="return App.Its.Handler.versionSelectChange.call(this, event)" style="display:none"></select><div id="w_search_highlight" class="w null down" title="Подсветка найденного" onClick="return App.Its.Handler.searchHighlightClick.call(this, event)" style="display:none"></div></div></div></div><div id="l_toc" class="l" style="display:"><script type="text/javascript">(function(){if(window.styleDeferred && window.matchMedia && matchMedia('(max-width: 991px)').matches && !styleDeferred.inactive){var tocLayoutStyle = document.getElementById('l_toc').style;tocLayoutStyle.display = 'none';var show = function(){tocLayoutStyle.removeProperty('display');};styleDeferred.unshift(function(){if(window.SSP){show();}else{setTimeout(function(){if(window.SSP){show();}else{setTimeout(show, 0);}}, 0);}});}})();</script><div id="w_metadata_toc_button" class="l" onClick="var lc=document.getElementById('l_content');if(lc.className.match(/\bshow-toc\b/)){if(window.SSP&amp;&amp;window.App&amp;&amp;App.Viewport&amp;&amp;App.Viewport.hasShift&amp;&amp;App.Viewport.hasShift()&amp;&amp;App.Viewport.adjustLayout){App.Viewport.adjustLayout()}lc.className=lc.className.replace(/\bshow-toc\b/,'')}else if(lc.className.match(/\bhide-toc\b/)){lc.className=lc.className.replace(/\bhide-toc\b/,'')}else{lc.className+=' hide-toc'}" style="display:"><div id="toc_button_hide" title="Скрыть оглавление"></div><div id="toc_button_show" title="Показать оглавление"></div><noscript><style>#w_metadata_toc_button{display:none!important}</style></noscript></div><div id="l_toc_inner" class="l metadata-spacer native_scroll view-hideable view-expandable null"><div id="w_metadata_toc" class="w mimic_scroll" src="/db/metadata/intgr83/toc/1_?_=1789134211" data-book="" data-deferred-media-query="(max-width: 991px)" style="display:"><ul class="tree top active mixed"><li class="expanded active" id="toc_999999"><a href="/db/intgr83" target="_top">Технологии интеграции &quot;1С:Предприятия 8.3&quot;</a><ul><li id="toc_1"><a href="/db/intgr83/content/1/hdoc" target="_top">Обложка</a></li><li id="toc_2"><a href="/db/intgr83/content/2/hdoc" target="_top">Титульный лист</a></li><li id="toc_3"><a href="/db/intgr83/content/3/hdoc" target="_top">Выходные данные</a></li><li id="toc_4"><a href="/db/intgr83/content/4/hdoc" target="_top">Дополнительные материалы</a></li><li class="collapsed" id="toc_5"><a href="/db/intgr83/content/5/hdoc" target="_top">Глава 1. Интернет-технологии</a><ul><li class="collapsed" id="toc_6"><a href="/db/intgr83/content/6/hdoc" target="_top">JSON</a><ul><li id="toc_7"><a href="/db/intgr83/content/7/hdoc" target="_top">Общая информация</a></li><li class="collapsed" id="toc_8"><a href="/db/intgr83/content/8/hdoc" target="_top">Потоковая работа</a><ul><li id="toc_9"><a href="/db/intgr83/content/9/hdoc" target="_top">Запись и чтение</a></li><li id="toc_10"><a href="/db/intgr83/content/10/hdoc" target="_top">Работа со строкой JSON</a></li><li id="toc_11"><a href="/db/intgr83/content/11/hdoc" target="_top">Проверка структуры записываемого JSON-документа</a></li><li class="collapsed" id="toc_12"><a href="/db/intgr83/content/12/hdoc" target="_top">Параметры записи JSON</a><ul><li id="toc_13"><a href="/db/intgr83/content/13/hdoc" target="_top">Перенос строк</a></li><li id="toc_14"><a href="/db/intgr83/content/14/hdoc" target="_top">Символы отступа</a></li><li id="toc_15"><a href="/db/intgr83/content/15/hdoc" target="_top">Экранирование символов</a></li></ul></li></ul></li><li class="collapsed" id="toc_16"><a href="/db/intgr83/content/16/hdoc" target="_top">Сериализация коллекций значений (объектная техника)</a><ul><li id="toc_17"><a href="/db/intgr83/content/17/hdoc" target="_top">Запись и чтение</a></li><li id="toc_18"><a href="/db/intgr83/content/18/hdoc" target="_top">Чтение в соответствие</a></li><li class="collapsed" id="toc_19"><a href="/db/intgr83/content/19/hdoc" target="_top">Функции преобразования и восстановления</a><ul><li id="toc_20"><a href="/db/intgr83/content/20/hdoc" target="_top">Функция преобразования</a></li><li id="toc_21"><a href="/db/intgr83/content/21/hdoc" target="_top">Функция восстановления</a></li></ul></li><li id="toc_22"><a href="/db/intgr83/content/22/hdoc" target="_top">Сериализация типа «Дата»</a></li></ul></li><li class="collapsed" id="toc_23"><a href="/db/intgr83/content/23/hdoc" target="_top">Сериализация прикладных типов «1С:Предприятия»</a><ul><li id="toc_24"><a href="/db/intgr83/content/24/hdoc" target="_top">Запись</a></li><li id="toc_25"><a href="/db/intgr83/content/25/hdoc" target="_top">Чтение</a></li><li id="toc_26"><a href="/db/intgr83/content/26/hdoc" target="_top">Десериализация прикладных типов с помощью функции восстановления</a></li></ul></li><li id="toc_27"><a href="/db/intgr83/content/27/hdoc" target="_top">Смешанная техника работы</a></li></ul></li><li class="collapsed" id="toc_28"><a href="/db/intgr83/content/28/hdoc" target="_top">HTTP-сервисы (REST)</a><ul><li id="toc_29"><a href="/db/intgr83/content/29/hdoc" target="_top">Общая информация</a></li><li id="toc_30"><a href="/db/intgr83/content/30/hdoc" target="_top">Разработка HTTP-сервиса</a></li><li class="collapsed" id="toc_31"><a href="/db/intgr83/content/31/hdoc" target="_top">Примеры реализации HTTP-сервисов</a><ul><li class="collapsed" id="toc_32"><a href="/db/intgr83/content/32/hdoc" target="_top">Информация о сотрудниках</a><ul><li id="toc_33"><a href="/db/intgr83/content/33/hdoc" target="_top">Получить список сотрудников</a></li><li id="toc_34"><a href="/db/intgr83/content/34/hdoc" target="_top">Получить данные о конкретном сотруднике</a></li><li id="toc_35"><a href="/db/intgr83/content/35/hdoc" target="_top">Удалить данные о конкретном сотруднике</a></li></ul></li><li class="collapsed" id="toc_36"><a href="/db/intgr83/content/36/hdoc" target="_top">Информация о ценах на товары</a><ul><li id="toc_37"><a href="/db/intgr83/content/37/hdoc" target="_top">Получить цены товаров на определенную дату</a></li><li id="toc_38"><a href="/db/intgr83/content/38/hdoc" target="_top">Получить данные о ценах на конкретный товар</a></li><li id="toc_39"><a href="/db/intgr83/content/39/hdoc" target="_top">Проиндексировать цены на товары</a></li></ul></li></ul></li><li id="toc_40"><a href="/db/intgr83/content/40/hdoc" target="_top">HTTP-сервисы в расширениях</a></li></ul></li><li class="collapsed" id="toc_41"><a href="/db/intgr83/content/41/hdoc" target="_top">HTTP-запросы</a><ul><li class="collapsed" id="toc_42"><a href="/db/intgr83/content/42/hdoc" target="_top">Обращение к HTTP-сервисам</a><ul><li id="toc_43"><a href="/db/intgr83/content/43/hdoc" target="_top">Получение данных</a></li><li id="toc_44"><a href="/db/intgr83/content/44/hdoc" target="_top">Удаление данных</a></li><li id="toc_45"><a href="/db/intgr83/content/45/hdoc" target="_top">Добавление данных</a></li></ul></li><li id="toc_46"><a href="/db/intgr83/content/46/hdoc" target="_top">Обращение к REST-интерфейсу (OData)</a></li></ul></li><li class="collapsed" id="toc_47"><a href="/db/intgr83/content/47/hdoc" target="_top">Автоматический REST-интерфейс (OData)</a><ul><li id="toc_48"><a href="/db/intgr83/content/48/hdoc" target="_top">Общая информация</a></li><li class="collapsed" id="toc_49"><a href="/db/intgr83/content/49/hdoc" target="_top">Правила формирования URL запроса</a><ul><li id="toc_50"><a href="/db/intgr83/content/50/hdoc" target="_top">Правила формирования имени ресурса</a></li><li id="toc_51"><a href="/db/intgr83/content/51/hdoc" target="_top">Правила формирования условий отбора</a></li></ul></li><li class="collapsed" id="toc_52"><a href="/db/intgr83/content/52/hdoc" target="_top">Примеры использования</a><ul><li id="toc_53"><a href="/db/intgr83/content/53/hdoc" target="_top">Получение всех данных справочника</a></li><li id="toc_54"><a href="/db/intgr83/content/54/hdoc" target="_top">Получение количества записей в результате запроса</a></li><li id="toc_55"><a href="/db/intgr83/content/55/hdoc" target="_top">Получение данных из некоторых полей справочника и их сортировка</a></li><li id="toc_56"><a href="/db/intgr83/content/56/hdoc" target="_top">Получение данных по ссылке</a></li><li class="collapsed" id="toc_57"><a href="/db/intgr83/content/57/hdoc" target="_top">Отобрать записи справочника по условию</a><ul><li id="toc_58"><a href="/db/intgr83/content/58/hdoc" target="_top">Отобрать записи справочника по началу наименования</a></li><li id="toc_59"><a href="/db/intgr83/content/59/hdoc" target="_top">Отобрать записи справочника по дате рождения</a></li><li id="toc_60"><a href="/db/intgr83/content/60/hdoc" target="_top">Отобрать записи справочника по подстроке</a></li></ul></li><li id="toc_61"><a href="/db/intgr83/content/61/hdoc" target="_top">Получение данных связанных сущностей (ссылок)</a></li><li id="toc_62"><a href="/db/intgr83/content/62/hdoc" target="_top">Получение данных из табличной части документа</a></li><li id="toc_63"><a href="/db/intgr83/content/63/hdoc" target="_top">Условие отбора по реквизитам табличных частей</a></li><li id="toc_64"><a href="/db/intgr83/content/64/hdoc" target="_top">Получение данных регистра сведений</a></li><li class="collapsed" id="toc_65"><a href="/db/intgr83/content/65/hdoc" target="_top">Модификация данных прикладного решения</a><ul><li id="toc_66"><a href="/db/intgr83/content/66/hdoc" target="_top">Добавление данных</a></li><li id="toc_67"><a href="/db/intgr83/content/67/hdoc" target="_top">Изменение данных</a></li><li id="toc_68"><a href="/db/intgr83/content/68/hdoc" target="_top">Удаление данных</a></li><li id="toc_69"><a href="/db/intgr83/content/69/hdoc" target="_top">Изменение данных табличной части</a></li></ul></li></ul></li><li id="toc_70"><a href="/db/intgr83/content/70/hdoc" target="_top">Типичные ошибки при получении данных</a></li></ul></li><li class="collapsed" id="toc_71"><a href="/db/intgr83/content/71/hdoc" target="_top">Web-сервисы</a><ul><li id="toc_72"><a href="/db/intgr83/content/72/hdoc" target="_top">Общая информация</a></li><li class="collapsed" id="toc_73"><a href="/db/intgr83/content/73/hdoc" target="_top">Предоставление функциональности через Web-сервисы</a><ul><li id="toc_74"><a href="/db/intgr83/content/74/hdoc" target="_top">Разработка Web-сервиса</a></li><li id="toc_75"><a href="/db/intgr83/content/75/hdoc" target="_top">Использование XDTO для описания типов параметров и возвращаемых значений Web-сервисов</a></li></ul></li><li id="toc_76"><a href="/db/intgr83/content/76/hdoc" target="_top">Работа с Web-сервисами сторонних поставщиков</a></li><li class="collapsed" id="toc_77"><a href="/db/intgr83/content/77/hdoc" target="_top">Пример реализации Web-сервиса</a><ul><li id="toc_78"><a href="/db/intgr83/content/78/hdoc" target="_top">Закрытие заказов на товары</a></li></ul></li><li id="toc_79"><a href="/db/intgr83/content/79/hdoc" target="_top">Web-сервисы в расширениях</a></li></ul></li><li class="collapsed" id="toc_80"><a href="/db/intgr83/content/80/hdoc" target="_top">Повторное использование сеансов интернет-сервисов</a><ul><li id="toc_81"><a href="/db/intgr83/content/81/hdoc" target="_top">Автоматическое переиспользование сеансов</a></li><li id="toc_82"><a href="/db/intgr83/content/82/hdoc" target="_top">Ручное управление сеансами</a></li></ul></li><li id="toc_83"><a href="/db/intgr83/content/83/hdoc" target="_top">Коды состояния в ответах HTTP-сервера</a></li><li class="collapsed" id="toc_84"><a href="/db/intgr83/content/84/hdoc" target="_top">FTP-соединение</a><ul><li id="toc_85"><a href="/db/intgr83/content/85/hdoc" target="_top">Получить файлы с сервера</a></li><li id="toc_86"><a href="/db/intgr83/content/86/hdoc" target="_top">Записать файлы на сервер</a></li><li id="toc_87"><a href="/db/intgr83/content/87/hdoc" target="_top">Копировать файлы с сервера</a></li></ul></li><li class="collapsed" id="toc_88"><a href="/db/intgr83/content/88/hdoc" target="_top">Электронная почта</a><ul><li id="toc_89"><a href="/db/intgr83/content/89/hdoc" target="_top">Отправить и получить почту</a></li><li id="toc_90"><a href="/db/intgr83/content/90/hdoc" target="_top">Отправить и получить сообщение обмена</a></li></ul></li></ul></li><li class="collapsed" id="toc_91"><a href="/db/intgr83/content/91/hdoc" target="_top">Глава 2. Внешние источники данных</a><ul><li class="collapsed" id="toc_92"><a href="/db/intgr83/content/92/hdoc" target="_top">Работа с реляционными внешними источниками данных</a><ul><li id="toc_93"><a href="/db/intgr83/content/93/hdoc" target="_top">Общая информация</a></li><li id="toc_94"><a href="/db/intgr83/content/94/hdoc" target="_top">Строка соединения</a></li><li class="collapsed" id="toc_95"><a href="/db/intgr83/content/95/hdoc" target="_top">Редактирование структуры внешнего источника данных</a><ul><li id="toc_96"><a href="/db/intgr83/content/96/hdoc" target="_top">Создание таблиц внешнего источника данных с помощью конструктора</a></li><li class="collapsed" id="toc_97"><a href="/db/intgr83/content/97/hdoc" target="_top">Создание таблиц внешнего источника данных вручную</a><ul><li id="toc_98"><a href="/db/intgr83/content/98/hdoc" target="_top">Свойства полей</a></li></ul></li></ul></li><li class="collapsed" id="toc_99"><a href="/db/intgr83/content/99/hdoc" target="_top">Работа с функциями внешнего источника данных</a><ul><li id="toc_100"><a href="/db/intgr83/content/100/hdoc" target="_top">Общая информация</a></li><li id="toc_101"><a href="/db/intgr83/content/101/hdoc" target="_top">Редактирование функций</a></li></ul></li></ul></li><li id="toc_102"><a href="/db/intgr83/content/102/hdoc" target="_top">Управление внешними источниками данных</a></li><li class="collapsed" id="toc_103"><a href="/db/intgr83/content/103/hdoc" target="_top">Примеры использования</a><ul><li id="toc_104"><a href="/db/intgr83/content/104/hdoc" target="_top">Исходная информация для примеров</a></li><li id="toc_105"><a href="/db/intgr83/content/105/hdoc" target="_top">DSN</a></li><li class="collapsed" id="toc_106"><a href="/db/intgr83/content/106/hdoc" target="_top">Работа с внешними источниками данных в конфигураторе и в режиме «1С:Предприятие»</a><ul><li id="toc_107"><a href="/db/intgr83/content/107/hdoc" target="_top">Источник данных, подключенный через DSN</a></li><li id="toc_108"><a href="/db/intgr83/content/108/hdoc" target="_top">Источник данных, подключенный с помощью полной строки соединения</a></li><li id="toc_109"><a href="/db/intgr83/content/109/hdoc" target="_top">Подключение и отображение внешних источников данных в режиме «1С:Предприятие»</a></li></ul></li><li id="toc_110"><a href="/db/intgr83/content/110/hdoc" target="_top">Программная синхронизация</a></li><li class="collapsed" id="toc_111"><a href="/db/intgr83/content/111/hdoc" target="_top">Работа с функциями</a><ul><li id="toc_112"><a href="/db/intgr83/content/112/hdoc" target="_top">Собственная функция</a></li><li id="toc_113"><a href="/db/intgr83/content/113/hdoc" target="_top">Функция внешней схемы</a></li></ul></li><li class="collapsed" id="toc_114"><a href="/db/intgr83/content/114/hdoc" target="_top">Прикладное использование данных из внешних источников</a><ul><li id="toc_115"><a href="/db/intgr83/content/115/hdoc" target="_top">Учет</a></li><li id="toc_116"><a href="/db/intgr83/content/116/hdoc" target="_top">Отчет</a></li></ul></li></ul></li></ul></li><li class="collapsed" id="toc_117"><a href="/db/intgr83/content/117/hdoc" target="_top">Глава 3. Обмен данными</a><ul><li class="collapsed" id="toc_118"><a href="/db/intgr83/content/118/hdoc" target="_top">Планы обмена</a><ul><li class="collapsed" id="toc_119"><a href="/db/intgr83/content/119/hdoc" target="_top">Служба регистрации изменений</a><ul><li id="toc_120"><a href="/db/intgr83/content/120/hdoc" target="_top">Управление регистрацией изменений</a></li><li id="toc_121"><a href="/db/intgr83/content/121/hdoc" target="_top">Автоматическая регистрация изменений</a></li><li id="toc_122"><a href="/db/intgr83/content/122/hdoc" target="_top">Ручная регистрация изменений</a></li><li id="toc_123"><a href="/db/intgr83/content/123/hdoc" target="_top">Принудительная регистрация изменений</a></li></ul></li><li id="toc_124"><a href="/db/intgr83/content/124/hdoc" target="_top">Инфраструктура сообщений</a></li></ul></li><li class="collapsed" id="toc_125"><a href="/db/intgr83/content/125/hdoc" target="_top">Распределенные информационные базы</a><ul><li id="toc_126"><a href="/db/intgr83/content/126/hdoc" target="_top">Общие принципы</a></li><li id="toc_127"><a href="/db/intgr83/content/127/hdoc" target="_top">Главный и подчиненный узлы</a></li><li id="toc_128"><a href="/db/intgr83/content/128/hdoc" target="_top">Сообщение обмена данными в распределенной информационной базе</a></li><li class="collapsed" id="toc_129"><a href="/db/intgr83/content/129/hdoc" target="_top">Работа с распределенной информационной базой</a><ul><li id="toc_130"><a href="/db/intgr83/content/130/hdoc" target="_top">Создание начального образа</a></li><li id="toc_131"><a href="/db/intgr83/content/131/hdoc" target="_top">Запись и чтение сообщений обмена</a></li></ul></li><li id="toc_132"><a href="/db/intgr83/content/132/hdoc" target="_top">Подготовка конфигурации к работе в распределенной информационной базе</a></li><li id="toc_133"><a href="/db/intgr83/content/133/hdoc" target="_top">Пример реализации обмена данными в распределенной информационной базе</a></li><li class="collapsed" id="toc_134"><a href="/db/intgr83/content/134/hdoc" target="_top">Сценарии обмена данными в распределенной информационной базе</a><ul><li id="toc_135"><a href="/db/intgr83/content/135/hdoc" target="_top">Поведение по умолчанию</a></li><li id="toc_136"><a href="/db/intgr83/content/136/hdoc" target="_top">Распределение данных по подчиненным узлам</a></li><li id="toc_137"><a href="/db/intgr83/content/137/hdoc" target="_top">Разрешение коллизий</a></li></ul></li><li class="collapsed" id="toc_138"><a href="/db/intgr83/content/138/hdoc" target="_top">Доработка примера обмена данными в распределенной информационной базе</a><ul><li id="toc_139"><a href="/db/intgr83/content/139/hdoc" target="_top">Распределение данных по подчиненным узлам</a></li><li id="toc_140"><a href="/db/intgr83/content/140/hdoc" target="_top">Обработка для выполнения обмена</a></li><li id="toc_141"><a href="/db/intgr83/content/141/hdoc" target="_top">Разрешение коллизий</a></li></ul></li><li id="toc_142"><a href="/db/intgr83/content/142/hdoc" target="_top">Особенности использования последовательности документов в распределенной информационной базе</a></li></ul></li><li class="collapsed" id="toc_143"><a href="/db/intgr83/content/143/hdoc" target="_top">Универсальный механизм обмена данными</a><ul><li id="toc_144"><a href="/db/intgr83/content/144/hdoc" target="_top">Использование возможностей работы с XML-документами</a></li><li class="collapsed" id="toc_145"><a href="/db/intgr83/content/145/hdoc" target="_top">Пример реализации универсального обмена</a><ul><li id="toc_146"><a href="/db/intgr83/content/146/hdoc" target="_top">Стандартные процедуры обмена</a></li><li id="toc_147"><a href="/db/intgr83/content/147/hdoc" target="_top">Стратегия распространения данных</a></li><li id="toc_148"><a href="/db/intgr83/content/148/hdoc" target="_top">Обмен данными с разной структурой</a></li><li id="toc_149"><a href="/db/intgr83/content/149/hdoc" target="_top">Стратегия разрешения коллизий</a></li><li id="toc_150"><a href="/db/intgr83/content/150/hdoc" target="_top">Тестирование работы универсального обмена данными</a></li><li id="toc_151"><a href="/db/intgr83/content/151/hdoc" target="_top">Обмен предопределенными данными</a></li><li class="collapsed" id="toc_152"><a href="/db/intgr83/content/152/hdoc" target="_top">Ручная регистрация изменений</a><ul><li id="toc_153"><a href="/db/intgr83/content/153/hdoc" target="_top">Формирование списка узлов-получателей в обработчиках события «ПриЗаписи»</a></li><li id="toc_154"><a href="/db/intgr83/content/154/hdoc" target="_top">Регистрация изменений для узла в обработке для выполнения обмена</a></li><li id="toc_155"><a href="/db/intgr83/content/155/hdoc" target="_top">Регистрация в произвольные узлы</a></li></ul></li></ul></li></ul></li><li id="toc_156"><a href="/db/intgr83/content/156/hdoc" target="_top">Использование транзакций при организации обмена</a></li><li id="toc_157"><a href="/db/intgr83/content/157/hdoc" target="_top">Методика включения в сообщение обмена дополнительной информации</a></li><li id="toc_158"><a href="/db/intgr83/content/158/hdoc" target="_top">Организация одностороннего обмена</a></li><li class="collapsed" id="toc_159"><a href="/db/intgr83/content/159/hdoc" target="_top">Примеры реализации автоматического обмена данными</a><ul><li id="toc_160"><a href="/db/intgr83/content/160/hdoc" target="_top">Использование регламентных заданий</a></li><li id="toc_161"><a href="/db/intgr83/content/161/hdoc" target="_top">Использование объекта «СОМСоединение»</a></li></ul></li><li class="collapsed" id="toc_162"><a href="/db/intgr83/content/162/hdoc" target="_top">Использование планов обмена в расширении конфигурации</a><ul><li id="toc_163"><a href="/db/intgr83/content/163/hdoc" target="_top">Универсальный способ обмена данными</a></li><li id="toc_164"><a href="/db/intgr83/content/164/hdoc" target="_top">Обмен данными в распределенной информационной базе</a></li></ul></li></ul></li><li class="collapsed" id="toc_165"><a href="/db/intgr83/content/165/hdoc" target="_top">Глава 4. Внешние компоненты</a><ul><li class="collapsed" id="toc_166"><a href="/db/intgr83/content/166/hdoc" target="_top">Подключение внешней компоненты в тонком клиенте или в веб-клиенте (на примере Native API компоненты)</a><ul><li id="toc_167"><a href="/db/intgr83/content/167/hdoc" target="_top">Подключение внешней компоненты из файла на диске (отдельные файлы)</a></li><li id="toc_168"><a href="/db/intgr83/content/168/hdoc" target="_top">Подключение внешней компоненты из макета (ZIP-архив)</a></li><li id="toc_169"><a href="/db/intgr83/content/169/hdoc" target="_top">Подключение внешней компоненты из базы данных (ZIP-архив)</a></li></ul></li><li class="collapsed" id="toc_170"><a href="/db/intgr83/content/170/hdoc" target="_top">Подключение внешней компоненты в толстом клиенте или на сервере (на примере Native API компоненты)</a><ul><li id="toc_171"><a href="/db/intgr83/content/171/hdoc" target="_top">Подключение внешней компоненты из файла на диске (отдельные файлы)</a></li><li id="toc_172"><a href="/db/intgr83/content/172/hdoc" target="_top">Подключение внешней компоненты из макета (ZIP-архив)</a></li><li id="toc_173"><a href="/db/intgr83/content/173/hdoc" target="_top">Подключение внешней компоненты из макета (отдельные файлы)</a></li><li id="toc_174"><a href="/db/intgr83/content/174/hdoc" target="_top">Подключение внешней компоненты из базы данных (ZIP-архив)</a></li><li id="toc_175"><a href="/db/intgr83/content/175/hdoc" target="_top">Подключение внешней компоненты из базы данных (отдельные файлы)</a></li></ul></li></ul></li><li class="collapsed" id="toc_176"><a href="/db/intgr83/content/176/hdoc" target="_top">Глава 5. Взаимодействие с приложением системы «1С:Предприятие»</a><ul><li class="collapsed" id="toc_177"><a href="/db/intgr83/content/177/hdoc" target="_top">Automation</a><ul><li id="toc_178"><a href="/db/intgr83/content/178/hdoc" target="_top">Automation Server</a></li><li id="toc_179"><a href="/db/intgr83/content/179/hdoc" target="_top">Automation Client</a></li></ul></li><li id="toc_180"><a href="/db/intgr83/content/180/hdoc" target="_top">Внешнее соединение</a></li><li class="collapsed" id="toc_181"><a href="/db/intgr83/content/181/hdoc" target="_top">Встраивание веб-клиента «1С:Предприятия» в сторонний сайт</a><ul><li id="toc_182"><a href="/db/intgr83/content/182/hdoc" target="_top">Общая информация</a></li><li id="toc_183"><a href="/db/intgr83/content/183/hdoc" target="_top">Пример реализации</a></li></ul></li></ul></li><li class="collapsed" id="toc_184"><a href="/db/intgr83/content/184/hdoc" target="_top">Глава 6. Файловое взаимодействие</a><ul><li class="collapsed" id="toc_185"><a href="/db/intgr83/content/185/hdoc" target="_top">Работа с локальной файловой системой</a><ul><li id="toc_186"><a href="/db/intgr83/content/186/hdoc" target="_top">Найти файлы в каталоге</a></li><li id="toc_187"><a href="/db/intgr83/content/187/hdoc" target="_top">Удалить файлы в каталоге</a></li><li id="toc_188"><a href="/db/intgr83/content/188/hdoc" target="_top">Создать новый каталог</a></li><li id="toc_189"><a href="/db/intgr83/content/189/hdoc" target="_top">Копировать файл</a></li><li id="toc_190"><a href="/db/intgr83/content/190/hdoc" target="_top">Переместить файл</a></li></ul></li><li class="collapsed" id="toc_191"><a href="/db/intgr83/content/191/hdoc" target="_top">Передача файлов между клиентом и сервером</a><ul><li id="toc_192"><a href="/db/intgr83/content/192/hdoc" target="_top">Передача и получение одного файла с сервера</a></li><li id="toc_193"><a href="/db/intgr83/content/193/hdoc" target="_top">Передача нескольких файлов на сервер</a></li><li id="toc_194"><a href="/db/intgr83/content/194/hdoc" target="_top">Получение нескольких файлов с сервера</a></li></ul></li><li class="collapsed" id="toc_195"><a href="/db/intgr83/content/195/hdoc" target="_top">Текстовые файлы</a><ul><li id="toc_196"><a href="/db/intgr83/content/196/hdoc" target="_top">Текстовый документ, поле текстового документа</a></li><li id="toc_197"><a href="/db/intgr83/content/197/hdoc" target="_top">Отображение текстового документа</a></li><li id="toc_198"><a href="/db/intgr83/content/198/hdoc" target="_top">Модель последовательного доступа</a></li></ul></li><li class="collapsed" id="toc_199"><a href="/db/intgr83/content/199/hdoc" target="_top">XML-файлы</a><ul><li id="toc_200"><a href="/db/intgr83/content/200/hdoc" target="_top">Основные положения</a></li><li class="collapsed" id="toc_201"><a href="/db/intgr83/content/201/hdoc" target="_top">Базовые средства «1С:Предприятия» для работы с XML</a><ul><li id="toc_202"><a href="/db/intgr83/content/202/hdoc" target="_top">Запись данных в XML-документ</a></li><li id="toc_203"><a href="/db/intgr83/content/203/hdoc" target="_top">Чтение данных из XML-документа</a></li></ul></li><li class="collapsed" id="toc_204"><a href="/db/intgr83/content/204/hdoc" target="_top">XML-сериализация</a><ul><li class="collapsed" id="toc_205"><a href="/db/intgr83/content/205/hdoc" target="_top">Простые типы</a><ul><li id="toc_206"><a href="/db/intgr83/content/206/hdoc" target="_top">Число</a></li><li id="toc_207"><a href="/db/intgr83/content/207/hdoc" target="_top">Строка</a></li><li id="toc_208"><a href="/db/intgr83/content/208/hdoc" target="_top">Дата</a></li><li id="toc_209"><a href="/db/intgr83/content/209/hdoc" target="_top">Булево</a></li><li id="toc_210"><a href="/db/intgr83/content/210/hdoc" target="_top">ДвоичныеДанные</a></li><li id="toc_211"><a href="/db/intgr83/content/211/hdoc" target="_top">Null</a></li><li id="toc_212"><a href="/db/intgr83/content/212/hdoc" target="_top">УникальныйИдентификатор</a></li><li id="toc_213"><a href="/db/intgr83/content/213/hdoc" target="_top">ХранилищеЗначения</a></li><li id="toc_214"><a href="/db/intgr83/content/214/hdoc" target="_top">Тип ссылки на объект базы данных</a></li><li id="toc_215"><a href="/db/intgr83/content/215/hdoc" target="_top">Тип ссылки на значение перечисления</a></li><li id="toc_216"><a href="/db/intgr83/content/216/hdoc" target="_top">Работа с простыми типами</a></li></ul></li><li class="collapsed" id="toc_217"><a href="/db/intgr83/content/217/hdoc" target="_top">Сложные типы</a><ul><li id="toc_218"><a href="/db/intgr83/content/218/hdoc" target="_top">Тип</a></li><li id="toc_219"><a href="/db/intgr83/content/219/hdoc" target="_top">ОписаниеТипов</a></li><li id="toc_220"><a href="/db/intgr83/content/220/hdoc" target="_top">КонстантаМенеджерЗначения.&lt;имя&gt;</a></li><li id="toc_221"><a href="/db/intgr83/content/221/hdoc" target="_top">Объект</a></li><li id="toc_222"><a href="/db/intgr83/content/222/hdoc" target="_top">Набор записей</a></li><li id="toc_223"><a href="/db/intgr83/content/223/hdoc" target="_top">УдалениеОбъекта</a></li><li id="toc_224"><a href="/db/intgr83/content/224/hdoc" target="_top">Работа со сложными типами</a></li></ul></li></ul></li></ul></li><li class="collapsed" id="toc_225"><a href="/db/intgr83/content/225/hdoc" target="_top">HTML-документ</a><ul><li id="toc_226"><a href="/db/intgr83/content/226/hdoc" target="_top">Поле HTML-документа</a></li><li id="toc_227"><a href="/db/intgr83/content/227/hdoc" target="_top">Объектная модель документа</a></li><li class="collapsed" id="toc_228"><a href="/db/intgr83/content/228/hdoc" target="_top">Примеры работы</a><ul><li id="toc_229"><a href="/db/intgr83/content/229/hdoc" target="_top">Отобразить содержимое, URL и HTML-текст веб-страницы</a></li><li id="toc_230"><a href="/db/intgr83/content/230/hdoc" target="_top">Прочитать HTML-документ из текста</a></li><li id="toc_231"><a href="/db/intgr83/content/231/hdoc" target="_top">Прочитать HTML-документ из файла</a></li><li id="toc_232"><a href="/db/intgr83/content/232/hdoc" target="_top">Записать HTML-документ в файл</a></li><li id="toc_233"><a href="/db/intgr83/content/233/hdoc" target="_top">Сформировать HTML-документ и записать в файл</a></li><li id="toc_234"><a href="/db/intgr83/content/234/hdoc" target="_top">Разобрать HTML</a></li><li id="toc_235"><a href="/db/intgr83/content/235/hdoc" target="_top">Показать структуру HTML</a></li><li id="toc_236"><a href="/db/intgr83/content/236/hdoc" target="_top">Изменить содержимое HTML</a></li><li id="toc_237"><a href="/db/intgr83/content/237/hdoc" target="_top">Вставить произвольный фрагмент HTML</a></li></ul></li></ul></li><li class="collapsed" id="toc_238"><a href="/db/intgr83/content/238/hdoc" target="_top">Двоичные данные</a><ul><li id="toc_239"><a href="/db/intgr83/content/239/hdoc" target="_top">Общая информация</a></li><li class="collapsed" id="toc_240"><a href="/db/intgr83/content/240/hdoc" target="_top">Примеры работы</a><ul><li id="toc_241"><a href="/db/intgr83/content/241/hdoc" target="_top">Разбить WAV-файл на части</a></li><li class="collapsed" id="toc_242"><a href="/db/intgr83/content/242/hdoc" target="_top">Работа с составными (multipart) HTTP-сообщениями</a><ul><li id="toc_243"><a href="/db/intgr83/content/243/hdoc" target="_top">Создание сервиса для формирования составного сообщения</a></li><li id="toc_244"><a href="/db/intgr83/content/244/hdoc" target="_top">Разбор составного сообщения на стороне клиента</a></li></ul></li></ul></li></ul></li><li id="toc_245"><a href="/db/intgr83/content/245/hdoc" target="_top">XDTO-сериализация</a></li><li class="collapsed" id="toc_246"><a href="/db/intgr83/content/246/hdoc" target="_top">ZIP-архивы</a><ul><li class="collapsed" id="toc_247"><a href="/db/intgr83/content/247/hdoc" target="_top">Создание архива</a><ul><li id="toc_248"><a href="/db/intgr83/content/248/hdoc" target="_top">Особенности упаковки файлов по маске</a></li><li id="toc_249"><a href="/db/intgr83/content/249/hdoc" target="_top">Особенности работы метода «Добавить()»</a></li></ul></li><li id="toc_250"><a href="/db/intgr83/content/250/hdoc" target="_top">Чтение ZIP-архивов</a></li><li id="toc_251"><a href="/db/intgr83/content/251/hdoc" target="_top">Работа с файлами большого объема</a></li><li class="collapsed" id="toc_252"><a href="/db/intgr83/content/252/hdoc" target="_top">Примеры работы</a><ul><li id="toc_253"><a href="/db/intgr83/content/253/hdoc" target="_top">Добавление в архив файлов по маске</a></li><li id="toc_254"><a href="/db/intgr83/content/254/hdoc" target="_top">Добавление выбранных файлов в архив</a></li><li id="toc_255"><a href="/db/intgr83/content/255/hdoc" target="_top">Распаковка файлов из архива</a></li><li id="toc_256"><a href="/db/intgr83/content/256/hdoc" target="_top">Разделение и объединение файлов архива</a></li></ul></li></ul></li><li id="toc_257"><a href="/db/intgr83/content/257/hdoc" target="_top">DBF-файлы</a></li></ul></li></ul></li></ul><script type="text/javascript">
+		deferred.push(function(){
+			App.Viewport.attachToScroller('l_toc_inner', 'l_toc_inner');
+					});
+	</script></div></div></div></div></div><div id="l_search" class="l" style="display:none"></div><div id="l_extended_search" class="l" style="display:none"></div><div id="w_metadata_section" class="w"><div id="database_menu_section" data-section="books/books_dev" style="display:none"></div>
+<script type="text/javascript">
+	deferred.push(function(){
+				SSP.DOM.removeClass(SSP.DOM.byId('main_container'), 'sidebar-no-initial');
+			});
+</script></div><script type="text/javascript">
+	deferred.push(function()
+	{
+		App.Search.chatbotJs = 'https://portalchat.1c.ai/chatbot/widget/widget.js';
+		App.Search.chatbotCss = 'https://portalchat.1c.ai/chatbot/widget/style.css';
+
+		SSP.Bus.init(
+			'/db/',
+			['browse', 'content', 'bookmark', 'search', 'extsearch'],
+			App.Its.Router,
+			{"w_metadata_toc":{"5":{"listen":[{"event":"mouseover","callback":"App.Its.Handler.tocMouseOver"},{"event":"click","callback":"App.Its.Handler.tocClick"},{"event":"click","callback":"SSP.Tree.handleClick"}],"trigger":[]},"3":{"select":["toc_999999"],"reload":["\/db\/metadata\/intgr83\/toc\/1_?_=1789134211"]}},"w_metadata_toc_button":{"5":{"listen":[{"event":"click","callback":"App.Its.Handler.tocButtonClick"}],"trigger":[]},"3":{"reload":[null]}},"w_metadata_doc_frame":{"5":{"listen":[{"event":"DOMContentLoaded","callback":"App.Its.Handler.docFrameDOMContentLoaded"}],"trigger":[]}},"w_title":{"3":{"reload":[null]}},"w_navchain":{"3":{"reload":[null]}},"w_searchlink":{"3":{"reload":[null]}},"w_search":{"3":{"reload":[null]}},"w_main_tabclassifier":{"3":{"reload":[null]}},"w_main_tabdocument":{"3":{"reload":[null]}},"w_main_tabsearch":{"3":{"reload":[null]}},"w_metadata_doc_title":{"3":{"reload":[null]}},"l_doc_frame_inner":{"3":{"reload":[null]}},"w_review_link":{"3":{"reload":[null]}},"w_metadata_findinclassifier":{"3":{"reload":[null]}},"w_metadata_findintoc":{"3":{"reload":[null]}},"w_metadata_section":{"3":{"reload":[null]}}},
+			'/img/loading-tpt.gif',
+			false,
+			false,
+			["l_doc_frame_inner","search_filter_toggle"]		);
+		
+		
+		App.Its.Router.selectedTab = App.Its.Router.getRememberedTab();
+		
+		App.Its.Handler.listenBasket(false);
+	});
+</script>
+<script type="text/javascript">
+	deferred.push(function()
+	{
+		var match = App.Its.Router.match(App.Its.Router.toInternal(window.location.toString()));
+		if(!match || !match.context.mode)
+			SSP.Widget('w_metadata_doc_frame').indicate(false);
+	});
+</script>
+<noscript><style>#l_content{display:block!important}</style></noscript>
+<script>
+	deferred.push(function()
+	{
+		SSP.DOM.triggerReflow();
+		setTimeout(function()
+		{
+			var match = App.Its.Router.match(App.Its.Router.toInternal(window.location.toString()));
+			if(match)
+			{
+				var content = SSP.Widget('l_content');
+				var classifier = SSP.Widget('l_classifier');
+				var search = SSP.Widget('l_search');
+				var extsearch = SSP.Widget('l_extended_search');
+				
+				if(content.node && content.getStyle('display') !== 'none'
+				|| classifier.node && classifier.getStyle('display') !== 'none'
+				|| search.node && search.getStyle('display') !== 'none'
+				|| extsearch.node && extsearch.getStyle('display') !== 'none')
+					;
+				else
+				{
+					if(match.context.mode === 'content' || match.context.mode === 'bookmark')
+						content.show();
+					else if(match.context.mode === 'browse')
+						classifier.show();
+					/*else if(match.context.mode === 'search')
+						search.show();*/
+					else if(match.context.mode === 'extsearch')
+						extsearch.show();
+				}
+			}
+			try
+			{
+				SSP.Scroll.mimicByClass('mimic_scroll');
+			}
+			catch(e)
+			{
+				//debugger;
+			}
+			if(!SSP.Browser.hasTouchScreen)
+				SSP.DOM.triggerReflow();
+		}, 1000);
+	});
+</script>
+<noscript><style>
+li.collapsed > ul
+{display:block!important}
+#w_search_history div.collapsed div,
+#w_search_history div.collapsed ul
+{display:block!important}
+ul.tree li.collapsed
+{background-image:none !important}
+#w_metadata_toc li.collapsed,
+#w_search_history div.collapsed,
+#w_search_history li.collapsed
+{background-image:url('/img_new/r_minus.png') !important}
+#w_metadata_toc a:active::before,
+#w_metadata_navtree a:active::before,
+#w_metadata_toc a:focus::before,
+#w_metadata_navtree a:focus::before
+{position:absolute;top:0;bottom:0;right:0;width:100vw;display:block;content:'';z-index:-2}
+#w_metadata_toc a:active,
+#w_metadata_toc a:active::before,
+#w_metadata_navtree a:active,
+#w_metadata_navtree a:active::before,
+#w_metadata_toc a:focus,
+#w_metadata_toc a:focus::before,
+#w_metadata_navtree a:focus,
+#w_metadata_navtree a:focus::before
+{background-color:#dedede}
+#l_toc_inner,
+#l_nav_inner
+{overflow:auto;padding-right:0}
+</style></noscript>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://its.1c.ru/db/intgr83"
+    },
+    "headline": "Технологии интеграции \"1С:Предприятия 8.3\"",
+    "image": [
+        "https://its.1c.ru/db/content/intgr83/_metaimage/999999/hdoc/696x394.png?_=00000030389258BF-v2",
+        "https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598"
+    ],
+    "author": {
+        "@type": "Organization",
+        "name": "1С",
+        "url": "https://1c.ru/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "1С",
+        "url": "https://1c.ru/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598"
+        }
+    },
+    "datePublished": "2020-04-09T00:00:00+03:00",
+    "dateModified": "2020-04-09T00:00:00+03:00"
+}
+</script>
+</div><!--noindex--><ul id="l_tabs" class="tab tab1 l"><li id="w_main_tabclassifier" class="w png null" style="display:none"></li><li id="w_main_tabdocument" class="w png active" data-access="true" style="display:"><span class="inline-block"><a href="/db/intgr83/content/999999/hdoc" class="inline-block" target="_top">Документ</a></span><script type="text/javascript">
+	deferred.push(function(){
+		var access = SSP.Widget('w_main_tabdocument').getData('access');
+		if(access === 'false'){
+			var frameWidget = SSP.Widget('l_doc_frame');
+			var dbnickDocIdTab = frameWidget.getData('db') + ':' + frameWidget.getData('doc') + ':' + frameWidget.getData('tab');
+			App.Its.Handler.restrictedDbnickDocTabIds[dbnickDocIdTab] = true;
+		}
+	});
+</script></li><li id="w_main_tabsearch" class="w png null" style="display:none"><span class="inline-block"><a href="/db/intgr83/search" class="inline-block" target="_top" rel="nofollow">Результаты поиска</a></span><script type="text/javascript">
+deferred.push(function()
+{
+	if(SSP.Bus.cookie('SEARCH'))
+		document.getElementById('w_main_tabsearch').style.display = '';
+});
+</script></li><li id="w_main_tabextendedsearch" class="w png null" style="display:none"></li></ul><style>#l_tabs {display:none!important}</style><!--/noindex-->			<!--noindex-->
+			<div id="footer">
+				<div id="copyright">
+										&copy; Фирма «1С». Все права защищены									</div>
+			</div>
+			<!--/noindex-->
+						<!--noindex-->
+						<script type="text/javascript">
+				deferred.push(function(){
+					App.sidebarCarousel = new App.Carousel('sidebar_container', 'sidebar', 'sidebar_up_button', 'sidebar_down_button', null, {
+						vertical:true,
+						bypixel:true,
+						absolute:true,
+						step:38,
+						wrap:false
+					});
+				});
+			</script>
+			<div id="sidebar_container" data-nosnippet>
+						<script type="text/javascript">
+				(function(){
+					if(window.styleDeferred && styleDeferred.usingShell && !styleDeferred.inactive){
+						var sidebarContainerStyle = document.getElementById('sidebar_container').style;
+						sidebarContainerStyle.display = 'none';
+						var show = function(){
+							sidebarContainerStyle.removeProperty('display');
+						};
+						styleDeferred.unshift(function(){
+							if(window.SSP)
+								show();
+							else
+								setTimeout(show, 0);
+						});
+					}
+				})();
+			</script>
+							<div id="sidebar_close_button" onclick="var d=document,de=d.documentElement,db=d.body,rx=/\bshow-menu\b/,hc=db.className.match(rx);de.className=de.className.replace(rx, '');db.className=db.className.replace(rx, '');if(window.SSP&&window.App&&App.sidebarCarousel.getPosition()){App.sidebarCarousel.adjust()}"></div>
+				<div id="sidebar_up_button" class="sidebar_updown_button disabled"></div>
+				<div id="sidebar" class="sidebar_level0">
+					<div class="sidebar-main_container">
+						<div id="logo">
+							<a href="/" target="_top" title="Информационная система 1С:ИТС" class="logo_its"></a>
+							<a href="/" target="_top" title="Информационная система 1С:ИТС" class="hide_on_small">
+								<span class="about_its">
+									Информационная система 1С:ИТС								</span>
+							</a>
+						</div>
+						<div id="w_sidebar_search" class="w"><div id="search" class="logo search" onclick="!navigator.maxTouchPoints&&(!window.TouchEvent||!('standalone' in navigator))&&document.getElementById('sidebar_search_input').focus();">
+	<form id="sidebar_search_form" name="sidebar_search_form" method="GET" action="/db/intgr83/search/all" autocomplete="off" target="_top">
+		<input id="sidebar_search_input" type="text" name="query" value="" spellcheck="false" autocapitalize="off" onclick="if(window.msCrypto || window.msWriteProfilerMark || window.TouchEvent && 'standalone' in navigator){document.getElementById('search').className=document.getElementById('search').className.replace(/(\b\hover\b|$)/g, ' hover ')}" data-autocomplete-notrim data-autocomplete-autosubmit data-autocomplete-cache data-autocomplete-suggest="sidebar_search_input_suggest" aria-label="Ввести поисковый запрос" placeholder="Поиск по сайту">
+		<input id="sidebar_search_reset" type="reset" onclick="if(!document.getElementById('sidebar_search_input').value){this.blur();document.documentElement.focus();if(window.msCrypto || window.msWriteProfilerMark || window.TouchEvent && 'standalone' in navigator){document.getElementById('search').className=document.getElementById('search').className.replace(/(\b\hover\b|$)/g, ' ')}}" value="" title="Очистить/Закрыть" aria-label="" class="logo close-submenu" tabindex="0">
+		<input type="submit" style="display:none">
+		<div class="autocomplete-suggests" style="display:none"><ul id="sidebar_search_input_suggest" class="clean" style="display:none"></ul></div>
+	</form>
+</div>
+<script type="text/javascript">
+	deferred.push(function(){
+		App.Search.chatbotJs = 'https://portalchat.1c.ai/chatbot/widget/widget.js';
+		App.Search.chatbotCss = 'https://portalchat.1c.ai/chatbot/widget/style.css';
+		setTimeout(
+			function(){
+				App.Search.init(false, 'sidebar_search_form', 'sidebar_search_input', true);
+				var autocomplete = '/search/autocomplete.json?site=ru&query={query}';
+				if(!SSP.Browser.hasKeyboard)
+					autocomplete = autocomplete.replace('?', '?noSwitch&');
+				SSP.Form.initAutocomplete('sidebar_search_input', autocomplete);
+			},
+			0
+		);
+	});
+</script></div>						<div id="w_sidebar_menu" class="w nofreezelayout">
+<div id="sidebar_main_menu" class="section strong">
+<a class="logo i1c further" target="_top" href="/section/i1c" data-autoclick-delay="1000" id="menu_element_i1c"><span>Инструкции по учету в программах 1С</span></a><a class="logo dev further" target="_top" href="/section/dev" data-autoclick-delay="1000" id="menu_element_dev"><span>Инструкции по разработке на 1С</span></a><a class="logo law further" target="_top" href="/section/law" data-autoclick-delay="1000" id="menu_element_law"><span>Консультации по законодательству</span></a><a class="logo books further" target="_top" href="/section/books" data-autoclick-delay="1000" id="menu_element_books"><span>Книги и периодика</span></a><a class="logo info further" target="_top" href="/section/info" data-autoclick-delay="1000" id="menu_element_info"><span>Справочная информация</span></a><a class="logo garant further" target="_top" href="/section/garant" data-autoclick-delay="1000" id="menu_element_garant"><span>База нормативных документов</span></a></div>
+<hr>
+<div id="sidebar_extra_menu" class="section">
+<a class="logo news" target="_top" href="/news"><span>Новости</span></a><a class="logo lector" target="_top" href="/lector"><span>1С:Лекторий</span></a><a class="logo action further" target="_top" href="/section/action" data-autoclick-delay="1000" id="menu_element_action"><span>Акции и конкурсы</span></a><a class="logo edu" target="_top" href="/db/sprinfo"><span>Курсы и экзамены 1С</span></a><a class="logo review" target="_top" href="/feedback"><span>Отзывы об ИТС</span></a><a class="logo aibot" target="_blank" href="https://portalchat.1c.ai" rel="noopener"><span>1С:Напарник ИТС</span></a><a class="logo bestpartner" target="_top" href="/partner/best"><span>Партнер года 2025</span></a></div>
+
+<div id="w_sidebar_section">
+	<div class="sidebar_shadow_left"></div>
+	<div id="sidebar_open_section" class="sidebar_shadow"></div>
+	<div id="sidebar_section_header" title=""></div>
+	<div id="sidebar_back_section" class="logo back-submenu"></div>
+	<div id="sidebar_close_section" class="logo close-submenu"></div>
+	<div class="sidebar-spacer l native_scroll">
+				<div id="sidebar_list">
+		</div>
+			</div>
+
+	<div id="w_sidebar_subsection">
+		<div class="sidebar_shadow"></div>
+		<div id="sidebar_subsection_header" title=""></div>
+		<div id="sidebar_back_subsection" class="logo back-submenu"></div>
+		<div id="sidebar_close_subsection" class="logo close-submenu"></div>
+		<div class="sidebar-spacer l native_scroll">
+						<div id="sidebar_sublist">
+			</div>
+					</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+deferred.push(function()
+{
+	var deviceType = App.getCssDeviceType();
+	App.Sidebar.init('sidebar', 'w_sidebar_section', 'w_sidebar_subsection', 'database_menu_section', SSP.Browser.hasTouchScreen, undefined);
+	
+	});
+</script>
+
+</div>						<script type="text/javascript">
+							deferred.push(function(){SSP.DOM.listenAutoclick(SSP.DOM.byId('w_sidebar_menu'));});
+						</script>
+						<hr>
+						<div class="social_icons" id="sidebar_social_icons">
+										<a target="_top" href="javascript:" id="share_vk" class="share logo vk" title="Поделиться во Вконтакте">Вконтакте</a>
+									</div>
+						<hr id="top_menu_links_copy_hr">
+						<div id="top_menu_links_copy" class="section"></div>
+												<div class="sidebar-footer"></div>
+					</div>
+				</div>
+				<div id="sidebar_down_button" class="sidebar_updown_button disabled"></div>
+			</div>
+						<!--/noindex-->
+									<div id="cookie_consent_panel">
+				Мы используем файлы cookie.<br>
+				Продолжая находиться на сайте, вы соглашаетесь с этим<br>
+				на условиях, указанных по <a target="_top" href="/docs/policy/cookie">ссылке</a>.<br>
+				<div class="cookie_button_container">
+					<button id="cookie_consent" class="btn btn-default">Принимаю</button>
+				</div>
+			</div>
+			<script type="text/javascript">deferred.push(function(){App.CookieConsent.showPanel('cookie_consent_panel', 'cookie_consent', 'COOKIE_CONSENT');});</script>
+					</div>
+		<!--noindex-->
+		<script type="text/javascript">
+			(function(){
+				var links = document.getElementById('top_menu').getElementsByTagName('A');
+				var topMenuLinksCopy = document.getElementById('top_menu_links_copy');
+				for(var i = 0; i < links.length; i++){
+					var copy = document.createElement('A');
+					copy.href = links[i].href;
+					copy.target = links[i].target;
+					copy.rel = links[i].rel;
+					copy.className = links[i].parentNode.className.replace(/(^|\s)top_menu_item(\s|$)/, ' ');
+					var span = document.createElement('SPAN');
+					span.innerHTML = links[i].innerHTML;
+					copy.appendChild(span);
+					topMenuLinksCopy.appendChild(copy);
+				}
+			})();
+		</script>
+		<div id="w_popup" class="w box-shadow"><div id="popup_inner">
+	<div id="popup_controls">
+		<span id="popup_title"></span><a id="popup_close" href="javascript:"></a>
+	</div>
+	<div id="popup" tabindex="-1" class="l loading"></div>
+</div>
+<script type="text/javascript">
+	deferred.push(function(){
+		setTimeout(App.Popup.init, 0);
+	});
+</script></div>		<script type="text/javascript">
+			deferred.push(function(){
+				SSP.DOM.listen(SSP.DOM.byId('sidebar_social_icons'), 'click', App.Share.shareClick);
+			});
+		</script>
+		<script type="text/javascript">
+			deferred.push(function(){App.Stat.init('', '', '38953945', '', 'GA_PARAMS', 'USER_TYPE', {"net_cm":{"scope":"page","value":"broadband"},"net_rm":"navigate","net_aso":{"scope":"page","value":"OOO SET"},"net_asn":{"scope":"page","value":"AS201123"},"css_init":{"scope":"request","value":null},"user_segment":":UNAUTH:"}, false, false, false);});
+			</script>
+			<noscript>
+			<div><img src="https://mc.yandex.ru/watch/38953945" style="position:absolute; left:-9999px;" alt=""></div>
+		</noscript>
+				<noscript>
+					<div><img src="https://counter.yadro.ru/hit?r;uhttps%3A//its.1c.ru/db/intgr83;h%u0422%u0435%u0445%u043D%u043E%u043B%u043E%u0433%u0438%u0438%20%u0438%u043D%u0442%u0435%u0433%u0440%u0430%u0446%u0438%u0438%20%221%u0421%3A%u041F%u0440%u0435%u0434%u043F%u0440%u0438%u044F%u0442%u0438%u044F%208.3%22;0.84910319319419" style="position:absolute; left:-9999px;" alt=""></div>
+		</noscript>
+			<script type="text/javascript">
+			if('Notification' in window)
+				deferred.push(function(){
+					var initWebPush = function(){
+						SSP.DOM.requestIdleCallback(function(){
+							if(!document.cookie.match('WEBPUSH=0'))
+								SSP.DOM.requestIdleCallback(function(){
+									if('permissions' in navigator)
+										navigator.permissions.query({name: 'notifications'}).then(function(result){
+											result.state === 'granted' && SSP.DOM.requestIdleCallback(App.WebPush.init);
+										});
+									else if(Notification.permission === 'granted')
+										SSP.DOM.requestIdleCallback(App.WebPush.init);
+								});
+						});
+					};
+						initWebPush();
+				});
+		</script>
+		<noscript><style>
+			.noscript{display:inherit!important}
+			.script{display:none!important}
+			.w.loading > *,.l.loading > *{visibility:inherit}
+			.w.loading,.l.loading{cursor:inherit;background:inherit;background-position:inherit}
+			.l.loading{margin:inherit;padding:inherit}
+			#other_sites_link {display:none}
+			#contact {margin-top:12px}
+		</style></noscript>
+		<script type="text/javascript">
+			deferred.push(function(){App.Handler.initBodyCopy('Фирма «1С»')});
+		</script>
+		<script type="text/javascript">
+			(function(){
+				var resetScroll = function(){
+					var that = this;
+					that.scrollTop = 0;
+					setTimeout(function(){that.scrollTop = 0;}, 0);
+				};
+				var resetScrollers = [document.getElementById('main_container'), document.body, document.documentElement];
+				for(var i = 0; i < resetScrollers.length; i++)
+				{
+					resetScrollers[i].scrollTop = 0;
+					resetScrollers[i].addEventListener('scroll', resetScroll, false);
+				}
+				setTimeout(function(){
+					for(var i = 0; i < resetScrollers.length; i++)
+						resetScrollers[i].scrollTop = 0;
+				}, 0);
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				if(!('serviceWorker' in navigator))
+					return;
+				
+				var initWebApp = function(){
+					try{navigator.serviceWorker.register('/sw.js').catch(function(){});}catch(e){}
+					
+					if(navigator.userAgentData && navigator.userAgentData.mobile
+					|| !navigator.userAgentData && (window.TouchEvent || !('standalone' in navigator)))
+						(function(){
+							var setManifest = function(){
+								var link = document.createElement('LINK');
+								link.rel = 'manifest';
+								link.href = '/manifest.json';
+								document.head.appendChild(link);
+							};
+							if('standalone' in navigator && window.styleDeferred && !styleDeferred.inactive)
+								styleDeferred.push(setManifest);
+							else
+								setManifest();
+						})();
+				};
+				
+				if(!window.styleDeferred || styleDeferred.usingShell)
+					initWebApp();
+				else
+					deferred.push(initWebApp);
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				var testLink = document.createElement('LINK');
+				var probablySupportsPrefetch = !testLink.relList || !testLink.relList.supports || testLink.relList.supports('prefetch');
+				var prefetchUrl = function(url){
+					if(!probablySupportsPrefetch && window.fetch)
+						fetch(url);
+					else{
+						var link = document.createElement('LINK');
+						link.rel = 'prefetch';
+						link.href = url;
+						document.head.appendChild(link);
+					}
+				};
+				deferred.unshift(function(){
+					var urls = ["style.css?_=1789134211","\/css\/its.content.css?_=1693585191","\/js\/its.content.js?_=1697980666","\/common\/page\/css\/1789134243\/main__new.css_?_=1789134243","\/common\/page\/js\/1789134243\/main__new.js_?_=1789134243","\/common\/page\/css\/1789134243\/user__new.css_?_=1789134243","\/common\/page\/css\/1789134243\/document__new.css_?_=1789134243","\/font\/futura\/FuturaDemiC.woff2","\/font\/roboto\/Roboto-Light.woff2","\/font\/roboto\/Roboto-Bold.woff2","\/font\/roboto\/Roboto-Italic.woff2","\/font\/roboto\/Roboto-Black.woff2","\/font\/futura\/FuturaLightC.woff2"];
+					for(var i = 0; i < urls.length; i++)
+						prefetchUrl(urls[i]);
+				});
+				if(!window.styleDeferred){
+					var urls = ["\/font\/roboto\/Roboto-Light.woff2","\/font\/roboto\/Roboto-Bold.woff2"];
+					for(var i = 0; i < urls.length; i++)
+						prefetchUrl(urls[i]);
+				}
+			})();
+		</script>
+		<script type="text/javascript">
+			deferred.push(function(){
+				var nc = navigator.connection, dp = document.prerendering;
+				if(SSP.Browser.Android
+				|| SSP.Browser.IOS
+				|| (nc && nc.effectiveType ? nc.effectiveType !== '4g' : SSP.DOM.hasClass(document.body, 'cellular')))
+					SSP.DOM.listen(document, 'visibilitychange', function(event){
+						if(document.visibilityState === 'hidden')
+							return;
+						if(dp){
+							dp = false;
+							return;
+						}
+						SSP.Bus.request('/ping');
+					});
+			});
+		</script>
+		<script id="end_of_body"></script>
+		<!--/noindex-->
+	</body>
+</html>

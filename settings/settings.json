@@ -1,0 +1,105 @@
+{
+  "ui": {
+    "autoModeAcknowledged": true,
+    "feedbackLastShownTimestamp": 1790684031313
+  },
+  "env": {
+    "QWEN_CUSTOM_API_KEY_OPENAI_HTTP_192_168_215_174_11234_CEE95BD117A9": "__REDACTED_API_KEY__"
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "qwen/qwen3.6-27b",
+        "name": "qwen/qwen3.6-27b",
+        "baseUrl": "http://127.0.0.1:5003",
+        "envKey": "QWEN_CUSTOM_API_KEY_OPENAI_HTTP_192_168_215_174_11234_CEE95BD117A9",
+        "generationConfig": {
+          "contextWindowSize": 165720
+        },
+        "wireApi": "responses"
+      }
+    ]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai-responses"
+    }
+  },
+  "model": {
+    "name": "qwen/qwen3.6-27b",
+    "baseUrl": "http://127.0.0.1:5003"
+  },
+  "$version": 4,
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Bash(cd *)",
+      "Bash(taskkill *)",
+      "Bash(dir)",
+      "Bash(get-childitem *)",
+      "Bash(measure-object *)",
+      "Bash(select-object *)",
+      "Bash($_.sum/1mb,1)",
+      "Bash(}})",
+      "Bash(timeout *)",
+      "Bash(curl *)",
+      "Bash(findstr *)",
+      "Bash(netstat *)",
+      "Bash(tasklist *)",
+      "Bash(wmic *)",
+      "Bash(del *)",
+      "Bash(start *)",
+      "Bash(do *)",
+      "Bash(mkdir *)",
+      "Bash(true)",
+      "Bash(type *)",
+      "Bash(copy *)",
+      "Bash(qwen *)",
+      "Bash(ipconfig)",
+      "Bash(c:\\ai_projects\\qwen_cli\\src\\dashbord\\site\\venv\\scripts\\python.exe *)",
+      "Bash(c:\\users\\mz3\\appdata\\local\\programs\\python\\python311\\python.exe *)",
+      "Bash(venv\\scripts\\python.exe *)",
+      "Bash(more)",
+      "Bash(ping *)",
+      "Read(C:\\Users\\MZ3\\.qwen\\projects\\DashBord\\memory/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\server.py/**)",
+      "Bash(docker exec *)",
+      "Bash(task_stop *)",
+      "Bash(powershell *)",
+      "Bash(/new)",
+      "Bash(head *)",
+      "Bash(^)",
+      "Bash(echo *)",
+      "Bash(duckdb *)",
+      "Bash(docker cp *)",
+      "Bash(where *)",
+      "Bash(\"c:\\users\\mz3\\appdata\\local\\programs\\python\\python311\\python.exe\" *)",
+      "Bash(py *)",
+      "Bash(move *)",
+      "Bash(set *)",
+      "Bash(esentutl *)",
+      "Bash(net *)",
+      "Bash(vssadmin *)",
+      "Bash(find *)",
+      "Bash(rmdir *)",
+      "Bash(echo.)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\counterparties\\template.html/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\counterparties/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\account51\\template.html/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\account51/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\payment_receipts\\template.html/**)",
+      "Read(C:\\AI_PROJECTS\\Qwen_CLI\\src\\DashBord\\site\\pages\\payment_receipts/**)",
+      "Bash(node *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(gh *)",
+      "Bash(git config *)",
+      "Bash(cmdkey *)",
+      "Bash(git *)"
+    ]
+  }
+}

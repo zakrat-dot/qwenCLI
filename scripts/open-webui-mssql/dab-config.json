@@ -1,0 +1,49 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v2.0.9/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "Server=192.168.215.80;Database=UT_TEST_22;User Id=TestDashBoard;Password=__REDACTED__;TrustServerCertificate=True;",
+    "options": {
+      "set-session-context": false
+    }
+  },
+ 
+   "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api",
+      "request-body-strict": false
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "mcp": {
+      "enabled": true,
+      "path": "/mcp"
+    },
+ "host": {
+      "cors": {
+        "origins": [
+          "*"
+        ],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "Unauthenticated"
+      },
+      "mode": "production",
+      "host-address": "0.0.0.0",
+      "port": 5000
+    },
+    "telemetry": {
+      "open-telemetry": {
+        "enabled": false
+      }
+    }
+  },
+  
+  "autoentities": {},
+  "entities": {}
+}

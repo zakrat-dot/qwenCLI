@@ -1,0 +1,2457 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar_level0 no-touchscreen js-disabled">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+		<title id="w_title" class="w">Автоматический REST-интерфейс (OData) :: Технологии интеграции &quot;1С:Предприятия 8.3&quot;</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="theme-color" content="#ffdf16">
+		<link rel="preconnect" href="https://mc.yandex.ru">
+		<link rel="preconnect" href="https://counter.yadro.ru">
+		<base id="w_base" class="l" data-nonce="1789134211" href="/db/content/intgr83/src/43.html" target="w_metadata_doc_frame">		
+		<link id="w_canonical" rel="canonical" class="l" href="https://its.1c.ru/db/intgr83/content/47/hdoc">		<script type="text/javascript">
+			(function(){
+				var n = navigator, d = document, de = d.documentElement, dc = de.className.replace(/(^|\s+)js-disabled(\s+|$)/, ' '), rxos = /(^|\s+)(android|ios)(\s+|$)/;
+				if(window.TouchEvent && 'standalone' in n || window.matchMedia && matchMedia('(any-pointer: coarse)').matches){
+					dc = dc.replace(/(^|\s+)no-touchscreen(\s+|$)/, ' touchscreen ');
+					if(window.TouchEvent && 'standalone' in n){
+						dc = dc.replace(rxos, ' ios ');
+						d.addEventListener('touchstart', (function(){return function(){}})());
+					}
+					else if(n.userAgentData && n.userAgentData.platform === 'Android'
+					|| (!n.userAgentData || !n.userAgentData.platform && n.vendor === 'Google Inc.') && n.userAgent.match(/\bAndroid\b/))
+						dc = dc.replace(rxos, ' android ');
+					else
+						dc = dc.replace(rxos, ' ');
+				}else
+					dc = dc.replace(rxos, ' ').replace(/(^|\s+)touchscreen(\s+|$)/, ' no-touchscreen ');
+				de.className = dc;
+			})();
+		</script>
+		<script type="text/javascript">
+window.deferred=[];window.errors=[];;
+deferred.push(function(){App.User.init(false, 'BITRIX_SM_LOGIN', 'SUBSCRIBE_PERIOD', 'PARTWEB_LOGIN', 'FRESH_LOGIN', 'BITRIX_SM_UIDH', '/user/auth/ping.json', 1380);});
+</script>		<script type="text/javascript">
+			window.TEMPLATE_NEW = true;
+			window.MOBILE_ENABLED = true;
+		</script>
+		<style>
+		@font-face {
+			font-family: 'Roboto';
+			src: url('/font/roboto/Roboto-Regular.woff2') format('woff2'),
+				 url('/font/roboto/Roboto-Regular.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'Roboto';
+			src: url('/font/roboto/Roboto-Bold.woff2') format('woff2'),
+				 url('/font/roboto/Roboto-Bold.woff') format('woff');
+			font-weight: bold;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaMediumC';
+			src: url('/font/futura/FuturaMediumC.woff2') format('woff2'),
+				 url('/font/futura/FuturaMediumC.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaDemiC';
+			src: url('/font/futura/FuturaDemiC.woff2') format('woff2'),
+				 url('/font/futura/FuturaDemiC.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaBookC';
+			src: url('/font/futura/FuturaBookC.woff2') format('woff2'),
+				 url('/font/futura/FuturaBookC.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
+		@font-face {
+			font-family: 'FuturaLightC';
+			src: url('/font/futura/FuturaLightC.woff2') format('woff2'),
+				 url('/font/futura/FuturaLightC.woff') format('woff');
+			font-weight: 300;
+			font-style: normal;
+			font-display: block;
+		}
+		</style>
+												<link rel="stylesheet" type="text/css" href="/common/page/css/1789134243/core__new.css_?_=1789134243"><link rel="stylesheet" type="text/css" href="/common/page/css/1789134243/its__new.css_?_=1789134243"><link rel="stylesheet" type="text/css" href="/css/mobile.css?_=1758294439">							<script type="text/javascript" onload="this.loaded=true" defer src="/common/page/js/1789134243/core__new.js_?_=1789134243"></script><script type="text/javascript" onload="this.loaded=true" defer src="/common/page/js/1789134243/its__new.js_?_=1789134243"></script>						<style>
+				html
+		{contain:strict}
+		html::-webkit-scrollbar,
+		body::-webkit-scrollbar
+		{display:none}
+				</style>
+		<link id="favicon_static" type="image/x-icon" rel="icon" href="/favicon.ico">
+				<link rel="apple-touch-icon" sizes="120x120" href="/img_new/logo_its_apple_touch_120.png?_=1621642314">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img_new/logo_its_apple_touch_152.png?_=1621642321">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img_new/logo_its_apple_touch_180.png?_=1621642327">
+		<meta name="og:image" content="https://its.1c.ru/db/content/intgr83/_metaimage/47/hdoc/696x394.png?_=0000005976F55ADB-v2">
+		<meta name="og:image" content="https://its.1c.ru/db/content/intgr83/_metaimage/47/hdoc/770x342.png?_=0000005976F55ADB-v2">
+		<meta name="og:image" content="https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598">
+		<meta name="robots" content="noarchive">
+		<link rel="search" type="application/opensearchdescription+xml" title="1С:ИТС" href="/search/opensearch.xml">
+	</head>
+	<body class="ru lang_ru its main main_main tabbed unauthorized" data-app="its" data-module="main" data-action="main">
+		<div id="main_container" class="sidebar-fixed " data-viewport-shift-media-max-width-portrait="478px" data-viewport-shift-media-max-width-landscape="991px" data-viewport-shift-snap-padding="5px" data-viewport-shift-scrollbar-width="10px" data-viewport-shift-scrollbar-border-width="3px" data-viewport-shift-translate-x="0px" data-viewport-shift-absolute-max-shift="265">
+<!-- noindex -->
+		<div id="header">
+			<div id="w_siteselect" class="w" style="display:none"></div>			<div class="top-personal">
+				<div id="w_user_login" class="w unauthorized null nofreezelayout"><iframe id="auth_check" name="auth_check" style="display:none" src="https://login.1c.ru/login?service=https%3A%2F%2Fits.1c.ru%2Flogin%2F%3Faction%3Daftercheck%26provider%3Dlogin&amp;gateway=true" class="nojs"></iframe>
+<div id="personal_info">
+	<a id="login" class="nojs" href="/user/auth?backurl=%2Fdb%2Fintgr83%2Fcontent%2F47%2Fhdoc" target="_top" rel="nofollow" onclick="this.href=this.href.replace(/\?backurl=.*$/,'?backurl='+encodeURIComponent(location.href.replace(/^https?:\/\/[^\/]+/, '')))">Вход</a>
+</div>
+<div class="avatar">
+	<a class="nojs" href="/user/auth?backurl=%2Fdb%2Fintgr83%2Fcontent%2F47%2Fhdoc" target="_top" rel="nofollow" onclick="this.href=this.href.replace(/\?backurl=.*$/,'?backurl='+encodeURIComponent(location.href.replace(/^https?:\/\/[^\/]+/, '')))" aria-label="Вход">&nbsp;</a>
+</div>
+</div>			</div>
+			<div id="top_menu">
+				<div id="top_menu_burger_space">
+					<div id="top_menu_burger" onClick="setTimeout(function(){var d=document,de=d.documentElement,db=d.body,mc=d.getElementById('main_container'),rx=/\bshow-menu\b/,hc=db.className.match(rx);if(!d.getElementById('w_sidebar_menu')||window.styleDeferred&&styleDeferred.usingShell&&!styleDeferred.inactive){alert(window.styleDeferred.error?'Произошла ошибка. Пожалуйста, перезагрузите страницу.':'Пожалуйста, подождите...');return}if(hc){de.className=de.className.replace(rx, '');db.className=db.className.replace(rx, '')}else{de.className+=' show-menu';db.className+=' show-menu'}if(window.SSP&&window.App){!hc&&App.Sidebar.load(false,false,function(){});!hc&&App.Viewport.hasShift()&&db.addEventListener('transitionend',App.Viewport.resetShift,false);if(App.sidebarCarousel.getPosition()){App.sidebarCarousel.adjust();!hc&&App.sidebarCarousel.moveTo(0);}}}, 0)"></div>
+				</div>
+				<div class="top_menu1">
+					<div class="top_menu_item"><a target="_top" href="/db/aboutitsnew">Об 1С:ИТС</a></div>
+										<div class="top_menu_item"><a target="_top" href="/test-drive">Тест-драйв</a></div>
+					<div class="top_menu_item"><a target="_top" href="/zakaz?order[comment]=Заявка на заключение договора ИТС">Заказать ИТС</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/question/">Задать вопрос</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/update1c/">Обновить ПО</a></div>
+															<div class="top_menu_item"><a target="_top" href="/personal/qos">Оценить 1С</a></div>
+															<div class="top_menu_item"><a target="_blank" rel="noopener" href="https://torg.1c.ru/equipment/onlayn-kassy/?utm_source=its&utm_medium=tmenu">Купить кассу</a></div>
+									</div>
+				<div class="top_menu2">
+										<div class="top_menu_item"><a target="_top" href="/db/itsrev">Тематические подборки</a></div>
+															<div class="top_menu_item"><a target="_top" href="/calendar">Календарь бухгалтера</a></div>
+															<div class="top_menu_item"><a target="_top" href="/docs/calc_help/">Калькуляторы</a></div>
+					<div class="top_menu_item"><a target="_top" href="/kbk">Подбор КБК</a></div>
+															<div class="top_menu_item last_search_link"><a target="_top" href="/db/morphmerged/search">Последние результаты поиска</a></div>
+																				<div class="top_menu_item"><a target="_top" href="/news/subscription">Подписаться на рассылку</a></div>
+																								</div>
+			</div>
+			<script type="text/javascript">
+				document.getElementById('top_menu').style.setProperty('--menu-item-count', document.getElementsByClassName('top_menu_item').length);
+			</script>
+		</div>
+		<!-- /noindex -->			<script type="text/javascript">
+				if(window.performance
+				&& (performance.getEntriesByName || performance.getEntriesByType)
+				&& window.PerformancePaintTiming
+				&& window.requestAnimationFrame)
+					(function(){
+						var disableFaultyPaintReporting = function(){
+							if(performance.faultyPaintReportingDisabled)
+								return;
+							else if(document.visibilityState === 'hidden' && !performance.getEntriesByType('paint').length)
+								performance.faultyPaintReportingDisabled = document.prerendering ? 'prerender' : 'hidden';
+							else if(!('standalone' in navigator) && (!window.styleDeferred || !styleDeferred.waitingPaint))
+								requestAnimationFrame(function(){
+									requestAnimationFrame(function(){
+										setTimeout(function(){
+											if(performance.faultyPaintReportingDisabled || performance.getEntriesByType('paint').length)
+												return;
+											performance.faultyPaintReportingDisabled = 'timeout';
+										}, 500);
+									});
+								});
+						};
+						if(window.styleDeferred && !styleDeferred.inactive && !styleDeferred.usingShell){
+							styleDeferred.push(disableFaultyPaintReporting);
+							var splashPreload = document.getElementById('css_shell_splash_preload');
+							if(splashPreload)
+								splashPreload.onload = disableFaultyPaintReporting;
+						}
+						else
+							disableFaultyPaintReporting();
+					})();
+			</script>
+<script type="text/javascript">
+			deferred.push(function(){
+				App.navChainCarousel = new App.Carousel('navchain_inner', 'w_navchain', 'navchain_left', 'navchain_right', null, {
+					bypixel:false,
+					absolute:true,
+					step:1,
+					wrap:false
+				});
+				var navChain = SSP.DOM.byId('w_navchain');
+				SSP.DOM.listen(navChain, 'click', App.Handler.navChainClick);
+				if(SSP.Browser.hasTouchScreen)
+					SSP.DOM.listen(navChain, 'touchstart', App.Handler.navChainTouchStart);
+							});
+		</script><div id="navchain"><div class="navchain_carousel__navigation left disabled" id="navchain_left"></div><div id="navchain_inner">
+		<ol id="w_navchain" class="blank w" itemtype="http://schema.org/BreadcrumbList" itemscope><!--noindex-->
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/" id="navchain_level_1" target="_top" itemprop="item">Главная</a>
+<meta itemprop="name" content="Главная" />
+<meta itemprop="position" content="1" />
+</li>
+<!--/noindex-->
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/section/books" id="navchain_level_2" target="_top" itemprop="item">Книги и периодика</a>
+<meta itemprop="name" content="Книги и периодика" />
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/section/books/books_dev" id="navchain_level_3" target="_top" title="Книги для разработчиков и администраторов 1С" itemprop="item">Книги для разработчиков и администраторов 1С</a>
+<meta itemprop="name" content="Книги для разработчиков и администраторов 1С" />
+<meta itemprop="position" content="3" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/db/intgr83" id="navchain_level_4" target="_top" title="Технологии интеграции &quot;1С:Предприятия 8.3&quot;" itemprop="item">Технологии интеграции &quot;1С:Предприятия 8.3&quot;</a>
+<meta itemprop="name" content="Технологии интеграции &quot;1С:Предприятия 8.3&quot;" />
+<meta itemprop="position" content="4" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="inline-block">
+<a class="inline-block" href="/db/intgr83/content/5/hdoc" id="navchain_level_5" target="_top" title="Глава 1. Интернет-технологии" itemprop="item">Глава 1. Интернет-технологии</a>
+<meta itemprop="name" content="Глава 1. Интернет-технологии" />
+<meta itemprop="position" content="5" />
+</li>
+<li class="inline-block">
+<h1 class="inline-block" id="navchain_level_6" title="Автоматический REST-интерфейс (OData)"><noscript id="navchain_autofocus_noscript"><input class="autofocus_noscript" type="text" tabindex="-1" autofocus></noscript>Автоматический REST-интерфейс (OData)</h1>
+</li>
+<script type="text/javascript">
+	deferred.push(function(){
+		if(App.navChainCarousel)
+		{
+			App.navChainCarousel.adjust();
+						App.navChainCarousel.moveTo(5, App.Carousel.MOVETO_ALIGN_LEFT, true);
+		}
+	});
+	(function(){
+		var nans = document.getElementById('navchain_autofocus_noscript');
+		if(nans)
+			nans.parentNode.removeChild(nans);
+		var ribbon = document.getElementById('w_navchain');
+		ribbon.style.visibility = 'hidden';
+		var enableButton = function(id){
+			var button = document.getElementById(id);
+			if(button){
+				button.className = button.className.replace(/\bdisabled\b/g, ' ');
+				return true;
+			}
+		};
+		var removePseudo = function(){
+			document.documentElement.className = document.documentElement.className.replace(/(^|\s+)pseudo-navchain-chevron-(left|right)\b[^\s]*/g, ' ');
+			if(window.styleDeferred && !styleDeferred.inactive && styleDeferred.appendShell)
+				styleDeferred.appendShell('body::before{display:none}');
+		};
+		var adjustCarousel = function(isEager){
+			var style = ribbon.style;
+			if(style.display !== 'block')
+				style.display = 'block'
+			try{
+				var aperture = document.getElementById('navchain_inner');
+				var apertureRect = aperture.getBoundingClientRect();
+				var apertureSize = Math.round(apertureRect.right) - Math.round(apertureRect.left);
+				var ribbonSize = ribbon.scrollWidth;
+				if(ribbonSize > apertureSize){
+					var moveTo = ribbon.children[5];
+					var moveToRect = moveTo.getBoundingClientRect();
+					var ribbonPosition = Math.round(apertureRect.left) - Math.round(moveToRect.left);
+					var supportsTransform = window.CSS && CSS.supports && CSS.supports('transform: translate(0px, 0px)');
+					var existingMatch = supportsTransform ? style.transform.match(/^translate\((-?\d+[\.\d]*)px\b/) : style.left.match(/^(-?\d+[\.\d]*)px$/);
+					var existingPosition = existingMatch ? parseInt(existingMatch[1], 10) : 0;
+					if(existingPosition)
+						ribbonPosition += existingPosition;
+					if(ribbonPosition > 0)
+						ribbonPosition = 0;
+					else{
+						if(isEager && !document.getElementById('navchain_left'))
+							setTimeout(function(){
+								enableButton('navchain_left') || setTimeout(function(){enableButton('navchain_left')}, 0);
+							}, 0);
+						else
+							enableButton('navchain_left');
+					}
+					if(ribbonPosition < apertureSize - ribbonSize)
+						ribbonPosition = apertureSize - ribbonSize;
+					else{
+						if(isEager && !document.getElementById('navchain_right'))
+							setTimeout(function(){
+								enableButton('navchain_right') || setTimeout(function(){enableButton('navchain_right')}, 0);
+							}, 0);
+						else
+							enableButton('navchain_right');
+					}
+					if(window.requestAnimationFrame)
+						requestAnimationFrame(function(){
+							requestAnimationFrame(function(){
+								requestAnimationFrame(removePseudo);
+							});
+						});
+					else
+						setTimeout(removePseudo, 0);
+					if(ribbonPosition){
+						if(supportsTransform)
+							style.transform = 'translate(' + ribbonPosition + 'px, 0px)';
+						else
+							style.left = ribbonPosition + 'px';
+						if(window.App&&App.navChainCarousel)
+							App.navChainCarousel.syncPosition(ribbonPosition);
+					}
+				}
+			}catch(e){
+				console.log(e);
+			}
+			style.visibility = 'visible';
+			if(isEager && window.styleDeferred && !styleDeferred.inactive && styleDeferred.appendShell)
+				styleDeferred.appendShell('html::before{display:none}');
+		};
+		if(window.styleDeferred){
+			if(styleDeferred.waitingPaint)
+				;
+			else if(styleDeferred.inactive
+			|| styleDeferred.usingShell && ('standalone' in navigator || !document.documentElement.className.match(/(^|\s+)pseudo-navchain-chevron-right(\s+|$)/)))
+				adjustCarousel(true);
+			else
+				styleDeferred.push(adjustCarousel);
+			if(styleDeferred.waitingPaint || window.TouchEvent && 'standalone' in navigator){
+				var fonts = document.fonts;
+				if(fonts && (!fonts.check || !fonts.ready))
+					fonts = void 0;
+				var bodyFont = 'normal 400 1px Roboto';
+				var adjustCarouselWithFonts = function(){
+					if(fonts && 'standalone' in navigator){
+						if(fonts.check(bodyFont))
+							adjustCarousel();
+						else
+							fonts.ready.then(function(){
+								adjustCarousel();
+							});
+					}else
+						setTimeout(adjustCarousel, 0);
+				};
+				if(styleDeferred.waitingPaint)
+					var waitingPaintInterval = setInterval(function(){
+						if(styleDeferred.inactive
+						|| !styleDeferred.waitingPaint
+						|| window.PerformancePaintTiming && performance.getEntriesByType('paint').length && (!('standalone' in navigator) || fonts && fonts.check(bodyFont))){
+							clearInterval(waitingPaintInterval);
+							if(window.requestAnimationFrame)
+								requestAnimationFrame(function(){
+									requestAnimationFrame(adjustCarouselWithFonts);
+								});
+							else
+								setTimeout(adjustCarouselWithFonts, 0);
+							ribbon.className += ' not-waiting-paint';
+						}
+					}, 16);
+				else
+					setTimeout(adjustCarouselWithFonts, 0);
+			}
+		}
+		else
+			adjustCarousel(true);
+	})();
+</script>
+</ol>		</div><div class="navchain_carousel__navigation right disabled" id="navchain_right"></div></div>						<script type="text/javascript">
+				deferred.push(function(){try{SSP.Scroll.mimicByClass('mimic_scroll');}catch(e){}});
+							deferred.push(function(){if(!SSP.Browser.Android && !SSP.Browser.IOS && document.activeElement == document.body || document.activeElement == document.documentElement)SSP.DOM.requestAnimationFrame(function(){SSP.DOM.focus(SSP.DOM.byId('w_content'));});});
+						</script>
+<div id="w_content" class="l"><div id="l_classifier" class="l" style="display:none"></div><div id="l_content" class="l with-toc null" style="display:"><div id="l_doc" class="l" style="display:"><div id="l_doc_frame" class="l" data-db="intgr83" data-doc="47" data-tab="hdoc" style="display:"><div id="l_doc_frame_inner" class="l loading null" data-header-font="" data-header-tag="" data-header-pseudo="" data-wait-fonts="" data-wait-images="" style="display:"><iframe id="w_metadata_doc_frame" class="l mimic_scroll" name="w_metadata_doc_frame" frameborder="0" scrolling="auto" title="Документ" src="/db/content/intgr83/src/43.html" srcdoc="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;&lt;html class=&quot;js-disabled&quot;&gt;&lt;head&gt;&lt;title&gt;&amp;#1040;&amp;#1074;&amp;#1090;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1090;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081; REST-&amp;#1080;&amp;#1085;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1092;&amp;#1077;&amp;#1081;&amp;#1089; (OData) :: &amp;#1058;&amp;#1077;&amp;#1093;&amp;#1085;&amp;#1086;&amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1080; &amp;#1080;&amp;#1085;&amp;#1090;&amp;#1077;&amp;#1075;&amp;#1088;&amp;#1072;&amp;#1094;&amp;#1080;&amp;#1080; &quot;1&amp;#1057;:&amp;#1055;&amp;#1088;&amp;#1077;&amp;#1076;&amp;#1087;&amp;#1088;&amp;#1080;&amp;#1103;&amp;#1090;&amp;#1080;&amp;#1103; 8.3&quot;&lt;/title&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=windows-1251&quot;&gt;&lt;/meta&gt;&lt;style&gt;p, .MsoNormal {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 1.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+.listcont, .ListCont {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0); 
+	font-style: normal; 
+	margin-left: 2.8em;
+	margin-bottom: 1.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+.listcont2, .ListCont2 {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0); 
+	font-style: normal; 
+	margin-left: 5.6em;
+	margin-bottom: 1.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+.listcont3, .ListCont3 {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0); 
+	font-style: normal; 
+	margin-left: 8.4em;
+	margin-bottom: 1.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+li {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+.listingnazv {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	font-size: 0.83em;
+	text-align: left;
+	font-weight : normal;
+}
+.tablnazv {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	font-size: 0.83em;
+	text-align: center;
+	font-weight : normal;
+}
+.picnazv, .MsoCaption, .picturepodp {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 1.20em;
+	font-size: 0.83em;
+	text-align: center;
+	font-weight : normal;
+}
+.picyakor {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	text-align: center;
+	font-weight : normal;
+}
+.picture, .Picture {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	text-align: center;
+	font-weight : normal;
+}
+.bold {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	font-size: 0.92em;
+	font-weight : bold;
+}
+.vrezkanazv, .Warningword {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	margin-bottom: 0.20em;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : bold;
+}
+.vrezkabody, .Notes, .sovet {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: #666666;
+	font-style: italic;
+	margin-left: 26px;
+	margin-bottom: 20px;
+	font-size: 0.92em;
+	text-align: left;
+	font-weight : normal;
+}
+.interface, .Interface, .kursiv, .command {
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1.20em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-indent: 0.00em;
+	color: rgb(0,0,0);
+	font-style: normal;
+	margin-left: 0.00em;
+	font-style: italic;
+	font-size: 0.92em;
+	font-weight : normal;
+}
+h1 {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px;
+	font-size: 1.49em; 
+	margin: 32px 0px 20px 0px;
+}
+h2 {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px;
+	font-size: 1.27em; 
+	margin: 24px 0px 10px 0px;
+}
+h3 {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px;
+	font-size: 1.08em; 
+	margin: 18px 0px  5px 0px;
+}
+h4, h5, h6, h7, h8, h9 {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px;
+	font-size: 0.92em; 
+	margin: 13px 0px 0px 0px;
+}
+.title {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal;  
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px; 
+	font-weight: bold;
+	margin-left: 32px; 
+	margin-bottom: 60px;
+	font-size: 1.49em;
+}
+.titlecopy {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal;  
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px; 
+	font-weight: bold;
+	margin-left: 0px; 
+	margin-bottom: 30px;
+	font-size: 1.49em;
+}
+.author {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal;  
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px; 
+	font-weight: normal;
+ 	margin: 32px 0px 60px 0px;
+	font-size: 1.27em;
+}
+.authorcopy {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal;  
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px; 
+	font-weight: normal;
+ 	margin: 32px 0px 30px 0px;
+	font-size: 1.27em;
+}
+.ancopy {
+	font-style: italic;
+}
+.firmacopy {
+	font-weight: bold;
+}
+.version {
+	color: #000000; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-style: normal; 
+	font-variant: normal;  
+	line-height: 1.2; 
+	text-align: left; 
+	text-decoration: none; 
+	text-indent: 0px; 
+	font-weight: normal;
+	margin-left: 32px;
+	font-size: 1.27em;
+}
+img {
+	border-width : 0;
+	max-width : 100%;
+	max-height: 100%;
+}
+table {
+	border-collapse: collapse;
+	border-color : #999;
+	border-width: 1px; 
+	color: #333333; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 0.90em; 
+	font-weight: normal; 
+	line-height: 1.1; 
+	width: 100%; 
+	margin-bottom: 1.20em;
+}
+thead {
+	border: inherit;
+}
+thead th{
+	background-color: #A6A6A6; 
+	color: #FFF; 
+}
+tbody, tfoot, tr {
+	border:inherit;
+}
+th {
+	border-color : #666;    
+	border-style : solid;   
+	border-width : 1px; 
+	padding : 5px; 
+	padding-top: 7px;
+}
+td {
+	border-color : #666;    
+	border-style : solid;   
+	border-width : 1px; 
+	padding : 5px; 
+	padding-top: 7px;
+	background-color: #FFFFFF; 
+	color : #4D4D4D;
+}
+div.codebox {
+	background-color: #FEFFCC;
+	border: thin solid; 
+	margin-bottom: 1.2em; 
+	padding: 0.5em; 
+	border-color: #0000ff;
+}
+.k {
+	color: #FF0000;
+}
+.c {
+	color: #008000;
+}
+.s {
+	color: #000000;
+}
+.n {
+	color: #000000;
+}
+.p {
+	color: #993300;
+}
+p.codeline {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 0.00em;
+}
+p.codeline1indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 1.20em;
+}
+p.codeline2indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 2.40em;
+}
+p.codeline3indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 3.60em;
+}
+p.codeline4indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 4.80em;
+}
+p.codeline5indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 6.00em;
+}
+p.codeline6indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 7.20em;
+}
+p.codeline7indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 8.40em;
+}
+p.codeline8indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 9.60em;
+}
+p.codeline9indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 10.80em;
+}
+p.codeline10indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #0000ff;
+	margin-left: 12.00em;
+}
+p.textline {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 0.00em;
+}
+p.textline1indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 1.20em;
+}
+p.textline2indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 2.40em;
+}
+p.textline3indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 3.60em;
+}
+p.textline4indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 4.80em;
+}
+p.textline5indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 6.00em;
+}
+p.textline6indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 7.20em;
+}
+p.textline7indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 8.40em;
+}
+p.textline8indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 9.60em;
+}
+p.textline9indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 10.80em;
+}
+p.textline10indent {
+	font-family: &quot;Courier&quot;; 
+	font-size: 0.83em;  
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 1.20em; 
+	margin-bottom: 0.00em; 
+	margin-right: 0.00em; 
+	margin-top: 0.00em; 
+	text-align: left; 
+	text-indent: 0.00em;
+	color: #000000;
+	margin-left: 12.00em;
+}&lt;/style&gt;&lt;/link&gt;&lt;meta name=&quot;robots&quot; content=&quot;noarchive&quot;&gt;
+&lt;link href=&quot;https://its.1c.ru/db/content/intgr83/src/43.html&quot; rel=&quot;canonical&quot;&gt;
+&lt;style&gt;a
+{text-decoration-skip-ink:none}
+
+.msocomtxt,
+.iss_disk_only
+{display:none}
+
+@media not all and (any-pointer: coarse) {
+  * a:not([href]),
+  * a:not([href]):hover
+  {color:inherit;text-decoration:inherit}
+  
+  * a:not([href]):focus,
+  a.bookmark:focus
+  {outline:0}
+}
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  * a:not([href]),
+  * a:not([href]):hover
+  {color:inherit;text-decoration:inherit}
+  
+  * a:not([href]):focus,
+  a.bookmark:focus
+  {outline:0}
+}
+
+pre
+{font-family:Courier New, Courier, monospace}
+
+.iss_sch_hl,
+mark
+{background-color:#fff3a9;color:inherit}
+
+.iss_sch_hl.active,
+mark.active
+{background-color:#ffdf16!important}
+
+#w_share,
+#w_webpush
+{margin:12px 0!important;padding:12px 20px!important;border-top:2pt #d7d7d7 solid;border-bottom:2pt #d7d7d7 solid}
+
+#w_share
+{margin:20px}
+
+#w_content #w_share
+{margin-left:0}
+
+#w_share a.share
+{text-decoration:none;width:40px;height:40px;margin:0 5px 0 0;background-image:url('/img/share.gif?v2');background-repeat:no-repeat;display:inline-block}
+
+#w_share a#share_vk
+{background-position:0 0}
+
+#w_share a#share_fb
+{background-position:-45px 0}
+
+#w_share a#share_ok
+{background-position:-90px 0}
+
+#w_share a#share_tw
+{background-position:-135px 0}
+
+#w_share a#share_gp
+{background-position:-180px 0}
+
+#w_share a#share_lj
+{background-position:-225px 0}
+
+#w_webpush
+{display:none!important}
+
+#w_webpush #webpush_button
+{background-image:url('/img/template/button-bcg-grey.gif');background-position:bottom;background-repeat:repeat-x;height:20px;border:1px solid #a0a0a0;color:#404040;font-family:Verdana,Tahoma,sans-serif;font-size:12px;width:auto!important}
+
+@media print { #w_share, #w_webpush, #w_news_footer {display:none!important} }
+
+img.enlargeable
+{
+	max-width: 100%;
+	height: auto;
+	cursor: pointer;
+	cursor: zoom-in;
+	transition: max-width 600ms ease;
+}
+
+img.enlargeable.enlarged
+{
+	max-width: none;
+	cursor: pointer;
+	cursor: zoom-out;
+}
+
+img.enlargeable.incomplete
+{
+	background-image: url('/img_new/spinner-tpt-small.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active)
+{
+	img.enlargeable.incomplete
+	{
+		background-image: none;
+	}
+}
+
+.aspect-ratio-keeper {
+  position: relative;
+  max-height: var(--max-height);
+}
+
+.aspect-ratio-keeper::before {
+  content: &quot;&quot;;
+  display: block;
+  padding-bottom: calc(100% / (var(--aspect-ratio)) + var(--height-compensation));
+}
+
+.aspect-ratio-keeper &gt; img.enlargeable,
+.aspect-ratio-keeper &gt; a,
+.aspect-ratio-keeper &gt; span {
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+}
+
+.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; img.enlargeable,
+.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; a,
+.aspect-ratio-keeper.aspect-ratio-keeper-left &gt; span {
+  left: 0;
+}
+
+.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; img.enlargeable,
+.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; a,
+.aspect-ratio-keeper.aspect-ratio-keeper-right &gt; span {
+  right: 0;
+}
+
+.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; img.enlargeable,
+.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; a,
+.aspect-ratio-keeper.aspect-ratio-keeper-center &gt; span {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+p:has(img) {
+	contain: none;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (any-pointer: coarse) {
+	html,
+	body {
+		scrollbar-gutter: stable;
+	}
+	html::-webkit-scrollbar,
+	body::-webkit-scrollbar {
+		background-color: transparent;
+		--scrollbar-corner: absent;
+	}
+	html::-webkit-scrollbar:corner-present,
+	body::-webkit-scrollbar:corner-present {
+		--scrollbar-corner: present;
+	}
+	html::-webkit-scrollbar-track,
+	body::-webkit-scrollbar-track,
+	html::-webkit-scrollbar-button,
+	body::-webkit-scrollbar-button {
+		background-color: #e7e7e7;
+	}
+	html::-webkit-scrollbar-thumb,
+	body::-webkit-scrollbar-thumb {
+		background-color: #bbbbbb;
+	}
+	html::-webkit-scrollbar:vertical,
+	body::-webkit-scrollbar:vertical,
+	html::-webkit-scrollbar-track:vertical,
+	body::-webkit-scrollbar-track:vertical,
+	html::-webkit-scrollbar-thumb:vertical,
+	body::-webkit-scrollbar-thumb:vertical,
+	html::-webkit-scrollbar-button:vertical,
+	body::-webkit-scrollbar-button:vertical {
+		width: 10px;
+		border-top: 0;
+		border-bottom: 0;
+	}
+	html::-webkit-scrollbar:horizontal,
+	body::-webkit-scrollbar:horizontal,
+	html::-webkit-scrollbar-track:horizontal,
+	body::-webkit-scrollbar-track:horizontal,
+	html::-webkit-scrollbar-thumb:horizontal,
+	body::-webkit-scrollbar-thumb:horizontal,
+	html::-webkit-scrollbar-button:horizontal,
+	body::-webkit-scrollbar-button:horizontal {
+		height: 10px;
+		border-left: 0;
+		border-right: 0;
+	}
+	html::-webkit-scrollbar,
+	body::-webkit-scrollbar,
+	html::-webkit-scrollbar-track,
+	body::-webkit-scrollbar-track,
+	html::-webkit-scrollbar-thumb,
+	body::-webkit-scrollbar-thumb,
+	html::-webkit-scrollbar-button,
+	body::-webkit-scrollbar-button {
+		border-width: 3px;
+		border-style: solid;
+		border-color: transparent;
+		-webkit-background-clip: content-box;
+		background-clip: content-box;
+	}
+	html::-webkit-scrollbar-thumb:vertical,
+	body::-webkit-scrollbar-thumb:vertical {
+		min-height: 66px;
+	}
+	html::-webkit-scrollbar-thumb:horizontal,
+	body::-webkit-scrollbar-thumb:horizontal {
+		min-width: 66px;
+	}
+	html::-webkit-scrollbar-corner,
+	body::-webkit-scrollbar-corner,
+	html::-webkit-resizer,
+	body::-webkit-resizer,
+	html::-webkit-scrollbar-button,
+	body::-webkit-scrollbar-button,
+	html.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end:corner-present,
+	body.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end:corner-present,
+	html.attached_to_viewport &gt; body::-webkit-scrollbar-button:vertical:increment:end:corner-present {
+		display: none;
+	}
+	html.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end,
+	body.attached_to_viewport::-webkit-scrollbar-button:vertical:increment:end,
+	html.attached_to_viewport &gt; body::-webkit-scrollbar-button:vertical:increment:end {
+		display: block;
+		height: 0;
+	}
+}
+&lt;/style&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
+&lt;style id=&quot;doc_style&quot;&gt;.iss_sch_hl,mark,.iss_sch_hl.active,mark.active{background-color:transparent!important;padding:0}&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;(function(window, undefined)
+{
+	&quot;use strict&quot;;
+	
+	if(window.frameElement)
+	{
+		var parent = window.frameElement.ownerDocument.defaultView || window.frameElement.ownerDocument.parentWindow;
+		var styleDeferred = parent.styleDeferred;
+		var iframeParent = window.frameElement.parentNode;
+		var waitFonts = iframeParent.getAttribute('data-wait-fonts');
+		var headerFont = iframeParent.getAttribute('data-header-font');
+		var headerTag = iframeParent.getAttribute('data-header-tag');
+		var headerPseudo = iframeParent.getAttribute('data-header-pseudo');
+		
+		if(waitFonts)
+		{
+			waitFonts = waitFonts.split(',');
+			var fontTriggerCss = [];
+			var fontTriggerRules = 'content:&quot;.&quot;;position:absolute;visibility:hidden';
+			
+			if(waitFonts[0])
+				fontTriggerCss.push('html::before{' + fontTriggerRules + ';font:' + waitFonts[0] + '}');
+			
+			if(waitFonts[1])
+				fontTriggerCss.push('html::after{' + fontTriggerRules + ';font:' + waitFonts[1] + '}');
+			
+			if(fontTriggerCss.length)
+			{
+				var fontTriggerStyle = document.createElement('STYLE');
+				fontTriggerStyle.type = 'text/css';
+				fontTriggerStyle.appendChild(document.createTextNode(fontTriggerCss.join(&quot;\r\n&quot;)));
+				document.head.appendChild(fontTriggerStyle);
+				var forceLayout = document.documentElement.offsetHeight;
+				document.head.removeChild(fontTriggerStyle);
+			}
+		}
+	}
+	else
+	{
+		var parent = window;
+		var styleDeferred = void 0;
+		var iframeParent = void 0;
+	}
+	
+	var iOS = window.TouchEvent &amp;&amp; 'standalone' in navigator;
+	var Android = navigator.userAgentData &amp;&amp; navigator.userAgentData.platform === 'Android'
+			   || (!navigator.userAgentData || !navigator.userAgentData.platform &amp;&amp; navigator.vendor === 'Google Inc.') &amp;&amp; navigator.userAgent.match(/\bAndroid\b/);
+	var supportsScrollbarStyle = window.CSS &amp;&amp; CSS.supports &amp;&amp; CSS.supports('selector(::-webkit-scrollbar)');
+	var raf = window.requestAnimationFrame || function(cb){setTimeout(cb, 0);};
+	
+	if(iOS)
+		document.addEventListener('touchstart', (function(){return function(){}})());
+	
+	var hasTouchScreen = iOS || window.matchMedia &amp;&amp; matchMedia('(any-pointer: coarse)').matches;
+	var dc = document.documentElement.className.replace(/(^|\s+)js-disabled(\s+|$)/, ' ');
+	dc += ' ' + (hasTouchScreen ? 'touchscreen' : 'no-touchscreen');
+	
+	if(iOS)
+		dc += ' ios';
+	else if(Android)
+		dc += ' android';
+	
+	document.documentElement.className = dc;
+	
+	if(window.frameElement &amp;&amp; (Android || parent.LIGHTHOUSE))
+		var triggerLCP = parent.DEV
+					  || parent.LIGHTHOUSE
+					  || navigator.userAgent.match(/\b(Chrome-Lighthouse|PTST)\b/);
+	else
+		var triggerLCP = false;
+	
+	var waitingImages = window.frameElement ? !!iframeParent.getAttribute('data-wait-images') : false;
+	var waitingFonts = false;
+	var fontWaitDeadline = 1500;
+	var LCPtriggered = false;
+	
+	var showDocument = function(noTriggerLCP)
+	{
+		waitingFonts = false;
+		var rx = /(^|\s)loading(\s|$)/;
+		
+		if(iframeParent.className.match(rx))
+		{
+			if(headerTag &amp;&amp; headerPseudo &amp;&amp; styleDeferred &amp;&amp; styleDeferred.appendShell &amp;&amp; !styleDeferred.inactive)
+			{
+				var removeFakeHeader = function()
+				{
+					if(styleDeferred.inactive
+					|| document.readyState === 'complete'
+					|| document.getElementsByTagName(headerTag)[0] &amp;&amp; (!headerFont || checkFonts([headerFont])))
+					{
+						if(!styleDeferred.inactive)
+							styleDeferred.appendShell(headerPseudo + '{display:none}');
+					}
+					else
+						raf(removeFakeHeader);
+				};
+				
+				raf(removeFakeHeader);
+			}
+			
+			iframeParent.className = iframeParent.className.replace(rx, ' ');
+			
+			if((!styleDeferred || styleDeferred.usingShell || styleDeferred.inactive)
+			&amp;&amp; (!styleDeferred || styleDeferred.activateInterval || styleDeferred.finalizeInterval || parent.SSP &amp;&amp; parent.App))
+			{
+				iframeParent.style.width = iframeParent.offsetWidth + 'px';
+				var forceLayout = iframeParent.offsetWidth;
+				iframeParent.style.removeProperty('width');
+			}
+			
+			if(triggerLCP
+			&amp;&amp; !noTriggerLCP)
+			{
+				if(styleDeferred &amp;&amp; !styleDeferred.usingShell &amp;&amp; !styleDeferred.inactive)
+					styleDeferred.push(function(){
+						triggerLCPforLighthouse(true);
+					});
+				else if(window.location.toString() === 'about:srcdoc')
+					triggerLCPforLighthouse();
+				else
+					raf(function(){
+						raf(triggerLCPforLighthouse);
+					});
+			}
+		}
+	};
+	
+	var readyToShowDocument = function()
+	{
+		if(!parent.App
+		|| !parent.App.Its
+		|| !parent.App.Its.Handler
+		|| !parent.App.Its.Handler.loadedInitialDocument)
+			if(!hasDocumentScrollIntent())
+				if(styleDeferred
+				|| !Android &amp;&amp; !iOS)
+				{
+					if(!Android &amp;&amp; !iOS &amp;&amp; !hasTouchScreen)
+					{
+						var syncedCustomScrollbars = syncCustomScrollbars();
+						
+						if(!syncedCustomScrollbars
+						&amp;&amp; !supportsScrollbarStyle)
+							return false;
+					}
+					
+					return true;
+				}
+		
+		return false;
+	};
+	
+	var syncCustomScrollbars = function()
+	{
+		var frameParent = frameElement.parentNode;
+		
+		if(frameParent
+		&amp;&amp; frameParent.querySelector)
+		{
+			var bar_v = frameParent.querySelector('div.thin_scroll_bar_v');
+			var thumb_v = frameParent.querySelector('div.thin_scroll_thumb_v');
+			var bar_h = frameParent.querySelector('div.thin_scroll_bar_h');
+			var thumb_h = frameParent.querySelector('div.thin_scroll_thumb_h');
+			var corner = frameParent.querySelector('div.thin_scroll_corner');
+			
+			if(!bar_v || !thumb_v || !bar_h || !thumb_h || !corner)
+			{
+				if(supportsScrollbarStyle)
+					return;
+				else if(navigator.userAgent.match(/Edge\/([\d]{1,3})/))
+					return true;
+				
+				var parentDocument = parent.document;
+				
+				bar_v = parentDocument.createElement('div');
+				bar_v.className = 'thin_scroll_bar_v';
+				
+				thumb_v = parentDocument.createElement('div');
+				thumb_v.className = 'thin_scroll_thumb_v';
+				
+				bar_v.appendChild(thumb_v);
+				
+				bar_h = parentDocument.createElement('div');
+				bar_h.className = 'thin_scroll_bar_h';
+				
+				thumb_h = parentDocument.createElement('div');
+				thumb_h.className = 'thin_scroll_thumb_h';
+				
+				bar_h.appendChild(thumb_h);
+				
+				corner = parentDocument.createElement('div');
+				corner.className = 'thin_scroll_corner';
+				
+				frameParent.appendChild(corner);
+				frameParent.appendChild(bar_v);
+				frameParent.appendChild(bar_h);
+			}
+			
+			if(supportsScrollbarStyle)
+			{
+				bar_v.style.display = 'none';
+				thumb_v.style.display = 'none';
+				bar_h.style.display = 'none';
+				thumb_h.style.display = 'none';
+				corner.style.display = 'none';
+			}
+			else
+			{
+				if(document.scrollingElement)
+					var scrolling = document.scrollingElement;
+				else
+					var scrolling = document.compatMode === 'BackCompat' ? document.body : document.documentElement;
+				
+				var has_scroll_v = scrolling.scrollHeight &gt; scrolling.clientHeight;
+				var has_scroll_h = scrolling.scrollWidth &gt; scrolling.clientWidth;
+				
+				bar_v.style.display = 'block';
+				bar_v.style.removeProperty('bottom');
+				thumb_v.style.display = has_scroll_v ? 'block' : 'none';
+				bar_h.style.display = 'block';
+				bar_h.style.removeProperty('right');
+				thumb_h.style.display = has_scroll_h ? 'block' : 'none';
+				corner.style.display = 'block';
+				
+				return true;
+			}
+		}
+		
+		return false;
+	};
+	
+	var checkFonts = function(fonts)
+	{
+		if(document.fonts &amp;&amp; document.fonts.size &amp;&amp; document.fonts.check)
+			for(var i = 0; i &lt; fonts.length; i++)
+				try
+				{
+					if(!document.fonts.check(fonts[i]))
+						return false;
+				}
+				catch(e){}
+		
+		return true;
+	};
+	
+	var fontWaitDeadlineMissed = function()
+	{
+		var performance = window.frameElement ? parent.performance : window.performance;
+		
+		if(performance)
+		{
+			if(performance.now)
+				return performance.now() &gt;= fontWaitDeadline;
+			else if(performance.timing
+			&amp;&amp; performance.timing.navigationStart)
+				return Date.now() - performance.timing.navigationStart &gt;= fontWaitDeadline;
+		}
+	};
+	
+	var hasDocumentScrollIntent = function()
+	{
+		if(!window.frameElement)
+			return false;
+		
+		return parent.location.hash !== ''
+			|| parent.location.pathname.match(/@[0-9a-f]+[:\/]*$/)
+			|| window.location.hash !== ''
+			|| window.location.search.match(/[\?&amp;]search=/);
+	};
+	
+	window.alertDiskOnly = parent.alertDiskOnly = function()
+	{
+		alert('Данная возможность доступна в дисковой версии');
+	};
+	
+	window.alertBrokenLink = parent.alertBrokenLink = function()
+	{
+		alert('Ошибка! Неизвестная ссылка');
+	};
+	
+	window.onBodyAvailable = function()
+	{
+		if(!window.frameElement
+		|| !parent.TEMPLATE_NEW)
+			return;
+		
+		var imgRules = '{max-width:100%;height:auto;background:center no-repeat url(\'/img_new/spinner-tpt-small.svg\')}';
+		var css = 'p.pic_image&gt;img,'
+				+ 'div.pic_image&gt;img,'
+				+ 'p.Picture&gt;img,'
+				+ 'div.Picture&gt;img,'
+				+ 'p img:only-child,'
+				+ 'div img:only-child'
+				+ imgRules
+				+ 'p:has(img~script) img,'
+				+ 'div:has(img~script) img'
+				+ imgRules;
+		
+		var style = document.createElement('STYLE');
+		style.id = 'img_enlargeable_style_initial';
+		style.type = 'text/css';
+		style.appendChild(document.createTextNode(css));
+		document.head.appendChild(style);
+		
+		if(iOS
+		&amp;&amp; (!window.CSS || !CSS.supports || !CSS.supports('touch-action: pan-y')))
+		{
+			var parentWidth = window.frameElement.parentNode.offsetWidth;
+			
+			if(!parentWidth)
+				return;
+			
+			var body = document.body;
+			var documentElementStyle = window.getComputedStyle(documentElement);
+			var bodyStyle = window.getComputedStyle(body);
+			var documentElementPadding = parseInt(documentElementStyle.paddingLeft) + parseInt(documentElementStyle.paddingRight);
+			var bodyMargin = parseInt(bodyStyle.marginLeft) + parseInt(bodyStyle.marginRight);
+			var bodyPadding = parseInt(bodyStyle.paddingLeft) + parseInt(bodyStyle.paddingRight);
+			documentElement.style.setProperty('margin-left', '0px', 'important');
+			documentElement.style.setProperty('margin-right', '0px', 'important');
+			documentElement.style.setProperty('min-width', 'auto', 'important');
+			documentElement.style.setProperty('max-width', 'none', 'important');
+			documentElement.style.setProperty('width', (parentWidth - documentElementPadding) + 'px', 'important');
+			body.style.setProperty('min-width', 'auto', 'important');
+			body.style.setProperty('max-width', 'none', 'important');
+			body.style.setProperty('width', (parentWidth - documentElementPadding - bodyMargin - bodyPadding) + 'px', 'important');
+		}
+		
+		document.contentAdjustedForWebkitOverflowScrolling = true;
+		
+		if(!Android &amp;&amp; !iOS &amp;&amp; supportsScrollbarStyle)
+		{
+			var css = 'html::-webkit-scrollbar,body::-webkit-scrollbar'
+					+ '{width:17px;height:17px}'
+					+ 'html::-webkit-scrollbar,body::-webkit-scrollbar,'
+					+ 'html::-webkit-scrollbar-track,body::-webkit-scrollbar-track,'
+					+ 'html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb'
+					+ '{background-color:transparent}';
+			
+			var style = document.createElement('STYLE');
+			style.id = 'scrollbar_style_initial';
+			style.type = 'text/css';
+			style.appendChild(document.createTextNode(css));
+			document.head.appendChild(style);
+		}
+		
+		if((Android || !iOS &amp;&amp; supportsScrollbarStyle)
+		&amp;&amp; !document.body.className.match(/(?:^|\s)iframe\s+error(?:\s|$)/))
+		{
+			var scrollerStyleSheetId = 'scroller_stylesheet_w_metadata_doc_frame';
+			
+			if((!Android &amp;&amp; !iOS &amp;&amp; supportsScrollbarStyle || parent.document.getElementById(scrollerStyleSheetId))
+			&amp;&amp; !document.getElementById(scrollerStyleSheetId))
+			{
+				if(document.scrollingElement)
+					var scrollerTagName = document.scrollingElement.tagName.toLowerCase();
+				else
+					var scrollerTagName = document.compatMode === 'BackCompat' ? 'body' : 'html';
+				
+				var css = scrollerTagName
+						+ '{overflow-y:scroll}';
+				
+				var style = document.createElement('STYLE');
+				style.id = scrollerStyleSheetId;
+				style.type = 'text/css';
+				style.appendChild(document.createTextNode(css));
+				style.setAttribute('data-preserve-style', css);
+				document.head.appendChild(style);
+			}
+		}
+		
+		if(readyToShowDocument()
+		&amp;&amp; !waitingImages)
+		{
+			var doWaitFonts = !!waitFonts;
+			
+			if(doWaitFonts)
+			{
+				var connection = navigator.connection;
+				
+				if(fontWaitDeadlineMissed())
+					doWaitFonts = false;
+				else if((Android || iOS)
+				&amp;&amp; (navigator.hardwareConcurrency &amp;&amp; navigator.hardwareConcurrency &lt;= 4 || navigator.deviceMemory &amp;&amp; navigator.deviceMemory &lt;= 2 || navigator.maxTouchPoints &amp;&amp; navigator.maxTouchPoints &lt;= 2))
+					doWaitFonts = false;
+				else if(connection
+				&amp;&amp; (connection.type === 'cellular' || connection.type === 'unknown' || connection.effectiveType &amp;&amp; connection.effectiveType !== '4g'))
+					doWaitFonts = false;
+			}
+			
+			if(!doWaitFonts || !document.fonts || !document.fonts.size || !document.fonts.ready)
+				showDocument();
+			else
+			{
+				waitingFonts = true;
+				var fontWaiterInterval;
+				
+				var fontWaiter = function()
+				{
+					var fontsLoaded = true;
+					
+					if(waitingFonts
+					&amp;&amp; !fontWaitDeadlineMissed()
+					&amp;&amp; !checkFonts(waitFonts))
+						fontsLoaded = false;
+					
+					if(fontsLoaded)
+					{
+						if(fontWaiterInterval)
+						{
+							clearInterval(fontWaiterInterval);
+							fontWaiterInterval = void 0;
+						}
+						
+						showDocument();
+					}
+				};
+				
+				fontWaiter();
+				
+				if(waitingFonts)
+				{
+					raf(fontWaiter);
+					setTimeout(fontWaiter, 0);
+					fontWaiterInterval = setInterval(fontWaiter, 8);
+					document.fonts.ready.then(showDocument);
+					document.fonts.onloadingerror = showDocument;
+				}
+			}
+		}
+	};
+	
+	window.forceDocumentLayout = function(ignoreWaitingResources)
+	{
+		var currentScript = document.currentScript;
+		
+		if(currentScript
+		&amp;&amp; !currentScript.src
+		&amp;&amp; currentScript.parentNode
+		&amp;&amp; currentScript.parentNode.tagName !== 'HEAD')
+		{
+			var previousSibling = currentScript.previousSibling;
+			var unsizedImg = previousSibling
+						  &amp;&amp; previousSibling.tagName === 'IMG'
+						  &amp;&amp; (!previousSibling.getAttribute('width') &amp;&amp; !previousSibling.style.width || !previousSibling.getAttribute('height') &amp;&amp; !previousSibling.style.height);
+			
+			if(!unsizedImg &amp;&amp; window.CSS &amp;&amp; CSS.supports &amp;&amp; CSS.supports('selector(:has(*))'))
+				setTimeout(function(){
+					raf(function(){
+						raf(function(){
+							currentScript.parentNode.removeChild(currentScript);
+						});
+					});
+				}, 0);
+			else
+				currentScript.parentNode.removeChild(currentScript);
+			
+			if(unsizedImg)
+				return;
+		}
+		
+		if(!window.frameElement
+		|| !parent.TEMPLATE_NEW)
+			return;
+		
+		if((ignoreWaitingResources || !waitingImages &amp;&amp; (!waitingFonts || fontWaitDeadlineMissed()))
+		&amp;&amp; readyToShowDocument())
+		{
+			var forceLayout = document.documentElement.offsetHeight;
+			showDocument(true);
+			triggerLCPforLighthouse();
+		}
+	};
+	
+	window.adjustContentLegacy = function()
+	{
+		var css = 'pre, code, kbd, p.Programtext'
+				+ '{white-space:pre-wrap;word-wrap:break-word}'
+				+ 'h1, h2, h3, h4, h5, h6, p, li, table,'
+				+ 'p span, p font, p b, p strong, p i, p em,'
+				+ 'li span, li font, li b, li strong, li i, li em,'
+				+ 'table span, table font, table b, table strong, table i, table em,'
+				+ 'span.apiname'
+				+ '{white-space:normal;word-wrap:break-word}'
+				+ 'body&gt;div.index&gt;a, body&gt;div&gt;div.index&gt;a, ul.toc a,'
+				+ 'body&gt;ul:not([class]) a:only-of-type[target=&quot;_top&quot;],'
+				+ 'body&gt;ul:not([class]) a:only-of-type[href^=&quot;/&quot;],'
+				+ 'body&gt;ul:not([class]) a:only-of-type[href^=&quot;#&quot;]'
+				+ '{display:inline-block;margin-top:10px;word-wrap:normal}';
+		
+		if(!window.frameElement)
+		{
+			if(location.hash !== '_print'
+			&amp;&amp; location.hash !== '#_print')
+			{
+				css += 'p a, li a, table a'
+					 + '{white-space:normal;word-wrap:break-word}';
+			}
+		}
+		else if(!parent.MOBILE_ENABLED)
+			css += 'html {text-size-adjust:200%!important;-webkit-text-size-adjust:200%!important}';
+		
+		var style = document.createElement('STYLE');
+		style.type = 'text/css';
+		style.appendChild(document.createTextNode('@media (any-pointer: coarse),(pointer: none){' + css + '}'));
+		document.head.appendChild(style);
+	};
+	
+	window.triggerLCPforLighthouse = function(ignoreTriggered)
+	{
+		if(!window.frameElement
+		|| !triggerLCP
+		|| !ignoreTriggered &amp;&amp; LCPtriggered)
+			return;
+		
+		var overlay = parent.document.createElement('DIV');
+		overlay.className = 'lighthouse_forced_lcp_from_iframe';
+		overlay.style.backgroundColor = '#fff';
+		overlay.style.position = 'absolute';
+		overlay.style.display = 'block';
+		overlay.style.overflow = 'hidden';
+		overlay.style.top = 0;
+		overlay.style.bottom = 0;
+		overlay.style.left = 0;
+		overlay.style.right = 0;
+		overlay.style.opacity = '0.5';
+		overlay.innerHTML = '. '.repeat(5000);
+		parent.document.body.appendChild(overlay);
+		LCPtriggered = true;
+		raf(function(){
+			setTimeout(function(){
+				overlay.style.opacity = 0;
+				setTimeout(function(){
+					raf(function(){
+						overlay.style.top = '-100vh';
+						overlay.style.bottom = '100vh';
+					});
+				}, 0);
+			}, 0);
+		});
+	};
+	
+	if(!window.frameElement)
+	{
+		var autoImgWidth = true;
+		var hash = window.location.hash;
+		
+		if(hash !== '_print' &amp;&amp; hash !== '#_print')
+		{
+			var thisLoc = window.location.pathname.split('/');
+			if(thisLoc[0] === '')
+				thisLoc.shift();
+			var appPath = thisLoc.shift();
+			var mode = thisLoc.shift();
+			var dbNick = thisLoc.shift();
+			var docPath = thisLoc.join('/').replace(/\?[0-9]{10}=?/, '').replace(/_+$/, '');
+			
+			if(hash &amp;&amp; hash.charAt(0) === '#')
+				hash = hash.substr(1);
+			
+			var matchReferrer = new RegExp('^https?://' + location.host.replace(/\./g, '\\.') + '/' + appPath + '/' + dbNick + '(?:/|$)', 'i');
+			
+			var colon = encodeURIComponent(':');
+			var matchUser = new RegExp('\\bUSER_TYPE=[' + colon + '\\d]*' + colon + '1' + colon);
+			
+			if(mode !== 'files'
+			&amp;&amp; (document.referrer &amp;&amp; !document.referrer.match(matchReferrer) || !document.referrer &amp;&amp; document.cookie.match(matchUser)))
+			{
+				autoImgWidth = false;
+				
+				try
+				{
+					if(!document.body &amp;&amp; location.hostname.match(/(?:\.(ru|local)|^127\.0\.0\.1)$/))
+					{
+						document.write('&lt;style&gt;html{width:100%;height:100%;background:#fff url(\'/img_new/logo_its_resize_on_white.gif\') center center no-repeat}body{display:none!important}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;');
+						document.close();
+					}
+				}
+				catch(e){}
+				
+				setTimeout(function(){
+					window.location.replace('/' + appPath + '/' + dbNick + '/' + mode + '/' + docPath + '_' + (hash ? '?anchor=' + hash : ''));
+				}, 0);
+			}
+			else if(hasTouchScreen)
+				document.write('&lt;style&gt;table{display:block;width:auto!important;overflow-x:auto;clear:both}&lt;/style&gt;');
+		}
+		else
+		{
+			/*@cc_on
+			if(true)
+			{
+				window.print();
+			}
+			else
+			{
+			@*/
+				window.onload = function()
+				{
+					var imgs = document.getElementsByTagName('IMG');
+					var incomplete = 0;
+					
+					var imgOnLoad = function()
+					{
+						incomplete--;
+						
+						if(incomplete === 0)
+							window.print();
+					};
+					
+					for(var i = 0; i &lt; imgs.length; i++)
+						if(imgs[i].complete === false)
+						{
+							imgs[i].onload = imgOnLoad;
+							imgs[i].setAttribute('loading', 'eager');
+							incomplete++;
+						}
+					
+					if(!incomplete)
+						window.print();
+				};
+			/*@cc_on
+			}
+			@*/
+		}
+		
+		if(autoImgWidth)
+			document.write('&lt;style&gt;.pic_image img, .Picture img {max-width:100%;height:auto} @media (any-pointer: coarse),(pointer: none){ img {max-width:100%;height:auto} }&lt;/style&gt;');
+	}
+	else
+	{
+		if(parent.document.title === 'Document Moved')
+			parent.location.reload(true);
+		else
+		{
+			if(parent.MOBILE_ENABLED)
+			{
+				var documentElement = document.documentElement;
+				documentElement.style.setProperty('text-size-adjust', '100%', 'important');
+				documentElement.style.setProperty('-webkit-text-size-adjust', '100%', 'important');
+			}
+			
+			if(parent.deferred
+			&amp;&amp; location.hostname.match(/\.eu$/))
+				parent.deferred.push(function()
+				{
+					var loginLink = document.getElementById('login_link_iframe');
+					
+					if(loginLink)
+					{
+						var parentLoc = parent.location.pathname.split('/');
+						if(parentLoc[0] === '')
+							parentLoc.shift();
+						var appPath = '/' + parentLoc.shift() + '/';
+						
+						if(appPath !== '/db/')
+						{
+							appPath += parentLoc.shift() + '/';
+							var pathEncoded = appPath.replace(/\//g, '%2F');
+							var rx = new RegExp('\\?backurl=' + pathEncoded);
+							
+							if(!loginLink.href.match(rx))
+								loginLink.href = loginLink.href.replace(/\?backurl=%2Fdb%2F/, '?backurl=' + pathEncoded);
+						}
+					}
+				});
+			
+			if(parent.SSP &amp;&amp; parent.App)
+				setTimeout(parent.SSP.Bus.runDeferred, 0);
+			
+			var checker = (function()
+			{
+				if((document.readyState === 'loaded' || document.readyState === 'complete')
+				&amp;&amp; parent.SSP
+				&amp;&amp; parent.App)
+				{
+					clearInterval(interval);
+					parent.SSP.Bus.runDeferred();
+				}
+				else if(parent.document.documentElement.className.match(/(^|\s)css-failed(\s|$)/))
+					clearInterval(interval);
+			});
+			var interval = setInterval(checker, 50);
+			
+			if(parent.App
+			&amp;&amp; parent.App.Viewport)
+				parent.App.Viewport.resetShift(true);
+			
+			if(!hasTouchScreen)
+				try
+				{
+					window.frameElement.focus();
+				}
+				catch(e)
+				{
+					console.log(e);
+				}
+		}
+	}
+}
+)(window);&lt;/script&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;adjustContentLegacy()&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;onBodyAvailable()&lt;/script&gt;
+
+&lt;h2&gt;&lt;a name=&quot;h47&quot;&gt;&lt;/a&gt;Автоматический REST-интерфейс (OData)&lt;/h2&gt; 
+&lt;p class=&quot;MsoNormal&quot;&gt;Платформа «1С:Предприятие» может автоматически создать &lt;span lang=&quot;EN-US&quot;&gt;REST&lt;/span&gt;-интерфейс для любого прикладного решения. Благодаря своей универсальности и кроссплатформенности REST-интерфейс является очень удобным инструментом для интеграции прикладного решения со сторонними системами. &lt;/p&gt; 
+
+&lt;/body&gt;&lt;/html&gt;"></iframe></div><div id="w_metadata_doc_tabs" class="w null" style="display:none"></div><div id="w_metadata_doc_title" class="w" style="display:"><div id="doc_title" title="Автоматический REST-интерфейс (OData)"><!--noindex-->Автоматический REST-интерфейс (OData)<!--/noindex--></div><div id="l_doc_controls" class="l null"><div id="w_back_link" class="l"><a id="w_back_href" class="inline-block nojs l" href="javascript:history.back()" rel="nofollow" onClick="return window.App ? App.Its.Handler.backLinkClick.call(this, event) : true"><!--noindex-->Назад<!--/noindex--></a></div><div id="w_review_link" class="w" title="Оставить отзыв" style="display:none"><a href="/db/review/edit/intgr83/47/1" class="popup" target="_top" rel="nofollow">&nbsp;</a></div><div id="w_review_likelink" class="w" title="Мне нравится" onClick="return App.Its.Handler.likeClick.call(this, event)" style="display:none"></div><div id="w_extended_search_button_doc" class="l" style="display:none"><a id="w_extended_search_href_doc" title="Расширенный поиск" class="inline-block l" target="_top" href="javascript:">&nbsp;</a></div><div id="w_metadata_findintoc" class="l" style="display:"><a id="w_metadata_findintoc_href" title="Оглавление" class="inline-block l" target="_top" href="/db/intgr83/content/5/hdoc" onclick="if(window.styleDeferred&amp;&amp;styleDeferred.usingShell&amp;&amp;!styleDeferred.inactive)return true;var lc=document.getElementById('l_content');lc.className=lc.className.replace(/\bhide-toc\b/,'');if(lc.className.match(/\bshow-toc\b/)){lc.className=lc.className.replace(/\bshow-toc\b/,'')}else{lc.className+=' show-toc'}return false" onmousedown="window.SSP&amp;&amp;window.App&amp;&amp;App.Its.Handler.findInTocMouseDown()">&nbsp;</a></div><div id="w_metadata_findinclassifier" class="l" style="display:none"><a id="w_metadata_findinclassifier_href" title="Найти в содержании" class="inline-block l" target="_top" href="javascript:">&nbsp;</a></div><div id="w_metadata_archive_button" class="l" style="display:"><a id="w_metadata_archive_href" target="archive" class="inline-block nojs l" title="Актуальность" rel="nofollow" href="javascript:" onClick="return App.Its.Handler.archiveButtonClick.call(this, event)" data-title="Документ был опубликован более 1 года назад и мог утратить актуальность.">&nbsp;</a></div><div id="w_metadata_print_button" class="l"><a id="w_metadata_print_href" target="print" class="inline-block nojs l" title="Версия для печати" rel="nofollow" onClick="return App.Its.Handler.printButtonClick.call(this, event)" href="/db/content/intgr83/src/43.html#_print">&nbsp;</a></div><div id="w_favorite_link" class="w" title="Избранное" onClick="return App.Its.Handler.favoriteClick.call(this, event)" style="display:none"></div><select id="w_metadata_versionselect" class="w" onChange="return App.Its.Handler.versionSelectChange.call(this, event)" style="display:none"></select><div id="w_search_highlight" class="w null down" title="Подсветка найденного" onClick="return App.Its.Handler.searchHighlightClick.call(this, event)" style="display:none"></div></div></div></div><div id="l_toc" class="l" style="display:"><script type="text/javascript">(function(){if(window.styleDeferred && window.matchMedia && matchMedia('(max-width: 991px)').matches && !styleDeferred.inactive){var tocLayoutStyle = document.getElementById('l_toc').style;tocLayoutStyle.display = 'none';var show = function(){tocLayoutStyle.removeProperty('display');};styleDeferred.unshift(function(){if(window.SSP){show();}else{setTimeout(function(){if(window.SSP){show();}else{setTimeout(show, 0);}}, 0);}});}})();</script><div id="w_metadata_toc_button" class="l" onClick="var lc=document.getElementById('l_content');if(lc.className.match(/\bshow-toc\b/)){if(window.SSP&amp;&amp;window.App&amp;&amp;App.Viewport&amp;&amp;App.Viewport.hasShift&amp;&amp;App.Viewport.hasShift()&amp;&amp;App.Viewport.adjustLayout){App.Viewport.adjustLayout()}lc.className=lc.className.replace(/\bshow-toc\b/,'')}else if(lc.className.match(/\bhide-toc\b/)){lc.className=lc.className.replace(/\bhide-toc\b/,'')}else{lc.className+=' hide-toc'}" style="display:"><div id="toc_button_hide" title="Скрыть оглавление"></div><div id="toc_button_show" title="Показать оглавление"></div><noscript><style>#w_metadata_toc_button{display:none!important}</style></noscript></div><div id="l_toc_inner" class="l metadata-spacer native_scroll view-hideable view-expandable null"><div id="w_metadata_toc" class="w mimic_scroll" src="/db/metadata/intgr83/toc/1_?_=1789134211" data-book="" data-deferred-media-query="(max-width: 991px)" style="display:"><ul class="tree top active mixed"><li class="expanded active" id="toc_999999"><a href="/db/intgr83" target="_top">Технологии интеграции &quot;1С:Предприятия 8.3&quot;</a><ul><li id="toc_1"><a data-nosnippet href="/db/intgr83/content/1/hdoc" target="_top"><!--noindex-->Обложка<!--/noindex--></a></li><li id="toc_2"><a data-nosnippet href="/db/intgr83/content/2/hdoc" target="_top"><!--noindex-->Титульный лист<!--/noindex--></a></li><li id="toc_3"><a data-nosnippet href="/db/intgr83/content/3/hdoc" target="_top"><!--noindex-->Выходные данные<!--/noindex--></a></li><li id="toc_4"><a data-nosnippet href="/db/intgr83/content/4/hdoc" target="_top"><!--noindex-->Дополнительные материалы<!--/noindex--></a></li><li class="expanded active" id="toc_5"><a href="/db/intgr83/content/5/hdoc" target="_top">Глава 1. Интернет-технологии</a><ul><li class="collapsed" id="toc_6"><a data-nosnippet href="/db/intgr83/content/6/hdoc" target="_top"><!--noindex-->JSON<!--/noindex--></a><ul><li id="toc_7"><a data-nosnippet href="/db/intgr83/content/7/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li class="collapsed" id="toc_8"><a data-nosnippet href="/db/intgr83/content/8/hdoc" target="_top"><!--noindex-->Потоковая работа<!--/noindex--></a><ul><li id="toc_9"><a data-nosnippet href="/db/intgr83/content/9/hdoc" target="_top"><!--noindex-->Запись и чтение<!--/noindex--></a></li><li id="toc_10"><a data-nosnippet href="/db/intgr83/content/10/hdoc" target="_top"><!--noindex-->Работа со строкой JSON<!--/noindex--></a></li><li id="toc_11"><a data-nosnippet href="/db/intgr83/content/11/hdoc" target="_top"><!--noindex-->Проверка структуры записываемого JSON-документа<!--/noindex--></a></li><li class="collapsed" id="toc_12"><a data-nosnippet href="/db/intgr83/content/12/hdoc" target="_top"><!--noindex-->Параметры записи JSON<!--/noindex--></a><ul><li id="toc_13"><a data-nosnippet href="/db/intgr83/content/13/hdoc" target="_top"><!--noindex-->Перенос строк<!--/noindex--></a></li><li id="toc_14"><a data-nosnippet href="/db/intgr83/content/14/hdoc" target="_top"><!--noindex-->Символы отступа<!--/noindex--></a></li><li id="toc_15"><a data-nosnippet href="/db/intgr83/content/15/hdoc" target="_top"><!--noindex-->Экранирование символов<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_16"><a data-nosnippet href="/db/intgr83/content/16/hdoc" target="_top"><!--noindex-->Сериализация коллекций значений (объектная техника)<!--/noindex--></a><ul><li id="toc_17"><a data-nosnippet href="/db/intgr83/content/17/hdoc" target="_top"><!--noindex-->Запись и чтение<!--/noindex--></a></li><li id="toc_18"><a data-nosnippet href="/db/intgr83/content/18/hdoc" target="_top"><!--noindex-->Чтение в соответствие<!--/noindex--></a></li><li class="collapsed" id="toc_19"><a data-nosnippet href="/db/intgr83/content/19/hdoc" target="_top"><!--noindex-->Функции преобразования и восстановления<!--/noindex--></a><ul><li id="toc_20"><a data-nosnippet href="/db/intgr83/content/20/hdoc" target="_top"><!--noindex-->Функция преобразования<!--/noindex--></a></li><li id="toc_21"><a data-nosnippet href="/db/intgr83/content/21/hdoc" target="_top"><!--noindex-->Функция восстановления<!--/noindex--></a></li></ul></li><li id="toc_22"><a data-nosnippet href="/db/intgr83/content/22/hdoc" target="_top"><!--noindex-->Сериализация типа «Дата»<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_23"><a data-nosnippet href="/db/intgr83/content/23/hdoc" target="_top"><!--noindex-->Сериализация прикладных типов «1С:Предприятия»<!--/noindex--></a><ul><li id="toc_24"><a data-nosnippet href="/db/intgr83/content/24/hdoc" target="_top"><!--noindex-->Запись<!--/noindex--></a></li><li id="toc_25"><a data-nosnippet href="/db/intgr83/content/25/hdoc" target="_top"><!--noindex-->Чтение<!--/noindex--></a></li><li id="toc_26"><a data-nosnippet href="/db/intgr83/content/26/hdoc" target="_top"><!--noindex-->Десериализация прикладных типов с помощью функции восстановления<!--/noindex--></a></li></ul></li><li id="toc_27"><a data-nosnippet href="/db/intgr83/content/27/hdoc" target="_top"><!--noindex-->Смешанная техника работы<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_28"><a data-nosnippet href="/db/intgr83/content/28/hdoc" target="_top"><!--noindex-->HTTP-сервисы (REST)<!--/noindex--></a><ul><li id="toc_29"><a data-nosnippet href="/db/intgr83/content/29/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li id="toc_30"><a data-nosnippet href="/db/intgr83/content/30/hdoc" target="_top"><!--noindex-->Разработка HTTP-сервиса<!--/noindex--></a></li><li class="collapsed" id="toc_31"><a data-nosnippet href="/db/intgr83/content/31/hdoc" target="_top"><!--noindex-->Примеры реализации HTTP-сервисов<!--/noindex--></a><ul><li class="collapsed" id="toc_32"><a data-nosnippet href="/db/intgr83/content/32/hdoc" target="_top"><!--noindex-->Информация о сотрудниках<!--/noindex--></a><ul><li id="toc_33"><a data-nosnippet href="/db/intgr83/content/33/hdoc" target="_top"><!--noindex-->Получить список сотрудников<!--/noindex--></a></li><li id="toc_34"><a data-nosnippet href="/db/intgr83/content/34/hdoc" target="_top"><!--noindex-->Получить данные о конкретном сотруднике<!--/noindex--></a></li><li id="toc_35"><a data-nosnippet href="/db/intgr83/content/35/hdoc" target="_top"><!--noindex-->Удалить данные о конкретном сотруднике<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_36"><a data-nosnippet href="/db/intgr83/content/36/hdoc" target="_top"><!--noindex-->Информация о ценах на товары<!--/noindex--></a><ul><li id="toc_37"><a data-nosnippet href="/db/intgr83/content/37/hdoc" target="_top"><!--noindex-->Получить цены товаров на определенную дату<!--/noindex--></a></li><li id="toc_38"><a data-nosnippet href="/db/intgr83/content/38/hdoc" target="_top"><!--noindex-->Получить данные о ценах на конкретный товар<!--/noindex--></a></li><li id="toc_39"><a data-nosnippet href="/db/intgr83/content/39/hdoc" target="_top"><!--noindex-->Проиндексировать цены на товары<!--/noindex--></a></li></ul></li></ul></li><li id="toc_40"><a data-nosnippet href="/db/intgr83/content/40/hdoc" target="_top"><!--noindex-->HTTP-сервисы в расширениях<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_41"><a data-nosnippet href="/db/intgr83/content/41/hdoc" target="_top"><!--noindex-->HTTP-запросы<!--/noindex--></a><ul><li class="collapsed" id="toc_42"><a data-nosnippet href="/db/intgr83/content/42/hdoc" target="_top"><!--noindex-->Обращение к HTTP-сервисам<!--/noindex--></a><ul><li id="toc_43"><a data-nosnippet href="/db/intgr83/content/43/hdoc" target="_top"><!--noindex-->Получение данных<!--/noindex--></a></li><li id="toc_44"><a data-nosnippet href="/db/intgr83/content/44/hdoc" target="_top"><!--noindex-->Удаление данных<!--/noindex--></a></li><li id="toc_45"><a data-nosnippet href="/db/intgr83/content/45/hdoc" target="_top"><!--noindex-->Добавление данных<!--/noindex--></a></li></ul></li><li id="toc_46"><a data-nosnippet href="/db/intgr83/content/46/hdoc" target="_top"><!--noindex-->Обращение к REST-интерфейсу (OData)<!--/noindex--></a></li></ul></li><li class="expanded active" id="toc_47"><a href="/db/intgr83/content/47/hdoc" target="_top">Автоматический REST-интерфейс (OData)</a><ul><li id="toc_48"><a href="/db/intgr83/content/48/hdoc" target="_top">Общая информация</a></li><li class="collapsed" id="toc_49"><a href="/db/intgr83/content/49/hdoc" target="_top">Правила формирования URL запроса</a><ul><li id="toc_50"><a href="/db/intgr83/content/50/hdoc" target="_top">Правила формирования имени ресурса</a></li><li id="toc_51"><a href="/db/intgr83/content/51/hdoc" target="_top">Правила формирования условий отбора</a></li></ul></li><li class="collapsed" id="toc_52"><a href="/db/intgr83/content/52/hdoc" target="_top">Примеры использования</a><ul><li id="toc_53"><a href="/db/intgr83/content/53/hdoc" target="_top">Получение всех данных справочника</a></li><li id="toc_54"><a href="/db/intgr83/content/54/hdoc" target="_top">Получение количества записей в результате запроса</a></li><li id="toc_55"><a href="/db/intgr83/content/55/hdoc" target="_top">Получение данных из некоторых полей справочника и их сортировка</a></li><li id="toc_56"><a href="/db/intgr83/content/56/hdoc" target="_top">Получение данных по ссылке</a></li><li class="collapsed" id="toc_57"><a href="/db/intgr83/content/57/hdoc" target="_top">Отобрать записи справочника по условию</a><ul><li id="toc_58"><a href="/db/intgr83/content/58/hdoc" target="_top">Отобрать записи справочника по началу наименования</a></li><li id="toc_59"><a href="/db/intgr83/content/59/hdoc" target="_top">Отобрать записи справочника по дате рождения</a></li><li id="toc_60"><a href="/db/intgr83/content/60/hdoc" target="_top">Отобрать записи справочника по подстроке</a></li></ul></li><li id="toc_61"><a href="/db/intgr83/content/61/hdoc" target="_top">Получение данных связанных сущностей (ссылок)</a></li><li id="toc_62"><a href="/db/intgr83/content/62/hdoc" target="_top">Получение данных из табличной части документа</a></li><li id="toc_63"><a href="/db/intgr83/content/63/hdoc" target="_top">Условие отбора по реквизитам табличных частей</a></li><li id="toc_64"><a href="/db/intgr83/content/64/hdoc" target="_top">Получение данных регистра сведений</a></li><li class="collapsed" id="toc_65"><a href="/db/intgr83/content/65/hdoc" target="_top">Модификация данных прикладного решения</a><ul><li id="toc_66"><a href="/db/intgr83/content/66/hdoc" target="_top">Добавление данных</a></li><li id="toc_67"><a href="/db/intgr83/content/67/hdoc" target="_top">Изменение данных</a></li><li id="toc_68"><a href="/db/intgr83/content/68/hdoc" target="_top">Удаление данных</a></li><li id="toc_69"><a href="/db/intgr83/content/69/hdoc" target="_top">Изменение данных табличной части</a></li></ul></li></ul></li><li id="toc_70"><a href="/db/intgr83/content/70/hdoc" target="_top">Типичные ошибки при получении данных</a></li></ul></li><li class="collapsed" id="toc_71"><a data-nosnippet href="/db/intgr83/content/71/hdoc" target="_top"><!--noindex-->Web-сервисы<!--/noindex--></a><ul><li id="toc_72"><a data-nosnippet href="/db/intgr83/content/72/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li class="collapsed" id="toc_73"><a data-nosnippet href="/db/intgr83/content/73/hdoc" target="_top"><!--noindex-->Предоставление функциональности через Web-сервисы<!--/noindex--></a><ul><li id="toc_74"><a data-nosnippet href="/db/intgr83/content/74/hdoc" target="_top"><!--noindex-->Разработка Web-сервиса<!--/noindex--></a></li><li id="toc_75"><a data-nosnippet href="/db/intgr83/content/75/hdoc" target="_top"><!--noindex-->Использование XDTO для описания типов параметров и возвращаемых значений Web-сервисов<!--/noindex--></a></li></ul></li><li id="toc_76"><a data-nosnippet href="/db/intgr83/content/76/hdoc" target="_top"><!--noindex-->Работа с Web-сервисами сторонних поставщиков<!--/noindex--></a></li><li class="collapsed" id="toc_77"><a data-nosnippet href="/db/intgr83/content/77/hdoc" target="_top"><!--noindex-->Пример реализации Web-сервиса<!--/noindex--></a><ul><li id="toc_78"><a data-nosnippet href="/db/intgr83/content/78/hdoc" target="_top"><!--noindex-->Закрытие заказов на товары<!--/noindex--></a></li></ul></li><li id="toc_79"><a data-nosnippet href="/db/intgr83/content/79/hdoc" target="_top"><!--noindex-->Web-сервисы в расширениях<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_80"><a data-nosnippet href="/db/intgr83/content/80/hdoc" target="_top"><!--noindex-->Повторное использование сеансов интернет-сервисов<!--/noindex--></a><ul><li id="toc_81"><a data-nosnippet href="/db/intgr83/content/81/hdoc" target="_top"><!--noindex-->Автоматическое переиспользование сеансов<!--/noindex--></a></li><li id="toc_82"><a data-nosnippet href="/db/intgr83/content/82/hdoc" target="_top"><!--noindex-->Ручное управление сеансами<!--/noindex--></a></li></ul></li><li id="toc_83"><a data-nosnippet href="/db/intgr83/content/83/hdoc" target="_top"><!--noindex-->Коды состояния в ответах HTTP-сервера<!--/noindex--></a></li><li class="collapsed" id="toc_84"><a data-nosnippet href="/db/intgr83/content/84/hdoc" target="_top"><!--noindex-->FTP-соединение<!--/noindex--></a><ul><li id="toc_85"><a data-nosnippet href="/db/intgr83/content/85/hdoc" target="_top"><!--noindex-->Получить файлы с сервера<!--/noindex--></a></li><li id="toc_86"><a data-nosnippet href="/db/intgr83/content/86/hdoc" target="_top"><!--noindex-->Записать файлы на сервер<!--/noindex--></a></li><li id="toc_87"><a data-nosnippet href="/db/intgr83/content/87/hdoc" target="_top"><!--noindex-->Копировать файлы с сервера<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_88"><a data-nosnippet href="/db/intgr83/content/88/hdoc" target="_top"><!--noindex-->Электронная почта<!--/noindex--></a><ul><li id="toc_89"><a data-nosnippet href="/db/intgr83/content/89/hdoc" target="_top"><!--noindex-->Отправить и получить почту<!--/noindex--></a></li><li id="toc_90"><a data-nosnippet href="/db/intgr83/content/90/hdoc" target="_top"><!--noindex-->Отправить и получить сообщение обмена<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_91"><a data-nosnippet href="/db/intgr83/content/91/hdoc" target="_top"><!--noindex-->Глава 2. Внешние источники данных<!--/noindex--></a><ul><li class="collapsed" id="toc_92"><a data-nosnippet href="/db/intgr83/content/92/hdoc" target="_top"><!--noindex-->Работа с реляционными внешними источниками данных<!--/noindex--></a><ul><li id="toc_93"><a data-nosnippet href="/db/intgr83/content/93/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li id="toc_94"><a data-nosnippet href="/db/intgr83/content/94/hdoc" target="_top"><!--noindex-->Строка соединения<!--/noindex--></a></li><li class="collapsed" id="toc_95"><a data-nosnippet href="/db/intgr83/content/95/hdoc" target="_top"><!--noindex-->Редактирование структуры внешнего источника данных<!--/noindex--></a><ul><li id="toc_96"><a data-nosnippet href="/db/intgr83/content/96/hdoc" target="_top"><!--noindex-->Создание таблиц внешнего источника данных с помощью конструктора<!--/noindex--></a></li><li class="collapsed" id="toc_97"><a data-nosnippet href="/db/intgr83/content/97/hdoc" target="_top"><!--noindex-->Создание таблиц внешнего источника данных вручную<!--/noindex--></a><ul><li id="toc_98"><a data-nosnippet href="/db/intgr83/content/98/hdoc" target="_top"><!--noindex-->Свойства полей<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_99"><a data-nosnippet href="/db/intgr83/content/99/hdoc" target="_top"><!--noindex-->Работа с функциями внешнего источника данных<!--/noindex--></a><ul><li id="toc_100"><a data-nosnippet href="/db/intgr83/content/100/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li id="toc_101"><a data-nosnippet href="/db/intgr83/content/101/hdoc" target="_top"><!--noindex-->Редактирование функций<!--/noindex--></a></li></ul></li></ul></li><li id="toc_102"><a data-nosnippet href="/db/intgr83/content/102/hdoc" target="_top"><!--noindex-->Управление внешними источниками данных<!--/noindex--></a></li><li class="collapsed" id="toc_103"><a data-nosnippet href="/db/intgr83/content/103/hdoc" target="_top"><!--noindex-->Примеры использования<!--/noindex--></a><ul><li id="toc_104"><a data-nosnippet href="/db/intgr83/content/104/hdoc" target="_top"><!--noindex-->Исходная информация для примеров<!--/noindex--></a></li><li id="toc_105"><a data-nosnippet href="/db/intgr83/content/105/hdoc" target="_top"><!--noindex-->DSN<!--/noindex--></a></li><li class="collapsed" id="toc_106"><a data-nosnippet href="/db/intgr83/content/106/hdoc" target="_top"><!--noindex-->Работа с внешними источниками данных в конфигураторе и в режиме «1С:Предприятие»<!--/noindex--></a><ul><li id="toc_107"><a data-nosnippet href="/db/intgr83/content/107/hdoc" target="_top"><!--noindex-->Источник данных, подключенный через DSN<!--/noindex--></a></li><li id="toc_108"><a data-nosnippet href="/db/intgr83/content/108/hdoc" target="_top"><!--noindex-->Источник данных, подключенный с помощью полной строки соединения<!--/noindex--></a></li><li id="toc_109"><a data-nosnippet href="/db/intgr83/content/109/hdoc" target="_top"><!--noindex-->Подключение и отображение внешних источников данных в режиме «1С:Предприятие»<!--/noindex--></a></li></ul></li><li id="toc_110"><a data-nosnippet href="/db/intgr83/content/110/hdoc" target="_top"><!--noindex-->Программная синхронизация<!--/noindex--></a></li><li class="collapsed" id="toc_111"><a data-nosnippet href="/db/intgr83/content/111/hdoc" target="_top"><!--noindex-->Работа с функциями<!--/noindex--></a><ul><li id="toc_112"><a data-nosnippet href="/db/intgr83/content/112/hdoc" target="_top"><!--noindex-->Собственная функция<!--/noindex--></a></li><li id="toc_113"><a data-nosnippet href="/db/intgr83/content/113/hdoc" target="_top"><!--noindex-->Функция внешней схемы<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_114"><a data-nosnippet href="/db/intgr83/content/114/hdoc" target="_top"><!--noindex-->Прикладное использование данных из внешних источников<!--/noindex--></a><ul><li id="toc_115"><a data-nosnippet href="/db/intgr83/content/115/hdoc" target="_top"><!--noindex-->Учет<!--/noindex--></a></li><li id="toc_116"><a data-nosnippet href="/db/intgr83/content/116/hdoc" target="_top"><!--noindex-->Отчет<!--/noindex--></a></li></ul></li></ul></li></ul></li><li class="collapsed" id="toc_117"><a data-nosnippet href="/db/intgr83/content/117/hdoc" target="_top"><!--noindex-->Глава 3. Обмен данными<!--/noindex--></a><ul><li class="collapsed" id="toc_118"><a data-nosnippet href="/db/intgr83/content/118/hdoc" target="_top"><!--noindex-->Планы обмена<!--/noindex--></a><ul><li class="collapsed" id="toc_119"><a data-nosnippet href="/db/intgr83/content/119/hdoc" target="_top"><!--noindex-->Служба регистрации изменений<!--/noindex--></a><ul><li id="toc_120"><a data-nosnippet href="/db/intgr83/content/120/hdoc" target="_top"><!--noindex-->Управление регистрацией изменений<!--/noindex--></a></li><li id="toc_121"><a data-nosnippet href="/db/intgr83/content/121/hdoc" target="_top"><!--noindex-->Автоматическая регистрация изменений<!--/noindex--></a></li><li id="toc_122"><a data-nosnippet href="/db/intgr83/content/122/hdoc" target="_top"><!--noindex-->Ручная регистрация изменений<!--/noindex--></a></li><li id="toc_123"><a data-nosnippet href="/db/intgr83/content/123/hdoc" target="_top"><!--noindex-->Принудительная регистрация изменений<!--/noindex--></a></li></ul></li><li id="toc_124"><a data-nosnippet href="/db/intgr83/content/124/hdoc" target="_top"><!--noindex-->Инфраструктура сообщений<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_125"><a data-nosnippet href="/db/intgr83/content/125/hdoc" target="_top"><!--noindex-->Распределенные информационные базы<!--/noindex--></a><ul><li id="toc_126"><a data-nosnippet href="/db/intgr83/content/126/hdoc" target="_top"><!--noindex-->Общие принципы<!--/noindex--></a></li><li id="toc_127"><a data-nosnippet href="/db/intgr83/content/127/hdoc" target="_top"><!--noindex-->Главный и подчиненный узлы<!--/noindex--></a></li><li id="toc_128"><a data-nosnippet href="/db/intgr83/content/128/hdoc" target="_top"><!--noindex-->Сообщение обмена данными в распределенной информационной базе<!--/noindex--></a></li><li class="collapsed" id="toc_129"><a data-nosnippet href="/db/intgr83/content/129/hdoc" target="_top"><!--noindex-->Работа с распределенной информационной базой<!--/noindex--></a><ul><li id="toc_130"><a data-nosnippet href="/db/intgr83/content/130/hdoc" target="_top"><!--noindex-->Создание начального образа<!--/noindex--></a></li><li id="toc_131"><a data-nosnippet href="/db/intgr83/content/131/hdoc" target="_top"><!--noindex-->Запись и чтение сообщений обмена<!--/noindex--></a></li></ul></li><li id="toc_132"><a data-nosnippet href="/db/intgr83/content/132/hdoc" target="_top"><!--noindex-->Подготовка конфигурации к работе в распределенной информационной базе<!--/noindex--></a></li><li id="toc_133"><a data-nosnippet href="/db/intgr83/content/133/hdoc" target="_top"><!--noindex-->Пример реализации обмена данными в распределенной информационной базе<!--/noindex--></a></li><li class="collapsed" id="toc_134"><a data-nosnippet href="/db/intgr83/content/134/hdoc" target="_top"><!--noindex-->Сценарии обмена данными в распределенной информационной базе<!--/noindex--></a><ul><li id="toc_135"><a data-nosnippet href="/db/intgr83/content/135/hdoc" target="_top"><!--noindex-->Поведение по умолчанию<!--/noindex--></a></li><li id="toc_136"><a data-nosnippet href="/db/intgr83/content/136/hdoc" target="_top"><!--noindex-->Распределение данных по подчиненным узлам<!--/noindex--></a></li><li id="toc_137"><a data-nosnippet href="/db/intgr83/content/137/hdoc" target="_top"><!--noindex-->Разрешение коллизий<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_138"><a data-nosnippet href="/db/intgr83/content/138/hdoc" target="_top"><!--noindex-->Доработка примера обмена данными в распределенной информационной базе<!--/noindex--></a><ul><li id="toc_139"><a data-nosnippet href="/db/intgr83/content/139/hdoc" target="_top"><!--noindex-->Распределение данных по подчиненным узлам<!--/noindex--></a></li><li id="toc_140"><a data-nosnippet href="/db/intgr83/content/140/hdoc" target="_top"><!--noindex-->Обработка для выполнения обмена<!--/noindex--></a></li><li id="toc_141"><a data-nosnippet href="/db/intgr83/content/141/hdoc" target="_top"><!--noindex-->Разрешение коллизий<!--/noindex--></a></li></ul></li><li id="toc_142"><a data-nosnippet href="/db/intgr83/content/142/hdoc" target="_top"><!--noindex-->Особенности использования последовательности документов в распределенной информационной базе<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_143"><a data-nosnippet href="/db/intgr83/content/143/hdoc" target="_top"><!--noindex-->Универсальный механизм обмена данными<!--/noindex--></a><ul><li id="toc_144"><a data-nosnippet href="/db/intgr83/content/144/hdoc" target="_top"><!--noindex-->Использование возможностей работы с XML-документами<!--/noindex--></a></li><li class="collapsed" id="toc_145"><a data-nosnippet href="/db/intgr83/content/145/hdoc" target="_top"><!--noindex-->Пример реализации универсального обмена<!--/noindex--></a><ul><li id="toc_146"><a data-nosnippet href="/db/intgr83/content/146/hdoc" target="_top"><!--noindex-->Стандартные процедуры обмена<!--/noindex--></a></li><li id="toc_147"><a data-nosnippet href="/db/intgr83/content/147/hdoc" target="_top"><!--noindex-->Стратегия распространения данных<!--/noindex--></a></li><li id="toc_148"><a data-nosnippet href="/db/intgr83/content/148/hdoc" target="_top"><!--noindex-->Обмен данными с разной структурой<!--/noindex--></a></li><li id="toc_149"><a data-nosnippet href="/db/intgr83/content/149/hdoc" target="_top"><!--noindex-->Стратегия разрешения коллизий<!--/noindex--></a></li><li id="toc_150"><a data-nosnippet href="/db/intgr83/content/150/hdoc" target="_top"><!--noindex-->Тестирование работы универсального обмена данными<!--/noindex--></a></li><li id="toc_151"><a data-nosnippet href="/db/intgr83/content/151/hdoc" target="_top"><!--noindex-->Обмен предопределенными данными<!--/noindex--></a></li><li class="collapsed" id="toc_152"><a data-nosnippet href="/db/intgr83/content/152/hdoc" target="_top"><!--noindex-->Ручная регистрация изменений<!--/noindex--></a><ul><li id="toc_153"><a data-nosnippet href="/db/intgr83/content/153/hdoc" target="_top"><!--noindex-->Формирование списка узлов-получателей в обработчиках события «ПриЗаписи»<!--/noindex--></a></li><li id="toc_154"><a data-nosnippet href="/db/intgr83/content/154/hdoc" target="_top"><!--noindex-->Регистрация изменений для узла в обработке для выполнения обмена<!--/noindex--></a></li><li id="toc_155"><a data-nosnippet href="/db/intgr83/content/155/hdoc" target="_top"><!--noindex-->Регистрация в произвольные узлы<!--/noindex--></a></li></ul></li></ul></li></ul></li><li id="toc_156"><a data-nosnippet href="/db/intgr83/content/156/hdoc" target="_top"><!--noindex-->Использование транзакций при организации обмена<!--/noindex--></a></li><li id="toc_157"><a data-nosnippet href="/db/intgr83/content/157/hdoc" target="_top"><!--noindex-->Методика включения в сообщение обмена дополнительной информации<!--/noindex--></a></li><li id="toc_158"><a data-nosnippet href="/db/intgr83/content/158/hdoc" target="_top"><!--noindex-->Организация одностороннего обмена<!--/noindex--></a></li><li class="collapsed" id="toc_159"><a data-nosnippet href="/db/intgr83/content/159/hdoc" target="_top"><!--noindex-->Примеры реализации автоматического обмена данными<!--/noindex--></a><ul><li id="toc_160"><a data-nosnippet href="/db/intgr83/content/160/hdoc" target="_top"><!--noindex-->Использование регламентных заданий<!--/noindex--></a></li><li id="toc_161"><a data-nosnippet href="/db/intgr83/content/161/hdoc" target="_top"><!--noindex-->Использование объекта «СОМСоединение»<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_162"><a data-nosnippet href="/db/intgr83/content/162/hdoc" target="_top"><!--noindex-->Использование планов обмена в расширении конфигурации<!--/noindex--></a><ul><li id="toc_163"><a data-nosnippet href="/db/intgr83/content/163/hdoc" target="_top"><!--noindex-->Универсальный способ обмена данными<!--/noindex--></a></li><li id="toc_164"><a data-nosnippet href="/db/intgr83/content/164/hdoc" target="_top"><!--noindex-->Обмен данными в распределенной информационной базе<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_165"><a data-nosnippet href="/db/intgr83/content/165/hdoc" target="_top"><!--noindex-->Глава 4. Внешние компоненты<!--/noindex--></a><ul><li class="collapsed" id="toc_166"><a data-nosnippet href="/db/intgr83/content/166/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты в тонком клиенте или в веб-клиенте (на примере Native API компоненты)<!--/noindex--></a><ul><li id="toc_167"><a data-nosnippet href="/db/intgr83/content/167/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из файла на диске (отдельные файлы)<!--/noindex--></a></li><li id="toc_168"><a data-nosnippet href="/db/intgr83/content/168/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из макета (ZIP-архив)<!--/noindex--></a></li><li id="toc_169"><a data-nosnippet href="/db/intgr83/content/169/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из базы данных (ZIP-архив)<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_170"><a data-nosnippet href="/db/intgr83/content/170/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты в толстом клиенте или на сервере (на примере Native API компоненты)<!--/noindex--></a><ul><li id="toc_171"><a data-nosnippet href="/db/intgr83/content/171/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из файла на диске (отдельные файлы)<!--/noindex--></a></li><li id="toc_172"><a data-nosnippet href="/db/intgr83/content/172/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из макета (ZIP-архив)<!--/noindex--></a></li><li id="toc_173"><a data-nosnippet href="/db/intgr83/content/173/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из макета (отдельные файлы)<!--/noindex--></a></li><li id="toc_174"><a data-nosnippet href="/db/intgr83/content/174/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из базы данных (ZIP-архив)<!--/noindex--></a></li><li id="toc_175"><a data-nosnippet href="/db/intgr83/content/175/hdoc" target="_top"><!--noindex-->Подключение внешней компоненты из базы данных (отдельные файлы)<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_176"><a data-nosnippet href="/db/intgr83/content/176/hdoc" target="_top"><!--noindex-->Глава 5. Взаимодействие с приложением системы «1С:Предприятие»<!--/noindex--></a><ul><li class="collapsed" id="toc_177"><a data-nosnippet href="/db/intgr83/content/177/hdoc" target="_top"><!--noindex-->Automation<!--/noindex--></a><ul><li id="toc_178"><a data-nosnippet href="/db/intgr83/content/178/hdoc" target="_top"><!--noindex-->Automation Server<!--/noindex--></a></li><li id="toc_179"><a data-nosnippet href="/db/intgr83/content/179/hdoc" target="_top"><!--noindex-->Automation Client<!--/noindex--></a></li></ul></li><li id="toc_180"><a data-nosnippet href="/db/intgr83/content/180/hdoc" target="_top"><!--noindex-->Внешнее соединение<!--/noindex--></a></li><li class="collapsed" id="toc_181"><a data-nosnippet href="/db/intgr83/content/181/hdoc" target="_top"><!--noindex-->Встраивание веб-клиента «1С:Предприятия» в сторонний сайт<!--/noindex--></a><ul><li id="toc_182"><a data-nosnippet href="/db/intgr83/content/182/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li id="toc_183"><a data-nosnippet href="/db/intgr83/content/183/hdoc" target="_top"><!--noindex-->Пример реализации<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_184"><a data-nosnippet href="/db/intgr83/content/184/hdoc" target="_top"><!--noindex-->Глава 6. Файловое взаимодействие<!--/noindex--></a><ul><li class="collapsed" id="toc_185"><a data-nosnippet href="/db/intgr83/content/185/hdoc" target="_top"><!--noindex-->Работа с локальной файловой системой<!--/noindex--></a><ul><li id="toc_186"><a data-nosnippet href="/db/intgr83/content/186/hdoc" target="_top"><!--noindex-->Найти файлы в каталоге<!--/noindex--></a></li><li id="toc_187"><a data-nosnippet href="/db/intgr83/content/187/hdoc" target="_top"><!--noindex-->Удалить файлы в каталоге<!--/noindex--></a></li><li id="toc_188"><a data-nosnippet href="/db/intgr83/content/188/hdoc" target="_top"><!--noindex-->Создать новый каталог<!--/noindex--></a></li><li id="toc_189"><a data-nosnippet href="/db/intgr83/content/189/hdoc" target="_top"><!--noindex-->Копировать файл<!--/noindex--></a></li><li id="toc_190"><a data-nosnippet href="/db/intgr83/content/190/hdoc" target="_top"><!--noindex-->Переместить файл<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_191"><a data-nosnippet href="/db/intgr83/content/191/hdoc" target="_top"><!--noindex-->Передача файлов между клиентом и сервером<!--/noindex--></a><ul><li id="toc_192"><a data-nosnippet href="/db/intgr83/content/192/hdoc" target="_top"><!--noindex-->Передача и получение одного файла с сервера<!--/noindex--></a></li><li id="toc_193"><a data-nosnippet href="/db/intgr83/content/193/hdoc" target="_top"><!--noindex-->Передача нескольких файлов на сервер<!--/noindex--></a></li><li id="toc_194"><a data-nosnippet href="/db/intgr83/content/194/hdoc" target="_top"><!--noindex-->Получение нескольких файлов с сервера<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_195"><a data-nosnippet href="/db/intgr83/content/195/hdoc" target="_top"><!--noindex-->Текстовые файлы<!--/noindex--></a><ul><li id="toc_196"><a data-nosnippet href="/db/intgr83/content/196/hdoc" target="_top"><!--noindex-->Текстовый документ, поле текстового документа<!--/noindex--></a></li><li id="toc_197"><a data-nosnippet href="/db/intgr83/content/197/hdoc" target="_top"><!--noindex-->Отображение текстового документа<!--/noindex--></a></li><li id="toc_198"><a data-nosnippet href="/db/intgr83/content/198/hdoc" target="_top"><!--noindex-->Модель последовательного доступа<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_199"><a data-nosnippet href="/db/intgr83/content/199/hdoc" target="_top"><!--noindex-->XML-файлы<!--/noindex--></a><ul><li id="toc_200"><a data-nosnippet href="/db/intgr83/content/200/hdoc" target="_top"><!--noindex-->Основные положения<!--/noindex--></a></li><li class="collapsed" id="toc_201"><a data-nosnippet href="/db/intgr83/content/201/hdoc" target="_top"><!--noindex-->Базовые средства «1С:Предприятия» для работы с XML<!--/noindex--></a><ul><li id="toc_202"><a data-nosnippet href="/db/intgr83/content/202/hdoc" target="_top"><!--noindex-->Запись данных в XML-документ<!--/noindex--></a></li><li id="toc_203"><a data-nosnippet href="/db/intgr83/content/203/hdoc" target="_top"><!--noindex-->Чтение данных из XML-документа<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_204"><a data-nosnippet href="/db/intgr83/content/204/hdoc" target="_top"><!--noindex-->XML-сериализация<!--/noindex--></a><ul><li class="collapsed" id="toc_205"><a data-nosnippet href="/db/intgr83/content/205/hdoc" target="_top"><!--noindex-->Простые типы<!--/noindex--></a><ul><li id="toc_206"><a data-nosnippet href="/db/intgr83/content/206/hdoc" target="_top"><!--noindex-->Число<!--/noindex--></a></li><li id="toc_207"><a data-nosnippet href="/db/intgr83/content/207/hdoc" target="_top"><!--noindex-->Строка<!--/noindex--></a></li><li id="toc_208"><a data-nosnippet href="/db/intgr83/content/208/hdoc" target="_top"><!--noindex-->Дата<!--/noindex--></a></li><li id="toc_209"><a data-nosnippet href="/db/intgr83/content/209/hdoc" target="_top"><!--noindex-->Булево<!--/noindex--></a></li><li id="toc_210"><a data-nosnippet href="/db/intgr83/content/210/hdoc" target="_top"><!--noindex-->ДвоичныеДанные<!--/noindex--></a></li><li id="toc_211"><a data-nosnippet href="/db/intgr83/content/211/hdoc" target="_top"><!--noindex-->Null<!--/noindex--></a></li><li id="toc_212"><a data-nosnippet href="/db/intgr83/content/212/hdoc" target="_top"><!--noindex-->УникальныйИдентификатор<!--/noindex--></a></li><li id="toc_213"><a data-nosnippet href="/db/intgr83/content/213/hdoc" target="_top"><!--noindex-->ХранилищеЗначения<!--/noindex--></a></li><li id="toc_214"><a data-nosnippet href="/db/intgr83/content/214/hdoc" target="_top"><!--noindex-->Тип ссылки на объект базы данных<!--/noindex--></a></li><li id="toc_215"><a data-nosnippet href="/db/intgr83/content/215/hdoc" target="_top"><!--noindex-->Тип ссылки на значение перечисления<!--/noindex--></a></li><li id="toc_216"><a data-nosnippet href="/db/intgr83/content/216/hdoc" target="_top"><!--noindex-->Работа с простыми типами<!--/noindex--></a></li></ul></li><li class="collapsed" id="toc_217"><a data-nosnippet href="/db/intgr83/content/217/hdoc" target="_top"><!--noindex-->Сложные типы<!--/noindex--></a><ul><li id="toc_218"><a data-nosnippet href="/db/intgr83/content/218/hdoc" target="_top"><!--noindex-->Тип<!--/noindex--></a></li><li id="toc_219"><a data-nosnippet href="/db/intgr83/content/219/hdoc" target="_top"><!--noindex-->ОписаниеТипов<!--/noindex--></a></li><li id="toc_220"><a data-nosnippet href="/db/intgr83/content/220/hdoc" target="_top"><!--noindex-->КонстантаМенеджерЗначения.&lt;имя&gt;<!--/noindex--></a></li><li id="toc_221"><a data-nosnippet href="/db/intgr83/content/221/hdoc" target="_top"><!--noindex-->Объект<!--/noindex--></a></li><li id="toc_222"><a data-nosnippet href="/db/intgr83/content/222/hdoc" target="_top"><!--noindex-->Набор записей<!--/noindex--></a></li><li id="toc_223"><a data-nosnippet href="/db/intgr83/content/223/hdoc" target="_top"><!--noindex-->УдалениеОбъекта<!--/noindex--></a></li><li id="toc_224"><a data-nosnippet href="/db/intgr83/content/224/hdoc" target="_top"><!--noindex-->Работа со сложными типами<!--/noindex--></a></li></ul></li></ul></li></ul></li><li class="collapsed" id="toc_225"><a data-nosnippet href="/db/intgr83/content/225/hdoc" target="_top"><!--noindex-->HTML-документ<!--/noindex--></a><ul><li id="toc_226"><a data-nosnippet href="/db/intgr83/content/226/hdoc" target="_top"><!--noindex-->Поле HTML-документа<!--/noindex--></a></li><li id="toc_227"><a data-nosnippet href="/db/intgr83/content/227/hdoc" target="_top"><!--noindex-->Объектная модель документа<!--/noindex--></a></li><li class="collapsed" id="toc_228"><a data-nosnippet href="/db/intgr83/content/228/hdoc" target="_top"><!--noindex-->Примеры работы<!--/noindex--></a><ul><li id="toc_229"><a data-nosnippet href="/db/intgr83/content/229/hdoc" target="_top"><!--noindex-->Отобразить содержимое, URL и HTML-текст веб-страницы<!--/noindex--></a></li><li id="toc_230"><a data-nosnippet href="/db/intgr83/content/230/hdoc" target="_top"><!--noindex-->Прочитать HTML-документ из текста<!--/noindex--></a></li><li id="toc_231"><a data-nosnippet href="/db/intgr83/content/231/hdoc" target="_top"><!--noindex-->Прочитать HTML-документ из файла<!--/noindex--></a></li><li id="toc_232"><a data-nosnippet href="/db/intgr83/content/232/hdoc" target="_top"><!--noindex-->Записать HTML-документ в файл<!--/noindex--></a></li><li id="toc_233"><a data-nosnippet href="/db/intgr83/content/233/hdoc" target="_top"><!--noindex-->Сформировать HTML-документ и записать в файл<!--/noindex--></a></li><li id="toc_234"><a data-nosnippet href="/db/intgr83/content/234/hdoc" target="_top"><!--noindex-->Разобрать HTML<!--/noindex--></a></li><li id="toc_235"><a data-nosnippet href="/db/intgr83/content/235/hdoc" target="_top"><!--noindex-->Показать структуру HTML<!--/noindex--></a></li><li id="toc_236"><a data-nosnippet href="/db/intgr83/content/236/hdoc" target="_top"><!--noindex-->Изменить содержимое HTML<!--/noindex--></a></li><li id="toc_237"><a data-nosnippet href="/db/intgr83/content/237/hdoc" target="_top"><!--noindex-->Вставить произвольный фрагмент HTML<!--/noindex--></a></li></ul></li></ul></li><li class="collapsed" id="toc_238"><a data-nosnippet href="/db/intgr83/content/238/hdoc" target="_top"><!--noindex-->Двоичные данные<!--/noindex--></a><ul><li id="toc_239"><a data-nosnippet href="/db/intgr83/content/239/hdoc" target="_top"><!--noindex-->Общая информация<!--/noindex--></a></li><li class="collapsed" id="toc_240"><a data-nosnippet href="/db/intgr83/content/240/hdoc" target="_top"><!--noindex-->Примеры работы<!--/noindex--></a><ul><li id="toc_241"><a data-nosnippet href="/db/intgr83/content/241/hdoc" target="_top"><!--noindex-->Разбить WAV-файл на части<!--/noindex--></a></li><li class="collapsed" id="toc_242"><a data-nosnippet href="/db/intgr83/content/242/hdoc" target="_top"><!--noindex-->Работа с составными (multipart) HTTP-сообщениями<!--/noindex--></a><ul><li id="toc_243"><a data-nosnippet href="/db/intgr83/content/243/hdoc" target="_top"><!--noindex-->Создание сервиса для формирования составного сообщения<!--/noindex--></a></li><li id="toc_244"><a data-nosnippet href="/db/intgr83/content/244/hdoc" target="_top"><!--noindex-->Разбор составного сообщения на стороне клиента<!--/noindex--></a></li></ul></li></ul></li></ul></li><li id="toc_245"><a data-nosnippet href="/db/intgr83/content/245/hdoc" target="_top"><!--noindex-->XDTO-сериализация<!--/noindex--></a></li><li class="collapsed" id="toc_246"><a data-nosnippet href="/db/intgr83/content/246/hdoc" target="_top"><!--noindex-->ZIP-архивы<!--/noindex--></a><ul><li class="collapsed" id="toc_247"><a data-nosnippet href="/db/intgr83/content/247/hdoc" target="_top"><!--noindex-->Создание архива<!--/noindex--></a><ul><li id="toc_248"><a data-nosnippet href="/db/intgr83/content/248/hdoc" target="_top"><!--noindex-->Особенности упаковки файлов по маске<!--/noindex--></a></li><li id="toc_249"><a data-nosnippet href="/db/intgr83/content/249/hdoc" target="_top"><!--noindex-->Особенности работы метода «Добавить()»<!--/noindex--></a></li></ul></li><li id="toc_250"><a data-nosnippet href="/db/intgr83/content/250/hdoc" target="_top"><!--noindex-->Чтение ZIP-архивов<!--/noindex--></a></li><li id="toc_251"><a data-nosnippet href="/db/intgr83/content/251/hdoc" target="_top"><!--noindex-->Работа с файлами большого объема<!--/noindex--></a></li><li class="collapsed" id="toc_252"><a data-nosnippet href="/db/intgr83/content/252/hdoc" target="_top"><!--noindex-->Примеры работы<!--/noindex--></a><ul><li id="toc_253"><a data-nosnippet href="/db/intgr83/content/253/hdoc" target="_top"><!--noindex-->Добавление в архив файлов по маске<!--/noindex--></a></li><li id="toc_254"><a data-nosnippet href="/db/intgr83/content/254/hdoc" target="_top"><!--noindex-->Добавление выбранных файлов в архив<!--/noindex--></a></li><li id="toc_255"><a data-nosnippet href="/db/intgr83/content/255/hdoc" target="_top"><!--noindex-->Распаковка файлов из архива<!--/noindex--></a></li><li id="toc_256"><a data-nosnippet href="/db/intgr83/content/256/hdoc" target="_top"><!--noindex-->Разделение и объединение файлов архива<!--/noindex--></a></li></ul></li></ul></li><li id="toc_257"><a data-nosnippet href="/db/intgr83/content/257/hdoc" target="_top"><!--noindex-->DBF-файлы<!--/noindex--></a></li></ul></li></ul></li></ul><script type="text/javascript">
+		deferred.push(function(){
+			App.Viewport.attachToScroller('l_toc_inner', 'l_toc_inner');
+					});
+	</script></div></div></div></div></div><div id="l_search" class="l" style="display:none"></div><div id="l_extended_search" class="l" style="display:none"></div><div id="w_metadata_section" class="w"><div id="database_menu_section" data-section="books/books_dev" style="display:none"></div>
+<script type="text/javascript">
+	deferred.push(function(){
+				SSP.DOM.removeClass(SSP.DOM.byId('main_container'), 'sidebar-no-initial');
+			});
+</script></div><script type="text/javascript">
+	deferred.push(function()
+	{
+		App.Search.chatbotJs = 'https://portalchat.1c.ai/chatbot/widget/widget.js';
+		App.Search.chatbotCss = 'https://portalchat.1c.ai/chatbot/widget/style.css';
+
+		SSP.Bus.init(
+			'/db/',
+			['browse', 'content', 'bookmark', 'search', 'extsearch'],
+			App.Its.Router,
+			{"w_metadata_toc":{"5":{"listen":[{"event":"mouseover","callback":"App.Its.Handler.tocMouseOver"},{"event":"click","callback":"App.Its.Handler.tocClick"},{"event":"click","callback":"SSP.Tree.handleClick"}],"trigger":[]},"3":{"select":["toc_47"],"reload":["\/db\/metadata\/intgr83\/toc\/1_?_=1789134211"]}},"w_metadata_toc_button":{"5":{"listen":[{"event":"click","callback":"App.Its.Handler.tocButtonClick"}],"trigger":[]},"3":{"reload":[null]}},"w_metadata_doc_frame":{"5":{"listen":[{"event":"DOMContentLoaded","callback":"App.Its.Handler.docFrameDOMContentLoaded"}],"trigger":[]}},"w_title":{"3":{"reload":[null]}},"w_navchain":{"3":{"reload":[null]}},"w_searchlink":{"3":{"reload":[null]}},"w_search":{"3":{"reload":[null]}},"w_main_tabclassifier":{"3":{"reload":[null]}},"w_main_tabdocument":{"3":{"reload":[null]}},"w_main_tabsearch":{"3":{"reload":[null]}},"w_metadata_doc_title":{"3":{"reload":[null]}},"w_review_link":{"3":{"reload":[null]}},"w_metadata_findinclassifier":{"3":{"reload":[null]}},"w_metadata_findintoc":{"3":{"reload":[null]}},"w_metadata_section":{"3":{"reload":[null]}}},
+			'/img/loading-tpt.gif',
+			false,
+			false,
+			["l_doc_frame_inner","search_filter_toggle"]		);
+		
+		
+		App.Its.Router.selectedTab = App.Its.Router.getRememberedTab();
+		
+		App.Its.Handler.listenBasket(false);
+	});
+</script>
+<script>
+	deferred.push(function()
+	{
+		SSP.DOM.triggerReflow();
+		setTimeout(function()
+		{
+			var match = App.Its.Router.match(App.Its.Router.toInternal(window.location.toString()));
+			if(match)
+			{
+				var content = SSP.Widget('l_content');
+				var classifier = SSP.Widget('l_classifier');
+				var search = SSP.Widget('l_search');
+				var extsearch = SSP.Widget('l_extended_search');
+				
+				if(content.node && content.getStyle('display') !== 'none'
+				|| classifier.node && classifier.getStyle('display') !== 'none'
+				|| search.node && search.getStyle('display') !== 'none'
+				|| extsearch.node && extsearch.getStyle('display') !== 'none')
+					;
+				else
+				{
+					if(match.context.mode === 'content' || match.context.mode === 'bookmark')
+						content.show();
+					else if(match.context.mode === 'browse')
+						classifier.show();
+					/*else if(match.context.mode === 'search')
+						search.show();*/
+					else if(match.context.mode === 'extsearch')
+						extsearch.show();
+				}
+			}
+			try
+			{
+				SSP.Scroll.mimicByClass('mimic_scroll');
+			}
+			catch(e)
+			{
+				//debugger;
+			}
+			if(!SSP.Browser.hasTouchScreen)
+				SSP.DOM.triggerReflow();
+		}, 1000);
+	});
+</script>
+<noscript><style>
+li.collapsed > ul
+{display:block!important}
+#w_search_history div.collapsed div,
+#w_search_history div.collapsed ul
+{display:block!important}
+ul.tree li.collapsed
+{background-image:none !important}
+#w_metadata_toc li.collapsed,
+#w_search_history div.collapsed,
+#w_search_history li.collapsed
+{background-image:url('/img_new/r_minus.png') !important}
+#w_metadata_toc a:active::before,
+#w_metadata_navtree a:active::before,
+#w_metadata_toc a:focus::before,
+#w_metadata_navtree a:focus::before
+{position:absolute;top:0;bottom:0;right:0;width:100vw;display:block;content:'';z-index:-2}
+#w_metadata_toc a:active,
+#w_metadata_toc a:active::before,
+#w_metadata_navtree a:active,
+#w_metadata_navtree a:active::before,
+#w_metadata_toc a:focus,
+#w_metadata_toc a:focus::before,
+#w_metadata_navtree a:focus,
+#w_metadata_navtree a:focus::before
+{background-color:#dedede}
+#l_toc_inner,
+#l_nav_inner
+{overflow:auto;padding-right:0}
+</style></noscript>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://its.1c.ru/db/intgr83/content/47/hdoc"
+    },
+    "headline": "Автоматический REST-интерфейс (OData)",
+    "image": [
+        "https://its.1c.ru/db/content/intgr83/_metaimage/47/hdoc/696x394.png?_=0000005976F55ADB-v2",
+        "https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598"
+    ],
+    "author": {
+        "@type": "Organization",
+        "name": "1С",
+        "url": "https://1c.ru/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "1С",
+        "url": "https://1c.ru/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://its.1c.ru/img_new/logo_its_og_image_300.png?_=1686643598"
+        }
+    },
+    "datePublished": "2020-04-09T00:00:00+03:00",
+    "dateModified": "2020-04-09T00:00:00+03:00",
+    "articleSection": "Технологии интеграции \"1С:Предприятия 8.3\""
+}
+</script>
+</div><!--noindex--><ul id="l_tabs" class="tab tab1 l"><li id="w_main_tabclassifier" class="w png null" style="display:none"></li><li id="w_main_tabdocument" class="w png active" data-access="true" style="display:"><span class="inline-block"><a href="/db/intgr83/content/47/hdoc" class="inline-block" target="_top">Документ</a></span><script type="text/javascript">
+	deferred.push(function(){
+		var access = SSP.Widget('w_main_tabdocument').getData('access');
+		if(access === 'false'){
+			var frameWidget = SSP.Widget('l_doc_frame');
+			var dbnickDocIdTab = frameWidget.getData('db') + ':' + frameWidget.getData('doc') + ':' + frameWidget.getData('tab');
+			App.Its.Handler.restrictedDbnickDocTabIds[dbnickDocIdTab] = true;
+		}
+	});
+</script></li><li id="w_main_tabsearch" class="w png null" style="display:none"><span class="inline-block"><a href="/db/intgr83/search" class="inline-block" target="_top" rel="nofollow">Результаты поиска</a></span><script type="text/javascript">
+deferred.push(function()
+{
+	if(SSP.Bus.cookie('SEARCH'))
+		document.getElementById('w_main_tabsearch').style.display = '';
+});
+</script></li><li id="w_main_tabextendedsearch" class="w png null" style="display:none"></li></ul><style>#l_tabs {display:none!important}</style><!--/noindex-->			<!--noindex-->
+			<div id="footer">
+				<div id="copyright">
+										&copy; Фирма «1С». Все права защищены									</div>
+			</div>
+			<!--/noindex-->
+						<!--noindex-->
+						<script type="text/javascript">
+				deferred.push(function(){
+					App.sidebarCarousel = new App.Carousel('sidebar_container', 'sidebar', 'sidebar_up_button', 'sidebar_down_button', null, {
+						vertical:true,
+						bypixel:true,
+						absolute:true,
+						step:38,
+						wrap:false
+					});
+				});
+			</script>
+			<div id="sidebar_container" data-nosnippet>
+						<script type="text/javascript">
+				(function(){
+					if(window.styleDeferred && styleDeferred.usingShell && !styleDeferred.inactive){
+						var sidebarContainerStyle = document.getElementById('sidebar_container').style;
+						sidebarContainerStyle.display = 'none';
+						var show = function(){
+							sidebarContainerStyle.removeProperty('display');
+						};
+						styleDeferred.unshift(function(){
+							if(window.SSP)
+								show();
+							else
+								setTimeout(show, 0);
+						});
+					}
+				})();
+			</script>
+							<div id="sidebar_close_button" onclick="var d=document,de=d.documentElement,db=d.body,rx=/\bshow-menu\b/,hc=db.className.match(rx);de.className=de.className.replace(rx, '');db.className=db.className.replace(rx, '');if(window.SSP&&window.App&&App.sidebarCarousel.getPosition()){App.sidebarCarousel.adjust()}"></div>
+				<div id="sidebar_up_button" class="sidebar_updown_button disabled"></div>
+				<div id="sidebar" class="sidebar_level0">
+					<div class="sidebar-main_container">
+						<div id="logo">
+							<a href="/" target="_top" title="Информационная система 1С:ИТС" class="logo_its"></a>
+							<a href="/" target="_top" title="Информационная система 1С:ИТС" class="hide_on_small">
+								<span class="about_its">
+									Информационная система 1С:ИТС								</span>
+							</a>
+						</div>
+						<div id="w_sidebar_search" class="w"><div id="search" class="logo search" onclick="!navigator.maxTouchPoints&&(!window.TouchEvent||!('standalone' in navigator))&&document.getElementById('sidebar_search_input').focus();">
+	<form id="sidebar_search_form" name="sidebar_search_form" method="GET" action="/db/intgr83/search/all" autocomplete="off" target="_top">
+		<input id="sidebar_search_input" type="text" name="query" value="" spellcheck="false" autocapitalize="off" onclick="if(window.msCrypto || window.msWriteProfilerMark || window.TouchEvent && 'standalone' in navigator){document.getElementById('search').className=document.getElementById('search').className.replace(/(\b\hover\b|$)/g, ' hover ')}" data-autocomplete-notrim data-autocomplete-autosubmit data-autocomplete-cache data-autocomplete-suggest="sidebar_search_input_suggest" aria-label="Ввести поисковый запрос" placeholder="Поиск по сайту">
+		<input id="sidebar_search_reset" type="reset" onclick="if(!document.getElementById('sidebar_search_input').value){this.blur();document.documentElement.focus();if(window.msCrypto || window.msWriteProfilerMark || window.TouchEvent && 'standalone' in navigator){document.getElementById('search').className=document.getElementById('search').className.replace(/(\b\hover\b|$)/g, ' ')}}" value="" title="Очистить/Закрыть" aria-label="" class="logo close-submenu" tabindex="0">
+		<input type="submit" style="display:none">
+		<div class="autocomplete-suggests" style="display:none"><ul id="sidebar_search_input_suggest" class="clean" style="display:none"></ul></div>
+	</form>
+</div>
+<script type="text/javascript">
+	deferred.push(function(){
+		App.Search.chatbotJs = 'https://portalchat.1c.ai/chatbot/widget/widget.js';
+		App.Search.chatbotCss = 'https://portalchat.1c.ai/chatbot/widget/style.css';
+		setTimeout(
+			function(){
+				App.Search.init(false, 'sidebar_search_form', 'sidebar_search_input', true);
+				var autocomplete = '/search/autocomplete.json?site=ru&query={query}';
+				if(!SSP.Browser.hasKeyboard)
+					autocomplete = autocomplete.replace('?', '?noSwitch&');
+				SSP.Form.initAutocomplete('sidebar_search_input', autocomplete);
+			},
+			0
+		);
+	});
+</script></div>						<div id="w_sidebar_menu" class="w nofreezelayout">
+<div id="sidebar_main_menu" class="section strong">
+<a class="logo i1c further" target="_top" href="/section/i1c" data-autoclick-delay="1000" id="menu_element_i1c"><span>Инструкции по учету в программах 1С</span></a><a class="logo dev further" target="_top" href="/section/dev" data-autoclick-delay="1000" id="menu_element_dev"><span>Инструкции по разработке на 1С</span></a><a class="logo law further" target="_top" href="/section/law" data-autoclick-delay="1000" id="menu_element_law"><span>Консультации по законодательству</span></a><a class="logo books further" target="_top" href="/section/books" data-autoclick-delay="1000" id="menu_element_books"><span>Книги и периодика</span></a><a class="logo info further" target="_top" href="/section/info" data-autoclick-delay="1000" id="menu_element_info"><span>Справочная информация</span></a><a class="logo garant further" target="_top" href="/section/garant" data-autoclick-delay="1000" id="menu_element_garant"><span>База нормативных документов</span></a></div>
+<hr>
+<div id="sidebar_extra_menu" class="section">
+<a class="logo news" target="_top" href="/news"><span>Новости</span></a><a class="logo lector" target="_top" href="/lector"><span>1С:Лекторий</span></a><a class="logo action further" target="_top" href="/section/action" data-autoclick-delay="1000" id="menu_element_action"><span>Акции и конкурсы</span></a><a class="logo edu" target="_top" href="/db/sprinfo"><span>Курсы и экзамены 1С</span></a><a class="logo review" target="_top" href="/feedback"><span>Отзывы об ИТС</span></a><a class="logo aibot" target="_blank" href="https://portalchat.1c.ai" rel="noopener"><span>1С:Напарник ИТС</span></a><a class="logo bestpartner" target="_top" href="/partner/best"><span>Партнер года 2025</span></a></div>
+
+<div id="w_sidebar_section">
+	<div class="sidebar_shadow_left"></div>
+	<div id="sidebar_open_section" class="sidebar_shadow"></div>
+	<div id="sidebar_section_header" title=""></div>
+	<div id="sidebar_back_section" class="logo back-submenu"></div>
+	<div id="sidebar_close_section" class="logo close-submenu"></div>
+	<div class="sidebar-spacer l native_scroll">
+				<div id="sidebar_list">
+		</div>
+			</div>
+
+	<div id="w_sidebar_subsection">
+		<div class="sidebar_shadow"></div>
+		<div id="sidebar_subsection_header" title=""></div>
+		<div id="sidebar_back_subsection" class="logo back-submenu"></div>
+		<div id="sidebar_close_subsection" class="logo close-submenu"></div>
+		<div class="sidebar-spacer l native_scroll">
+						<div id="sidebar_sublist">
+			</div>
+					</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+deferred.push(function()
+{
+	var deviceType = App.getCssDeviceType();
+	App.Sidebar.init('sidebar', 'w_sidebar_section', 'w_sidebar_subsection', 'database_menu_section', SSP.Browser.hasTouchScreen, undefined);
+	
+	});
+</script>
+
+</div>						<script type="text/javascript">
+							deferred.push(function(){SSP.DOM.listenAutoclick(SSP.DOM.byId('w_sidebar_menu'));});
+						</script>
+						<hr>
+						<div class="social_icons" id="sidebar_social_icons">
+										<a target="_top" href="javascript:" id="share_vk" class="share logo vk" title="Поделиться во Вконтакте">Вконтакте</a>
+									</div>
+						<hr id="top_menu_links_copy_hr">
+						<div id="top_menu_links_copy" class="section"></div>
+												<div class="sidebar-footer"></div>
+					</div>
+				</div>
+				<div id="sidebar_down_button" class="sidebar_updown_button disabled"></div>
+			</div>
+						<!--/noindex-->
+									<div id="cookie_consent_panel">
+				Мы используем файлы cookie.<br>
+				Продолжая находиться на сайте, вы соглашаетесь с этим<br>
+				на условиях, указанных по <a target="_top" href="/docs/policy/cookie">ссылке</a>.<br>
+				<div class="cookie_button_container">
+					<button id="cookie_consent" class="btn btn-default">Принимаю</button>
+				</div>
+			</div>
+			<script type="text/javascript">deferred.push(function(){App.CookieConsent.showPanel('cookie_consent_panel', 'cookie_consent', 'COOKIE_CONSENT');});</script>
+					</div>
+		<!--noindex-->
+		<script type="text/javascript">
+			(function(){
+				var links = document.getElementById('top_menu').getElementsByTagName('A');
+				var topMenuLinksCopy = document.getElementById('top_menu_links_copy');
+				for(var i = 0; i < links.length; i++){
+					var copy = document.createElement('A');
+					copy.href = links[i].href;
+					copy.target = links[i].target;
+					copy.rel = links[i].rel;
+					copy.className = links[i].parentNode.className.replace(/(^|\s)top_menu_item(\s|$)/, ' ');
+					var span = document.createElement('SPAN');
+					span.innerHTML = links[i].innerHTML;
+					copy.appendChild(span);
+					topMenuLinksCopy.appendChild(copy);
+				}
+			})();
+		</script>
+		<div id="w_popup" class="w box-shadow"><div id="popup_inner">
+	<div id="popup_controls">
+		<span id="popup_title"></span><a id="popup_close" href="javascript:"></a>
+	</div>
+	<div id="popup" tabindex="-1" class="l loading"></div>
+</div>
+<script type="text/javascript">
+	deferred.push(function(){
+		setTimeout(App.Popup.init, 0);
+	});
+</script></div>		<script type="text/javascript">
+			deferred.push(function(){
+				SSP.DOM.listen(SSP.DOM.byId('sidebar_social_icons'), 'click', App.Share.shareClick);
+			});
+		</script>
+		<script type="text/javascript">
+			deferred.push(function(){App.Stat.init('', '', '38953945', '', 'GA_PARAMS', 'USER_TYPE', {"net_cm":{"scope":"page","value":"broadband"},"net_rm":"navigate","net_aso":{"scope":"page","value":"OOO SET"},"net_asn":{"scope":"page","value":"AS201123"},"css_init":{"scope":"request","value":null},"user_segment":":UNAUTH:"}, false, false, false);});
+			</script>
+			<noscript>
+			<div><img src="https://mc.yandex.ru/watch/38953945" style="position:absolute; left:-9999px;" alt=""></div>
+		</noscript>
+				<noscript>
+					<div><img src="https://counter.yadro.ru/hit?r;uhttps%3A//its.1c.ru/db/intgr83/content/47/hdoc;h%u0410%u0432%u0442%u043E%u043C%u0430%u0442%u0438%u0447%u0435%u0441%u043A%u0438%u0439%20REST-%u0438%u043D%u0442%u0435%u0440%u0444%u0435%u0439%u0441%20%28OData%29%20%3A%3A%20%u0422%u0435%u0445%u043D%u043E%u043B%u043E%u0433%u0438%u0438%20%u0438%u043D%u0442%u0435%u0433%u0440%u0430%u0446%u0438%u0438%20%221%u0421%3A%u041F%u0440%u0435%u0434%u043F%u0440%u0438%u044F%u0442%u0438%u044F%208.3%22;0.19428677633139" style="position:absolute; left:-9999px;" alt=""></div>
+		</noscript>
+			<script type="text/javascript">
+			if('Notification' in window)
+				deferred.push(function(){
+					var initWebPush = function(){
+						SSP.DOM.requestIdleCallback(function(){
+							if(!document.cookie.match('WEBPUSH=0'))
+								SSP.DOM.requestIdleCallback(function(){
+									if('permissions' in navigator)
+										navigator.permissions.query({name: 'notifications'}).then(function(result){
+											result.state === 'granted' && SSP.DOM.requestIdleCallback(App.WebPush.init);
+										});
+									else if(Notification.permission === 'granted')
+										SSP.DOM.requestIdleCallback(App.WebPush.init);
+								});
+						});
+					};
+						initWebPush();
+				});
+		</script>
+		<noscript><style>
+			.noscript{display:inherit!important}
+			.script{display:none!important}
+			.w.loading > *,.l.loading > *{visibility:inherit}
+			.w.loading,.l.loading{cursor:inherit;background:inherit;background-position:inherit}
+			.l.loading{margin:inherit;padding:inherit}
+			#other_sites_link {display:none}
+			#contact {margin-top:12px}
+		</style></noscript>
+		<script type="text/javascript">
+			deferred.push(function(){App.Handler.initBodyCopy('Фирма «1С»')});
+		</script>
+		<script type="text/javascript">
+			(function(){
+				var resetScroll = function(){
+					var that = this;
+					that.scrollTop = 0;
+					setTimeout(function(){that.scrollTop = 0;}, 0);
+				};
+				var resetScrollers = [document.getElementById('main_container'), document.body, document.documentElement];
+				for(var i = 0; i < resetScrollers.length; i++)
+				{
+					resetScrollers[i].scrollTop = 0;
+					resetScrollers[i].addEventListener('scroll', resetScroll, false);
+				}
+				setTimeout(function(){
+					for(var i = 0; i < resetScrollers.length; i++)
+						resetScrollers[i].scrollTop = 0;
+				}, 0);
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				if(!('serviceWorker' in navigator))
+					return;
+				
+				var initWebApp = function(){
+					try{navigator.serviceWorker.register('/sw.js').catch(function(){});}catch(e){}
+					
+					if(navigator.userAgentData && navigator.userAgentData.mobile
+					|| !navigator.userAgentData && (window.TouchEvent || !('standalone' in navigator)))
+						(function(){
+							var setManifest = function(){
+								var link = document.createElement('LINK');
+								link.rel = 'manifest';
+								link.href = '/manifest.json';
+								document.head.appendChild(link);
+							};
+							if('standalone' in navigator && window.styleDeferred && !styleDeferred.inactive)
+								styleDeferred.push(setManifest);
+							else
+								setManifest();
+						})();
+				};
+				
+				if(!window.styleDeferred || styleDeferred.usingShell)
+					initWebApp();
+				else
+					deferred.push(initWebApp);
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				var testLink = document.createElement('LINK');
+				var probablySupportsPrefetch = !testLink.relList || !testLink.relList.supports || testLink.relList.supports('prefetch');
+				var prefetchUrl = function(url){
+					if(!probablySupportsPrefetch && window.fetch)
+						fetch(url);
+					else{
+						var link = document.createElement('LINK');
+						link.rel = 'prefetch';
+						link.href = url;
+						document.head.appendChild(link);
+					}
+				};
+				deferred.unshift(function(){
+					var urls = ["style.css?_=1789134211","\/css\/its.content.css?_=1693585191","\/js\/its.content.js?_=1697980666","\/common\/page\/css\/1789134243\/main__new.css_?_=1789134243","\/common\/page\/js\/1789134243\/main__new.js_?_=1789134243","\/common\/page\/css\/1789134243\/user__new.css_?_=1789134243","\/common\/page\/css\/1789134243\/document__new.css_?_=1789134243","\/font\/futura\/FuturaDemiC.woff2","\/font\/roboto\/Roboto-Light.woff2","\/font\/roboto\/Roboto-Bold.woff2","\/font\/roboto\/Roboto-Italic.woff2","\/font\/roboto\/Roboto-Black.woff2","\/font\/futura\/FuturaLightC.woff2"];
+					for(var i = 0; i < urls.length; i++)
+						prefetchUrl(urls[i]);
+				});
+				if(!window.styleDeferred){
+					var urls = ["\/font\/roboto\/Roboto-Light.woff2","\/font\/roboto\/Roboto-Bold.woff2"];
+					for(var i = 0; i < urls.length; i++)
+						prefetchUrl(urls[i]);
+				}
+			})();
+		</script>
+		<script type="text/javascript">
+			deferred.push(function(){
+				var nc = navigator.connection, dp = document.prerendering;
+				if(SSP.Browser.Android
+				|| SSP.Browser.IOS
+				|| (nc && nc.effectiveType ? nc.effectiveType !== '4g' : SSP.DOM.hasClass(document.body, 'cellular')))
+					SSP.DOM.listen(document, 'visibilitychange', function(event){
+						if(document.visibilityState === 'hidden')
+							return;
+						if(dp){
+							dp = false;
+							return;
+						}
+						SSP.Bus.request('/ping');
+					});
+			});
+		</script>
+		<script id="end_of_body"></script>
+		<!--/noindex-->
+	</body>
+</html>
