@@ -7,11 +7,12 @@
 ```
 qwenCLI/
 ├── settings/          # settings.json (API-ключ замаскирован)
-├── skills/            # 4 скилла
+├── skills/            # 5 скиллов
 │   ├── 1c-book-download/
 │   ├── 1c-data-model/
 │   ├── duckdb-sql-memory/
-│   └── excel-compare/
+│   ├── excel-compare/
+│   └── quick-commit/
 ├── memory/
 │   ├── user/          # глобальная память пользователя (C:\Users\MZ3\.qwen\memories)
 │   └── project/       # память проекта c--ai-projects
